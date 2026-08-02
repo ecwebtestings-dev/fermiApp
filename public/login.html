@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader"></div>
+
+<div class="registrationFrom">
+
+    <!-- LEFT SECTION -->
+    <div class="card-left">
+
+        <div class="card-paragraph">
+
+            <div class="header">
+                <i class="material-icons icon-bg">waves</i>
+
+                <h1>
+                    Welcome To Fermi IT Solutions
+                </h1>
+            </div>
+
+            <p class="service-text">
+                We are a full-service security and electrical contractor offering  safe and efficient
+                solutions for modern security, electrical, and IT needs. Our services include
+                automatic gates, electric fences, CCTV surveillance, motion sensors, metal detectors,
+                access control systems, smart alarms, fire alarms, POS systems, GPS tracking,
+                WAN/LAN installations, wiring, HVAC systems, refrigeration, water heating,
+                and many more.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="card">
+        <form id="form">
+             <h2>Sign In</h2>
+             <p>Log into your account</p>
+           
+            <!-- Email -->
+            <div class="input-icon">
+                <i  class="material-icons">email</i>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="input-icon">
+                <i class="material-icons">lock</i>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <!-- Button -->
+            <button type="submit" style="background-color:  #F59E0B;">Login</button>
+            
+            <div class="link">Don't have an account? <a href="signup.html">SignUp</a></div>
+            <div class="message" id="msg"></div>
+        </form>
+    </div>
+
+</div>
+<script src="registrationAuth.js"></script>
+
+
+</body>
+</html>

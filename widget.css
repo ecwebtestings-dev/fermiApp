@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --widget-primary:  #F59E0B; 
+    --widget-primary-hover: #F59E0B;
+    --widget-bg: #ffffff;
+    --widget-text: #1f2937;
+    --widget-text-light: #6b7280;
+    --widget-border: #e5e7eb;
+    --widget-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --font-family: 'Outfit', sans-serif;
+}
+
+#ai-widget-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--widget-primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ai-widget-button i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+#ai-widget-button:hover {
+    background: var(--widget-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(230, 81, 0, 0.5);
+}
+
+#ai-widget-button:hover i {
+    transform: scale(1.1);
+}
+
+/* Panel Container */
+#ai-widget-panel {
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    width: 380px;
+    height: 500px;
+    background: var(--widget-bg);
+    border-radius: 16px;
+    box-shadow: var(--widget-shadow);
+    border: 1px solid var(--widget-border);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: var(--font-family);
+    z-index: 10000;
+    animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Header */
+#ai-widget-panel-header {
+    background: #fff;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--widget-text);
+    border-bottom: 1px solid var(--widget-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    letter-spacing: -0.01em;
+}
+
+#ai-widget-panel-header::before {
+    content: '';
+}
+
+/* Messages Area */
+#ai-widget-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #f9fafb; 
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar - Subtle */
+#ai-widget-messages::-webkit-scrollbar {
+    width: 6px;
+}
+#ai-widget-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+#ai-widget-messages::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+#ai-widget-messages::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Message Bubbles */
+.message {
+    max-width: 85%;
+    word-wrap: break-word;
+    line-height: 1.5;
+    position: relative;
+    font-size: 0.8rem;
+    animation: messagePop 0.3s ease-out;
+}
+
+@keyframes messagePop {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* User Message */
+.message.user {
+    align-self: flex-end;
+    background: var(--widget-primary);
+    color: white;
+    font-size: .8rem;
+    padding: 8px 16px;
+    border-radius: 18px 18px 4px 18px; 
+    box-shadow: 0 2px 4px rgba(230, 81, 0, 0.2);
+}
+
+/* Assistant Message */
+.message.assistant {
+    align-self: flex-start;
+    background: white;
+    color: var(--widget-text-light);
+    padding: 10px 16px;
+    border-radius: 18px 18px 18px 4px; 
+    border: 1px solid var(--widget-border);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Contact Card inside Message */
+.message .contact {
+    margin-top: 8px;
+    padding: 12px;
+    background: #fff7ed; 
+    border-radius: 8px;
+    font-size: 0.8rem;
+    border: 1px solid #ffedd5;
+}
+
+.message .contact a {
+    color: var(--widget-primary);
+    text-decoration: none;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    transition: opacity 0.2s;
+}
+.message .contact a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Input Area */
+#ai-widget-input-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+    background: white;
+    border-top: 1px solid var(--widget-border);
+}
+
+#ai-widget-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--widget-border);
+    outline: none;
+    font-size: 0.8rem;
+    border-radius: 24px;
+    background: #f3f4f6;
+    transition: all 0.2s ease;
+    font-family: var(--font-family);
+    color: var(--widget-text);
+}
+
+#ai-widget-input:focus {
+    background: white;
+    border-color: var(--widget-primary);
+    box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.1);
+}
+
+#ai-widget-send {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--widget-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+#ai-widget-send:hover {
+    background: var(--widget-primary-hover);
+    transform: scale(1.05);
+}
+
+#ai-widget-send:active {
+    transform: scale(0.95);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 18px 18px 18px 4px;
+    border: 1px solid var(--widget-border);
+    align-self: flex-start;
+    width: fit-content;
+}
+
+.typing-indicator span {
+    width: 6px;
+    height: 6px;
+    background: #9ca3af;
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingBounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+
+@media (max-width: 480px) {
+    #ai-widget-panel {
+        width: calc(100% - 32px);
+        height: 60vh;
+        bottom: 80px;
+        right: 16px;
+        left: 16px;
+    }
+    
+    #ai-widget-button {
+        bottom: 16px;
+        right: 16px;
+    }
+}
