@@ -17,7 +17,7 @@ window.addEventListener('load',()=>{
             const menuToggle = document.getElementById('menuToggle');
             const mobileMenu = document.getElementById('mobileMenu');
             const userTriggers = document.querySelectorAll('.user-account-trigger');
-            const userProfile = document.getElementById('user-profile');
+            //const userProfile = document.getElementById('user-profile');
             const overlay = document.getElementById('menuOverlay');
 
             // Helper function to close mobile menu
@@ -78,7 +78,7 @@ window.addEventListener('load',()=>{
             document.addEventListener('click', (e) => {
                 const isClickInsideMobileMenu = mobileMenu.contains(e.target);
                 const isClickInsideMenuToggle = menuToggle?.contains(e.target);
-                const isClickInsideUserProfile = userProfile.contains(e.target);
+                //const isClickInsideUserProfile = userProfile.contains(e.target);
                 const isClickInsideUserTrigger = Array.from(userTriggers).some(trigger => trigger.contains(e.target));
                 
                 // Close mobile menu if click is outside
@@ -93,9 +93,9 @@ window.addEventListener('load',()=>{
             });
 
             // Prevent clicks inside user profile from bubbling
-            userProfile.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
+            // userProfile.addEventListener('click', (e) => {
+            //     e.stopPropagation();
+            // });
 
             // Close on escape key
             document.addEventListener('keydown', (e) => {
@@ -110,9 +110,9 @@ window.addEventListener('load',()=>{
                     if (mobileMenu.classList.contains('active')) {
                         closeMobileMenu();
                     }
-                    if (userProfile.classList.contains('active')) {
-                        closeUserProfile();
-                    }
+                    // if (userProfile.classList.contains('active')) {
+                    //     closeUserProfile();
+                    // }
                 }
             }, { passive: true });
                     
@@ -176,7 +176,7 @@ window.addEventListener('load',()=>{
                 });
                 
                 // Add active class to commercial tab
-                document.querySelector('.tab[data-tab="commercial"]').classList.add('active');
+               // document.querySelector('.tab[data-tab="commercial"]').classList.add('active');
                 
                 // Hide all content
                 document.querySelectorAll('.tab-content-mobile').forEach(content => {
@@ -184,7 +184,7 @@ window.addEventListener('load',()=>{
                 });
                 
                 // Show commercial content
-                document.getElementById('commercial-mobile').classList.add('active');
+                //document.getElementById('commercial-mobile').classList.add('active');
             }
         });
 
