@@ -169,6 +169,122 @@
 
     <!-- ====== FAVICON ====== -->
     <link rel="icon" type="image/png" href="./Images/favicon.png">
+
+
+    <style>
+        
+/* ============================================
+   FLOATING WHATSAPP BUTTON (all pages)
+   ============================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(37, 211, 102, 0.5);
+  background-color: #25D366;
+  text-decoration: none;
+  animation: whatsappPulse 2.2s infinite;
+}
+
+.whatsapp-float:hover {
+  width: 180px;
+  border-radius: 40px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  animation: none;
+}
+
+.whatsapp-float:active {
+  transform: scale(0.97);
+}
+
+/* Icon container */
+.wa-sign {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.35s ease;
+}
+
+.whatsapp-float:hover .wa-sign {
+  width: 28%;
+  padding-left: 12px;
+}
+
+.wa-sign svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.wa-sign svg path {
+  fill: white;
+}
+
+/* Label */
+.wa-text {
+  flex-grow: 1;
+  opacity: 0;
+  width: 0;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: 'Noto Sans', sans-serif;
+  white-space: nowrap;
+  padding-right: 0;
+  transition: all 0.35s ease;
+}
+
+.whatsapp-float:hover .wa-text {
+  opacity: 1;
+  width: auto;
+  padding-right: 18px;
+}
+
+/* Pulse ring animation — grabs attention without being annoying */
+@keyframes whatsappPulse {
+  0%   { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70%  { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ===== Mobile tweaks ===== */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    bottom: 18px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+  }
+  .whatsapp-float:hover {
+    width: 160px;
+  }
+  .wa-sign svg { width: 24px; height: 24px; }
+  .wa-text { font-size: 0.95rem; }
+}
+
+/* Respect users who prefer motion */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float,
+  .whatsapp-float:hover {
+    animation: none;
+    transition: none;
+  }
+}
+    </style>
 </head>
 
 
@@ -207,7 +323,7 @@
 
             <?php else: ?>
                 <!-- Guest State -->
-                <a href="/" class="btn-signup">
+                <a href="index.php" class="btn-signup">
                     Get Started
                 </a>
             <?php endif; ?>
@@ -240,7 +356,7 @@
         <a href="index.php" class="mobile-nav-link active">Home</a>
         <a href="services.php" class="mobile-nav-link">What We Offer</a>
         <a href="projects.php" class="mobile-nav-link">Projects</a>
-        <a href="/services.php" class="mobile-nav-link">Reserve Appointment</a>
+        <a href="services.php" class="mobile-nav-link">Reserve Appointment</a>
     </div>
     <div class="mobile-auth-section">
         <div class="mobile-auth-buttons">
@@ -250,7 +366,7 @@
                 </a>
                 
             <?php else: ?>
-                <a href="/" class="mobile-btn-signup">
+                <a href="index.php" class="mobile-btn-signup">
                     Get Started
                 </a>
             <?php endif; ?>
@@ -282,58 +398,73 @@
 <?php #endif; ?> -->
 
 
-    <!-- ================= HERO SECTION ================= -->
-   <section class="hero">
+ 
 
-
-
-        <div class="hero-container">
-            <div class="hero-left">
-                <h1>Best Practices For All Secure Security Systems.</h1>
-
-                <p> We provide security requirements for residential, commercial and industrial clients with the largest assortment of surveillance cameras, alarm systems,
-                    access control and smart home solutions.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="service.php" class="hero-btn">Our Services
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-
-                    <div class="phone-box">
-                        <div class="phone-icon"><i class="fas fa-phone"></i></div>
-                        <div class="phone-details">
-                            <span>Make a call</span>
-                            <a href="tel:+256760271098">+256 760 271 098</a>
-                        </div>
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-left">
+            <span class="hero-eyebrow"><span class="dot"></span>24/7 Monitored &amp; Certified</span>
+ 
+            <h1>Best Practices For All<span class="accent">Secure Security Systems.</span></h1>
+ 
+            <p>We provide security requirements for residential, commercial and industrial clients with the largest assortment of surveillance cameras, alarm systems, access control and smart home solutions.</p>
+ 
+            <div class="hero-actions">
+                <a href="service.php" class="hero-btn">Our Services
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+ 
+                <div class="phone-box">
+                    <div class="phone-icon"><i class="fas fa-phone"></i></div>
+                    <div class="phone-details">
+                        <span>Make a call</span>
+                        <a href="tel:+256760271098">+256 760 271 098</a>
                     </div>
                 </div>
             </div>
-
-            <!-- RIGHT SIDE -->
-            <div class="hero-right">
-
-               
-
-                <!-- Circle Slider -->
-                <div class="circle-slider">
-                    <img src="Images/AutomatedCamera1.jpeg" class="slide active">
-                    <img src="Images/cctvinter2.jpg"class="slide">
-                    <img src="Images/interiorViewOfRecordBox.jpeg" class="slide">
-                    <img src="Images/InstallationProcedure.jpeg"class="slide">
-                    <img src="Images/fire-sensor.jpg"class="slide">
-                    <img src="Images/OutdoorCCTV.jpg"class="slide">
-                    <img src="Images/ControlPanel2.jpeg"class="slide">
-                    <img src="Images/ManAtWork2.jpeg"class="slide">
-                    <img src="Images/Cyber.jpg"class="slide">
-                    <img src="Images/AutomatedGate.jpeg"class="slide">
-                </div>
-
+ 
+            <div class="hero-stats">
+                <div class="stat"><strong>10<span>+</span></strong><small>Years securing sites</small></div>
+                <div class="stat"><strong>500<span>+</span></strong><small>Installations</small></div>
+                <div class="stat"><strong>24/7</strong><small>Monitoring &amp; response</small></div>
             </div>
-
         </div>
-
-    </section>
+ 
+        <!-- RIGHT SIDE -->
+        <div class="hero-right">
+            <div class="hero-visual">
+                <div class="scope-ring"></div>
+                <div class="orbit-ring"></div>
+                <span class="bracket tl"></span>
+                <span class="bracket tr"></span>
+                <span class="bracket bl"></span>
+                <span class="bracket br"></span>
+ 
+                <div class="circle-slider" id="heroSlider">
+                    <img src="Images/albert.jpg" class="slide active">
+                    <img src="Images/cctvinter2.jpg" class="slide">
+                    <img src="Images/interiorViewOfRecordBox.jpeg" class="slide">
+                    <img src="Images/InstallationProcedure.jpeg" class="slide">
+                    <img src="Images/fire-sensor.jpg" class="slide">
+                    <img src="Images/OutdoorCCTV.jpg" class="slide">
+                    <img src="Images/ControlPanel2.jpeg" class="slide">
+                    <img src="Images/ManAtWork2.jpeg" class="slide">
+                    <img src="Images/Cyber.jpg" class="slide">
+                    <img src="Images/AutomatedGate.jpeg" class="slide">
+                    <div class="scanline"></div>
+                </div>
+ 
+                <div class="rec-readout">
+                    <span class="rec-dot"></span>
+                    <strong>REC</strong>
+                    <span class="rec-time" id="heroClock">00:00:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
 
     <!-- ================= ABOUT SECTION ================= -->
     <section class="about-section section-padding"  data-aos="fade-up" data-aos-duration="100" data-aos-delay="200">
@@ -353,7 +484,7 @@
                 </p>
     
                 <div class="about-cta">
-                    <a href="appointments/create.php" class="btn-about">Schedule An Appointment <i class="fas fa-arrow-right"></i></a>
+                    <a href="tel:+256 754 130 885" class="btn-about">Schedule An Appointment <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="about-img-wrapper">
@@ -797,7 +928,22 @@
     </footer>
 
     <!-- AI Widget Container -->
-    <div id="ai-widget-container"></div>
+    <!-- <div id="ai-widget-container"></div> -->
+
+    <!-- Floating WhatsApp CTA -->
+<a href="https://wa.me/256760271098?text=Hello%20FERMI%2C%20I%20need%20assistance%20with%20your%20services"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+  <span class="wa-sign">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+    </svg>
+  </span>
+  <span class="wa-text">WhatsApp</span>
+</a>
+
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -895,6 +1041,29 @@
                 if (window.innerWidth <= 768) startAutoRotate();
                 else stopAutoRotate();
             });
+
+
+
+                    (function () {
+            // auto-rotate circle-slider images
+            const slides = document.querySelectorAll('#heroSlider .slide');
+            if (slides.length) {
+                let i = [...slides].findIndex(s => s.classList.contains('active'));
+                if (i === -1) i = 0;
+                setInterval(() => {
+                    slides[i].classList.remove('active');
+                    i = (i + 1) % slides.length;
+                    slides[i].classList.add('active');
+                }, 3200);
+            }
+            // live REC timecode
+            const clock = document.getElementById('heroClock');
+            if (clock) {
+                const tick = () => clock.textContent = new Date().toLocaleTimeString('en-GB');
+                tick();
+                setInterval(tick, 1000);
+            }
+        })();
         });
     </script>
 </body>

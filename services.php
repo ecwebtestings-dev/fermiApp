@@ -1078,6 +1078,120 @@
         font-size: 1.8rem !important;
         
     }
+
+
+    
+/* ============================================
+   FLOATING WHATSAPP BUTTON (all pages)
+   ============================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(37, 211, 102, 0.5);
+  background-color: #25D366;
+  text-decoration: none;
+  animation: whatsappPulse 2.2s infinite;
+}
+
+.whatsapp-float:hover {
+  width: 180px;
+  border-radius: 40px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  animation: none;
+}
+
+.whatsapp-float:active {
+  transform: scale(0.97);
+}
+
+/* Icon container */
+.wa-sign {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.35s ease;
+}
+
+.whatsapp-float:hover .wa-sign {
+  width: 28%;
+  padding-left: 12px;
+}
+
+.wa-sign svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.wa-sign svg path {
+  fill: white;
+}
+
+/* Label */
+.wa-text {
+  flex-grow: 1;
+  opacity: 0;
+  width: 0;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: 'Noto Sans', sans-serif;
+  white-space: nowrap;
+  padding-right: 0;
+  transition: all 0.35s ease;
+}
+
+.whatsapp-float:hover .wa-text {
+  opacity: 1;
+  width: auto;
+  padding-right: 18px;
+}
+
+/* Pulse ring animation — grabs attention without being annoying */
+@keyframes whatsappPulse {
+  0%   { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70%  { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ===== Mobile tweaks ===== */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    bottom: 18px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+  }
+  .whatsapp-float:hover {
+    width: 160px;
+  }
+  .wa-sign svg { width: 24px; height: 24px; }
+  .wa-text { font-size: 0.95rem; }
+}
+
+/* Respect users who prefer motion */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float,
+  .whatsapp-float:hover {
+    animation: none;
+    transition: none;
+  }
+}
  </style>
 </head>
 <body>
@@ -1100,7 +1214,7 @@
             <a href="index.php" class="nav-link active">Home</a>
             <a href="services.php" class="nav-link">What We Offer</a>
             <a href="projects.php" class="nav-link">Projects</a>
-            <a href="appointments/create.php" class="nav-link">Reserve Appointment</a>
+            <a href="services.php" class="nav-link">Reserve Appointment</a>
         </nav>
 
         <div class="auth-buttons">
@@ -1114,7 +1228,7 @@
 
             <?php else: ?>
                 <!-- Guest State -->
-                <a href="public/signup.php" class="btn-signup">
+                <a href="index.php" class="btn-signup">
                     Get Started
                 </a>
             <?php endif; ?>
@@ -1147,7 +1261,7 @@
         <a href="index.php" class="mobile-nav-link active">Home</a>
         <a href="services.php" class="mobile-nav-link">What We Offer</a>
         <a href="projects.php" class="mobile-nav-link">Projects</a>
-        <a href="appointments/create.php" class="mobile-nav-link">Reserve Appointment</a>
+        <a href="services.php" class="mobile-nav-link">Reserve Appointment</a>
     </div>
     <div class="mobile-auth-section">
         <div class="mobile-auth-buttons">
@@ -1157,7 +1271,7 @@
                 </a>
                 
             <?php else: ?>
-                <a href="/" class="mobile-btn-signup">
+                <a href="index.php" class="mobile-btn-signup">
                     Get Started
                 </a>
             <?php endif; ?>
@@ -1212,7 +1326,7 @@
                 Rest assured, we put the same level of energy into every project we take on.
             </p>
             <div class="about-cta">
-                    <a href="appointments/create.php" class="btn-about">Schedule An Appointment <i class="fas fa-arrow-right"></i></a>
+                    <a href="tel:+256 754 130 885" class="btn-about">Schedule An Appointment <i class="fas fa-arrow-right"></i></a>
                 </div>
         </div>
     </div>
@@ -1541,17 +1655,17 @@
                     <li><a href="index.php"> Home</a></li>
                     <li><a href="services.php">What we offer</a></li>
                     <li><a href="projects.php"> Projects</a></li>
-                    <li><a href="appointments/create.php">Reserve Appointment</a></li>
+                    <li><a href="/services.php">Reserve Appointment</a></li>
                 </ul>
             </div>
             
             <div class="footer-box" data-aos="fade-up" data-aos-delay="400">
                 <h3 class="footer-title">Our Services</h3>
                 <ul class="footer-links">
-                    <li><a href="appointments/create.php"> WLAN/LAN Installation</a></li>
-                    <li><a href="appointments/create.php"> Air Conditioning</a></li>
-                    <li><a href="appointments/create.php"> Automatic Gates</a></li>
-                    <li><a href="appointments/create.php"> Fire Alarms</a></li>
+                    <li><a href="/services.php"> WLAN/LAN Installation</a></li>
+                    <li><a href="/services.php"> Air Conditioning</a></li>
+                    <li><a href="/services.php"> Automatic Gates</a></li>
+                    <li><a href="/services.php"> Fire Alarms</a></li>
                     <li><a href="services.php">View All</a></li>
                 </ul>
             </div>
@@ -1577,7 +1691,20 @@
     </footer>
 
     <!--AI WIDGET-->
-   <div id="ai-widget-container"></div>
+   <!-- <div id="ai-widget-container"></div> -->
+    <!-- Floating WhatsApp CTA -->
+<a href="https://wa.me/256760271098?text=Hello%20FERMI%2C%20I%20need%20assistance%20with%20your%20services"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+  <span class="wa-sign">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+    </svg>
+  </span>
+  <span class="wa-text">WhatsApp</span>
+</a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
