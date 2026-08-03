@@ -49,6 +49,8 @@
     <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://fermi.co.ug/">
 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
     <!-- ====== THEME & PERFORMANCE ====== -->
     <meta name="theme-color" content="#fff">
     <meta name="color-scheme" content="#fff">
@@ -503,13 +505,13 @@
     <!-- ================= SERVICES SECTION ================= -->
     <section class="services-section" id="our-featured-services">
         <div class="services-container">
-            <div class="services-header" data-aos="fade-up" data-aos-duration="800">
+            <div class="services-header" >
                 <span class="about-subtitle">24/7 Service – Safe & Efficient</span>
                 <h2 class="services-title">We are a Full Service Electrical Contractor</h2>
                 <p class="services-description">Comprehensive security, electrical, and IT solutions with round-the-clock support and certified expertise</p>
             </div>
 
-            <div class="slider-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="slider-container"  data-aos-delay="400">
                 <div class="slider-track" id="servicesSlider">
                     <!-- Service Card 1 -->
                     <div class="service-card">
@@ -610,7 +612,7 @@
         <div class="cta-container">
            
 
-            <div class="cta-content" data-aos="fade-right" data-aos-duration="800">
+            <div class="cta-content">
                 <div class="cta-header">
                     <span class="cta-subtitle">GET IMMEDIATE ASSISTANCE</span>
                     <h2 class="cta-title">Do You <span class="cta-highlight">Need Help</span> With Networking & Security?</h2>
@@ -717,15 +719,15 @@
     <!-- ================= WHY CHOOSE US ================= -->
     <section id="why-us-section" class="why-us-section">
         <div class="why-us-container">
-            <div class="why-us-header" data-aos="fade-up" data-aos-duration="800">
-                <span class="about-subtitle" data-aos="fade-up" data-aos-delay="100">Why Us</span>
-                <h2 class="why-us-title" data-aos="fade-up" data-aos-delay="200">Great Reasons Why People Choose Us</h2>
+            <div class="why-us-header">
+                <span class="about-subtitle" >Why Us</span>
+                <h2 class="why-us-title" >Great Reasons Why People Choose Us</h2>
             </div>
 
             <div class="why-us-cards-wrapper">
                 <div class="why-us-cards" id="whyUsCards">
                     <!-- Card 1 -->
-                    <div class="why-us-card" data-index="0" data-aos="fade-right" data-aos-delay="300">
+                    <div class="why-us-card" data-index="0">
                         <div class="why-us-img-container">
                             <img src="Images/AutomatedSmartDoor.jpeg" alt="Certified Electrician">
                             <div class="why-us-overlay"></div>
@@ -738,7 +740,7 @@
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="why-us-card" data-index="1" data-aos="fade-up" data-aos-delay="400">
+                    <div class="why-us-card" data-index="1" >
                         <div class="why-us-img-container">
                             <img src="Images/AutomatedCamera1.jpeg" alt="Customer First Approach">
                             <div class="why-us-overlay"></div>
@@ -751,7 +753,7 @@
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="why-us-card" data-index="2" data-aos="fade-left" data-aos-delay="500">
+                    <div class="why-us-card" data-index="2">
                         <div class="why-us-img-container">
                             <img src="Images/poss.jpg" alt="Transparent Pricing">
                             <div class="why-us-overlay"></div>
@@ -766,7 +768,7 @@
                 </div>
             </div>
 
-            <div class="why-us-slider-nav" id="whyUsSliderNav" data-aos="fade-up" data-aos-delay="600">
+            <div class="why-us-slider-nav" id="whyUsSliderNav">
                 <button class="why-us-slider-prev" onclick="slideWhyUs(-1)"><i class="fas fa-chevron-left"></i></button>
                 <div class="why-us-dots">
                     <span class="why-us-dot active" onclick="goToWhyUsSlide(0)"></span>
@@ -779,36 +781,36 @@
     </section>
 
     <!-- ================= FAQ SECTION ================= -->
-    <section class="faq-section" data-aos="fade-up" data-aos-duration="1000">
+    <section class="faq-section" >
         <div class="faq-container">
-            <div class="faq-header" data-aos="fade-right" data-aos-delay="200">
+            <div class="faq-header">
                 <span class="about-subtitle">Faq's</span>
                 <h2 class="faq-title">Frequently Asked Questions</h2>
                 <p class="faq-description">Some of the most asked questions here asked by our valuable Customers...</p>
             </div>
 
-            <div class="faq-items" data-aos="fade-left" data-aos-delay="300">
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="faq-items" >
+                <div class="faq-item" >
                     <div class="faq-question" onclick="toggleFaq(this)">Are your security systems compliant with data protection regulations?<i class="fas fa-chevron-down faq-arrow"></i></div>
                     <div class="faq-answer">Yes, all our security solutions are designed with privacy-by-design principles and comply with relevant data protection laws.</div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="450">
+                <div class="faq-item" >
                     <div class="faq-question" onclick="toggleFaq(this)">Do you provide energy efficiency assessments?<i class="fas fa-chevron-down faq-arrow"></i></div>
                     <div class="faq-answer">We include energy audits in all our electrical projects, recommending LED lighting and smart controls.</div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="faq-item" >
                     <div class="faq-question" onclick="toggleFaq(this)">How do you ensure cybersecurity?<i class="fas fa-chevron-down faq-arrow"></i></div>
                     <div class="faq-answer">Our IT infrastructure includes enterprise-grade firewalls, encrypted connections, and regular security patches.</div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="550">
+                <div class="faq-item" >
                     <div class="faq-question" onclick="toggleFaq(this)">What types of security systems do you install?<i class="fas fa-chevron-down faq-arrow"></i></div>
                     <div class="faq-answer">We provide CCTV cameras, alarm systems, biometric access controls, and perimeter security systems.</div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="faq-item" >
                     <div class="faq-question" onclick="toggleFaq(this)">Do you offer both residential and commercial services?<i class="fas fa-chevron-down faq-arrow"></i></div>
                     <div class="faq-answer">Yes, we handle electrical installations, repairs, and maintenance for homes, offices, factories, and other establishments.</div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="650">
+                <div class="faq-item" >
                     <div class="faq-question" onclick="toggleFaq(this)">What IT support services do you provide?<i class="fas fa-chevron-down faq-arrow"></i></div>
                     <div class="faq-answer">We offer network setup, server management, cybersecurity solutions, and ongoing technical support.</div>
                 </div>
@@ -818,13 +820,13 @@
     
 
     <!-- ================= CONTACT INFO SECTION ================= -->
-    <section class="con-section" data-aos="fade-up" data-aos-duration="300">
-        <div class="con-content" data-aos="fade-right" data-aos-delay="200">
-            <h2 class="con-heading" data-aos="fade-up" data-aos-delay="200">Do you <span class="con-highlight">Need Help</span><br> With Networking & Security?</h2>
-            <p class="con-description" data-aos="fade-up" data-aos-delay="200">
+    <section class="con-section" >
+        <div class="con-content" >
+            <h2 class="con-heading" >Do you <span class="con-highlight">Need Help</span><br> With Networking & Security?</h2>
+            <p class="con-description">
                 Our Security, networking & electrical repair service options are proudly offered to clients. Give us a call today!
             </p>
-            <div class="con-buttons" data-aos="fade-up" data-aos-delay="400">
+            <div class="con-buttons">
                 <a href="tel:+256760271098" class="con-btn con-btn-call" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fas fa-phone-alt"></i> Give Us a Call
                 </a>
@@ -843,7 +845,7 @@
    
    <section class="test-section section-padding">
         <div class="test-container">
-            <div class="test-header" data-aos="fade-up">
+            <div class="test-header">
                 <span class="test-subtitle">TESTIMONIALS</span>
                 <h2 class="test-title">What Our Clients Say</h2>
                 <p class="test-description">Trusted by businesses and homeowners across Uganda</p>
@@ -884,9 +886,9 @@
     </section>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="footer-section" data-aos="fade-up" data-aos-duration="1000">
+    <footer class="footer-section">
         <div class="footer-container">
-            <div class="footer-box" data-aos="fade-right" data-aos-delay="200">
+            <div class="footer-box" >
                 <div class="logo-img-wrapper">
                 <img src="./Images/logo2.png" alt="Fermi Logo" />
             </div>
@@ -900,7 +902,7 @@
                 </div>
             </div>
             
-            <div class="footer-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="footer-box" >
                 <h3 class="footer-title">Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.php"> Home</a></li>
@@ -910,7 +912,7 @@
                 </ul>
             </div>
             
-            <div class="footer-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="footer-box" >
                 <h3 class="footer-title">Our Services</h3>
                 <ul class="footer-links">
                     <li><a href="/services.php"> WLAN/LAN Installation</a></li>
@@ -921,7 +923,7 @@
                 </ul>
             </div>
             
-            <div class="footer-box contact-info" data-aos="fade-left" data-aos-delay="500">
+            <div class="footer-box contact-info">
                 <h3 class="footer-title">Contact Us</h3>
                 <div class="footer-contact-item">
                     <a href="tel:+256760 271 098"> +256 760 271 098</a>

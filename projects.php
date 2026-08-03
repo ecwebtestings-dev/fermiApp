@@ -54,6 +54,8 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 <!-- ====== OPEN GRAPH ====== -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fermi.co.ug/projects.php">

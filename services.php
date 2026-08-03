@@ -84,6 +84,9 @@
     <link rel="preload" as="image" href="./Images/logo2.png" fetchpriority="high">
     <link rel="preload" as="style" href="styles.css">
 
+
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
     <!-- ====== FONTS ====== -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Kodchasan:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
