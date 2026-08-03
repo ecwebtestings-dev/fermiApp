@@ -1,62 +1,177 @@
+
 <?php
-session_start();
+//session_start();
 
 // --- Configuration ---
-$timeout = 600; // 10 minutes in seconds
-$login_page = "../public/login.html";
-$logout_page = "/FERMI/auth/logout.php";
+// $timeout = 600; // 10 minutes in seconds
+// $login_page = "../public/login.html";
+// $logout_page = "/FERMI/auth/logout.php";
 
 // --- Session Management ---
-function checkSession($timeout, $login_page) {
-    // Check if user is logged in and is a 'user'
-    if (!isset($_SESSION['id']) || $_SESSION['role'] !== 'user') {
-        header("Location: " . $login_page);
-        exit;
-    }
+// function checkSession($timeout, $login_page) {
+//     // Check if user is logged in and is a 'user'
+//     if (!isset($_SESSION['id']) || $_SESSION['role'] !== 'user') {
+//         header("Location: " . $login_page);
+//         exit;
+//     }
 
-    // Check timeout
-    if (!isset($_SESSION['time']) || (time() - $_SESSION['time']) > $timeout) {
-        session_unset();
-        session_destroy();
-        header("Location: " . $login_page);
-        exit;
-    } else {
-        $_SESSION['time'] = time(); // Refresh session activity
-    }
-}
+//     // Check timeout
+//     if (!isset($_SESSION['time']) || (time() - $_SESSION['time']) > $timeout) {
+//         session_unset();
+//         session_destroy();
+//         header("Location: " . $login_page);
+//         exit;
+//     } else {
+//         $_SESSION['time'] = time(); // Refresh session activity
+//     }
+// }
 
 // Run checks
-checkSession($timeout, $login_page);
+//checkSession($timeout, $login_page);
 
 // Helper to get user data safely
-$userName = htmlspecialchars($_SESSION['username'] ?? 'User');
-$userEmail = htmlspecialchars($_SESSION['email'] ?? 'No email provided');
-$userInitial = strtoupper(substr($userName, 0, 1));
+// $userName = htmlspecialchars($_SESSION['username'] ?? 'User');
+// $userEmail = htmlspecialchars($_SESSION['email'] ?? 'No email provided');
+// $userInitial = strtoupper(substr($userName, 0, 1));
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Fermi - Professional Solutions</title>
-    
-    <!-- Fonts -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500;600;700&display=swap" rel="stylesheet">
-   
-    <!-- Icons & Animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ====== PRIMARY SEO ====== -->
+    <title>Fermi Professional Security, Electrical & IT Solutions in Uganda | Safe.Smart.Secure.</title>
+    <meta name="description" content="FERMI provides certified CCTV surveillance, access control, automatic gates, fire alarms, electrical installations, and IT networking for homes and businesses across Uganda. 24/7 emergency support.">
+    <meta name="keywords" content="CCTV Uganda, security systems Kampala, electrical contractor Uganda, access control, fire alarms, automatic gates, IT networking, Fermi Electrotech, fermi.co.ug">
+    <meta name="author" content="FERMI Electrical & IT Solutions">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://fermi.co.ug/">
+
+    <!-- ====== THEME & PERFORMANCE ====== -->
+    <meta name="theme-color" content="#fff">
+    <meta name="color-scheme" content="#fff">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+
+    <!-- ====== OPEN GRAPH ====== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fermi.co.ug/">
+    <meta property="og:title" content="FERMI | Professional Security, Electrical & IT Solutions in Uganda">
+    <meta property="og:description" content="Certified CCTV, access control, electrical installations and IT networking. 10+ years of excellence. 24/7 support.">
+    <!-- Ensure you have an image named og-cover.jpg in your Images folder  -->
+    <meta property="og:image" content="https://fermi.co.ug/Images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_UG">
+    <meta property="og:site_name" content="FERMI">
+
+    <!-- ====== TWITTER CARD ====== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FERMI | Professional Security, Electrical & IT Solutions in Uganda">
+    <meta name="twitter:description" content="Certified CCTV, access control, electrical installations and IT networking. 24/7 support.">
+    <meta name="twitter:image" content="https://fermi.co.ug/Images/og-cover.jpg">
+
+    <!-- ====== RESOURCE HINTS  ====== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+    <!-- Preload hero logo -->
+    <link rel="preload" as="image" href="./Images/logo2.png" fetchpriority="high">
+    <link rel="preload" as="style" href="styles.css">
+
+    <!-- ====== FONTS ====== -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Kodchasan:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+
+    <!-- ====== EXTERNAL CSS ====== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="widget.css">
     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.tailwindcss.com" defer></script>
+
+        <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#F59E0B",
+                    primaryDark: "#D97706",
+                    background: "#0B1220",
+                    card: "#111827",
+                    muted: "#94A3B8",
+                    liver: "#5D4037"
+                },
+                fontFamily: {
+                    body: ["Noto Sans", "sans-serif"],
+                    heading: ["Kodchasan", "sans-serif"]
+                },
+                boxShadow: {
+                    glow: "0 0 60px rgba(245,158,11,.35)"
+                }
+            }
+        }
+    }
+    </script>
+
+    <!-- ====== STRUCTURED DATA: Local Business (huge SEO boost for .co.ug) ====== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "@id": "https://fermi.co.ug/#organization",
+      "name": "FERMI Electrical & IT Solutions",
+      "alternateName": "Fermi Electrotech",
+      "url": "https://fermi.co.ug/",
+      "logo": "https://fermi.co.ug/Images/logo2.png",
+      "image": "https://fermi.co.ug/Images/og-cover.jpg",
+      "telephone": "+256760271098",
+      "email": "fermielectrictech@gmail.com",
+      "priceRange": "$$",
+      "description": "Certified security systems, electrical installations, and IT networking for residential, commercial, and industrial clients in Uganda.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kampala",
+        "addressCountry": "UG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "0.3476",
+        "longitude": "32.5825"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://facebook.com/fermi",
+        "https://twitter.com/fermi",
+        "https://linkedin.com/company/fermi"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Uganda"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "102"
+      }
+    }
+    </script>
+
+    <!-- ====== FAVICON ====== -->
+    <link rel="icon" type="image/png" href="./Images/favicon.png">
+
 </head>
 
-<body>
+
 
  <style>
     :root {
@@ -993,7 +1108,7 @@ $userInitial = strtoupper(substr($userName, 0, 1));
                 <!-- Logged In State -->
                 <div class="user-avatar user-account-trigger" id="userAvatar">
                     <span class="user-initial">
-                        <?php echo htmlspecialchars($userInitial); ?>
+                        <?php # echo htmlspecialchars($userInitial); ?>
                     </span>
                 </div>
 
@@ -1037,12 +1152,12 @@ $userInitial = strtoupper(substr($userName, 0, 1));
     <div class="mobile-auth-section">
         <div class="mobile-auth-buttons">
             <?php if(isset($_SESSION['username'])): ?>
-                <a href="<?php echo $logout_page; ?>" class="mobile-btn-login">
+                <a href="<?php #echo $logout_page; ?>" class="mobile-btn-login">
                     Log Out
                 </a>
                 
             <?php else: ?>
-                <a href="public/signup.php" class="mobile-btn-signup">
+                <a href="/" class="mobile-btn-signup">
                     Get Started
                 </a>
             <?php endif; ?>
@@ -1053,25 +1168,25 @@ $userInitial = strtoupper(substr($userName, 0, 1));
 
 
 <!-- ================= USER PROFILE DROPDOWN ================= -->
-<?php if(isset($_SESSION['username'])): ?>
+<!-- <?php # if(isset($_SESSION['username'])): ?>
 <div class="user-profile" id="user-profile">
     <div class="profile-header">
-            <?php echo strtoupper(substr($userName, 0, 1)); ?>
+            <?php #echo strtoupper(substr($userName, 0, 1)); ?>
         <p class="welcome-text">
-            Welcome, <?php echo $userName; ?>
+            Welcome, <?php #echo $userName; ?>
         </p>
         <p class="profile-email">
-            <?php echo $userEmail; ?>
+            <?php #echo $userEmail; ?>
         </p>
 
-         <a href="<?php echo $logout_page; ?>" class="sign-out-btn">
+         <a href="<?php #echo $logout_page; ?>" class="sign-out-btn">
             <i class="fas fa-sign-out-alt"></i>
             Sign Out
         </a>
     </div>
 
 </div>
-<?php endif; ?>
+<?php #endif; ?> -->
 
     
     

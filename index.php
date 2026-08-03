@@ -1,66 +1,104 @@
-<?php
-session_start();
+<!-- <?php
+////session_start();
 
 // --- Configuration ---
-$timeout = 600; // 10 minutes in seconds
-$login_page = "../public/login.html";
-$logout_page = "/FERMI/auth/logout.php";
+// $timeout = 600; // 10 minutes in seconds
+// $login_page = "../public/login.html";
+// $logout_page = "/FERMI/auth/logout.php";
 
 // --- Session Management ---
-function checkSession($timeout, $login_page) {
-    // Check if user is logged in and is a 'user'
-    if (!isset($_SESSION['id']) || $_SESSION['role'] !== 'user') {
-        header("Location: " . $login_page);
-        exit;
-    }
+//function checkSession($timeout, $login_page) {
+    // // Check if user is logged in and is a 'user'
+    // if (!isset($_SESSION['id']) || $_SESSION['role'] !== 'user') {
+    //     header("Location: " . $login_page);
+    //     exit;
+    // }
 
-    // Check timeout
-    if (!isset($_SESSION['time']) || (time() - $_SESSION['time']) > $timeout) {
-        session_unset();
-        session_destroy();
-        header("Location: " . $login_page);
-        exit;
-    } else {
-        $_SESSION['time'] = time(); // Refresh session activity
-    }
-}
+    // // Check timeout
+    // if (!isset($_SESSION['time']) || (time() - $_SESSION['time']) > $timeout) {
+    //     session_unset();
+    //     session_destroy();
+    //     header("Location: " . $login_page);
+    //     exit;
+    // } else {
+    //     $_SESSION['time'] = time(); // Refresh session activity
+    // }
+//}
 
 // Run checks
-checkSession($timeout, $login_page);
+//checkSession($timeout, $login_page);
 
 // Helper to get user data safely
-$userName = htmlspecialchars($_SESSION['username'] ?? 'User');
-$userEmail = htmlspecialchars($_SESSION['email'] ?? 'No email provided');
-$userInitial = strtoupper(substr($userName, 0, 1));
-?>
+// $userName = htmlspecialchars($_SESSION['username'] ?? 'User');
+// $userEmail = htmlspecialchars($_SESSION['email'] ?? 'No email provided');
+// $userInitial = strtoupper(substr($userName, 0, 1));
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Fermi - Professional Solutions</title>
-    
-    <!-- Fonts -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500;600;700&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Icons & Animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ====== PRIMARY SEO ====== -->
+    <title>Fermi Professional Security, Electrical & IT Solutions in Uganda | Safe.Smart.Secure.</title>
+    <meta name="description" content="FERMI provides certified CCTV surveillance, access control, automatic gates, fire alarms, electrical installations, and IT networking for homes and businesses across Uganda. 24/7 emergency support.">
+    <meta name="keywords" content="CCTV Uganda, security systems Kampala, electrical contractor Uganda, access control, fire alarms, automatic gates, IT networking, Fermi Electrotech, fermi.co.ug">
+    <meta name="author" content="FERMI Electrical & IT Solutions">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://fermi.co.ug/">
+
+    <!-- ====== THEME & PERFORMANCE ====== -->
+    <meta name="theme-color" content="#fff">
+    <meta name="color-scheme" content="#fff">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+
+    <!-- ====== OPEN GRAPH ====== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fermi.co.ug/">
+    <meta property="og:title" content="FERMI | Professional Security, Electrical & IT Solutions in Uganda">
+    <meta property="og:description" content="Certified CCTV, access control, electrical installations and IT networking. 10+ years of excellence. 24/7 support.">
+    <!-- Ensure you have an image named og-cover.jpg in your Images folder  -->
+    <meta property="og:image" content="https://fermi.co.ug/Images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_UG">
+    <meta property="og:site_name" content="FERMI">
+
+    <!-- ====== TWITTER CARD ====== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FERMI | Professional Security, Electrical & IT Solutions in Uganda">
+    <meta name="twitter:description" content="Certified CCTV, access control, electrical installations and IT networking. 24/7 support.">
+    <meta name="twitter:image" content="https://fermi.co.ug/Images/og-cover.jpg">
+
+    <!-- ====== RESOURCE HINTS  ====== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+    <!-- Preload hero logo -->
+    <link rel="preload" as="image" href="./Images/logo2.png" fetchpriority="high">
+    <link rel="preload" as="style" href="styles.css">
+
+    <!-- ====== FONTS ====== -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Kodchasan:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+
+    <!-- ====== EXTERNAL CSS ====== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="widget.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <script>
     tailwind.config = {
         theme: {
             extend: {
-
                 colors: {
                     primary: "#F59E0B",
                     primaryDark: "#D97706",
@@ -69,22 +107,71 @@ $userInitial = strtoupper(substr($userName, 0, 1));
                     muted: "#94A3B8",
                     liver: "#5D4037"
                 },
-
                 fontFamily: {
                     body: ["Noto Sans", "sans-serif"],
                     heading: ["Kodchasan", "sans-serif"]
                 },
-
                 boxShadow: {
                     glow: "0 0 60px rgba(245,158,11,.35)"
                 }
-
             }
         }
     }
     </script>
 
+    <!-- ====== STRUCTURED DATA: Local Business (huge SEO boost for .co.ug) ====== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "@id": "https://fermi.co.ug/#organization",
+      "name": "FERMI Electrical & IT Solutions",
+      "alternateName": "Fermi Electrotech",
+      "url": "https://fermi.co.ug/",
+      "logo": "https://fermi.co.ug/Images/logo2.png",
+      "image": "https://fermi.co.ug/Images/og-cover.jpg",
+      "telephone": "+256760271098",
+      "email": "fermielectrictech@gmail.com",
+      "priceRange": "$$",
+      "description": "Certified security systems, electrical installations, and IT networking for residential, commercial, and industrial clients in Uganda.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kampala",
+        "addressCountry": "UG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "0.3476",
+        "longitude": "32.5825"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://facebook.com/fermi",
+        "https://twitter.com/fermi",
+        "https://linkedin.com/company/fermi"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Uganda"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "102"
+      }
+    }
+    </script>
+
+    <!-- ====== FAVICON ====== -->
+    <link rel="icon" type="image/png" href="./Images/favicon.png">
 </head>
+
+
 <body>
 
 <div id="loader"></div>
@@ -106,7 +193,7 @@ $userInitial = strtoupper(substr($userName, 0, 1));
             <a href="index.php" class="nav-link active">Home</a>
             <a href="services.php" class="nav-link">What We Offer</a>
             <a href="projects.php" class="nav-link">Projects</a>
-            <a href="appointments/create.php" class="nav-link">Reserve Appointment</a>
+            <a href="services.php" class="nav-link">Reserve Appointment</a>
         </nav>
 
         <div class="auth-buttons">
@@ -114,13 +201,13 @@ $userInitial = strtoupper(substr($userName, 0, 1));
                 <!-- Logged In State -->
                 <div class="user-avatar user-account-trigger" id="userAvatar">
                     <span class="user-initial">
-                        <?php echo htmlspecialchars($userInitial); ?>
+                        <!-- <?php #echo htmlspecialchars($userInitial); ?> -->
                     </span>
                 </div>
 
             <?php else: ?>
                 <!-- Guest State -->
-                <a href="public/signup.php" class="btn-signup">
+                <a href="/" class="btn-signup">
                     Get Started
                 </a>
             <?php endif; ?>
@@ -153,17 +240,17 @@ $userInitial = strtoupper(substr($userName, 0, 1));
         <a href="index.php" class="mobile-nav-link active">Home</a>
         <a href="services.php" class="mobile-nav-link">What We Offer</a>
         <a href="projects.php" class="mobile-nav-link">Projects</a>
-        <a href="appointments/create.php" class="mobile-nav-link">Reserve Appointment</a>
+        <a href="/services.php" class="mobile-nav-link">Reserve Appointment</a>
     </div>
     <div class="mobile-auth-section">
         <div class="mobile-auth-buttons">
             <?php if(isset($_SESSION['username'])): ?>
-                <a href="<?php echo $logout_page; ?>" class="mobile-btn-login">
+                <a href="<?php #echo $logout_page; ?>" class="mobile-btn-login">
                     Log Out
                 </a>
                 
             <?php else: ?>
-                <a href="public/signup.php" class="mobile-btn-signup">
+                <a href="/" class="mobile-btn-signup">
                     Get Started
                 </a>
             <?php endif; ?>
@@ -174,66 +261,37 @@ $userInitial = strtoupper(substr($userName, 0, 1));
 
 
 <!-- ================= USER PROFILE DROPDOWN ================= -->
-<?php if(isset($_SESSION['username'])): ?>
+<!-- <?php #if(isset($_SESSION['username'])): ?>
 <div class="user-profile" id="user-profile">
     <div class="profile-header">
-            <?php echo strtoupper(substr($userName, 0, 1)); ?>
+            <?php # echo strtoupper(substr($userName, 0, 1)); ?>
         <p class="welcome-text">
-            Welcome, <?php echo $userName; ?>
+            Welcome, <?php #echo $userName; ?>
         </p>
         <p class="profile-email">
-            <?php echo $userEmail; ?>
+            <?php #echo $userEmail; ?>
         </p>
 
-         <a href="<?php echo $logout_page; ?>" class="sign-out-btn">
+         <a href="<?php # echo $logout_page; ?>" class="sign-out-btn">
             <i class="fas fa-sign-out-alt"></i>
             Sign Out
         </a>
     </div>
 
 </div>
-<?php endif; ?>
+<?php #endif; ?> -->
 
 
     <!-- ================= HERO SECTION ================= -->
    <section class="hero">
 
-    <!-- Background SVG -->
-        <svg class="network-svg" viewBox="0 0 1600 900">
 
-            <line x1="40" y1="90" x2="190" y2="160"/>
-            <line x1="190" y1="160" x2="320" y2="90"/>
-            <line x1="320" y1="90" x2="500" y2="230"/>
-            <line x1="500" y1="230" x2="650" y2="130"/>
-            <line x1="650" y1="130" x2="900" y2="250"/>
 
-            <line x1="250" y1="300" x2="450" y2="450"/>
-            <line x1="450" y1="450" x2="650" y2="390"/>
-            <line x1="650" y1="390" x2="920" y2="520"/>
-
-            <line x1="1000" y1="200" x2="1300" y2="160"/>
-            <line x1="1300" y1="160" x2="1480" y2="330"/>
-
-            <circle cx="40" cy="90" r="8"/>
-            <circle cx="190" cy="160" r="7"/>
-            <circle cx="320" cy="90" r="7"/>
-            <circle cx="500" cy="230" r="8"/>
-            <circle cx="650" cy="130" r="7"/>
-            <circle cx="900" cy="250" r="10"/>
-            <circle cx="250" cy="300" r="8"/>
-            <circle cx="450" cy="450" r="7"/>
-            <circle cx="650" cy="390" r="8"/>
-            <circle cx="920" cy="520" r="8"/>
-            <circle cx="1000" cy="200" r="7"/>
-            <circle cx="1300" cy="160" r="8"/>
-            <circle cx="1480" cy="330" r="10"/>
-
-        </svg>
         <div class="hero-container">
             <div class="hero-left">
                 <h1>Best Practices For All Secure Security Systems.</h1>
 
-                <p> We provide security requirements for residential, commercial and industrial clients with the largestassortment of surveillance cameras, alarm systems,
+                <p> We provide security requirements for residential, commercial and industrial clients with the largest assortment of surveillance cameras, alarm systems,
                     access control and smart home solutions.
                 </p>
 
@@ -255,23 +313,20 @@ $userInitial = strtoupper(substr($userName, 0, 1));
             <!-- RIGHT SIDE -->
             <div class="hero-right">
 
-                <!-- Orbit Ring -->
-                <div class="orbit-ring">
-                   
-                </div>
+               
 
                 <!-- Circle Slider -->
                 <div class="circle-slider">
-                    <img src="images/AutomatedCamera1.jpeg" class="slide active">
-                    <img src="images/cctvinter2.jpg"class="slide">
-                    <img src="images/interiorViewOfRecordBox.jpeg" class="slide">
-                    <img src="images/InstallationProcedure.jpeg"class="slide">
-                    <img src="images/fire-sensor.jpg"class="slide">
-                    <img src="images/OutdoorCCTV.jpg"class="slide">
-                    <img src="images/ControlPanel2.jpeg"class="slide">
-                    <img src="images/ManAtWork2.jpeg"class="slide">
-                    <img src="images/Cyber.jpg"class="slide">
-                    <img src="images/AutomatedGate.jpeg"class="slide">
+                    <img src="Images/AutomatedCamera1.jpeg" class="slide active">
+                    <img src="Images/cctvinter2.jpg"class="slide">
+                    <img src="Images/interiorViewOfRecordBox.jpeg" class="slide">
+                    <img src="Images/InstallationProcedure.jpeg"class="slide">
+                    <img src="Images/fire-sensor.jpg"class="slide">
+                    <img src="Images/OutdoorCCTV.jpg"class="slide">
+                    <img src="Images/ControlPanel2.jpeg"class="slide">
+                    <img src="Images/ManAtWork2.jpeg"class="slide">
+                    <img src="Images/Cyber.jpg"class="slide">
+                    <img src="Images/AutomatedGate.jpeg"class="slide">
                 </div>
 
             </div>
@@ -303,9 +358,9 @@ $userInitial = strtoupper(substr($userName, 0, 1));
             </div>
             <div class="about-img-wrapper">
                 <div class="about-img">
-                    <img src="Images/Technician.jpeg" alt="Professional Electrical Services" class="main-img">
+                    <img src="Images/WINTERR.jpg" alt="Professional Electrical Services" class="main-img">
                     <div class="experience-badge">
-                        <span class="exp-number">10+</span>
+                        <span class="exp-number">3+</span>
                         <span class="exp-text">Years of Excellence</span>
                     </div>
                 </div>
@@ -486,8 +541,8 @@ $userInitial = strtoupper(substr($userName, 0, 1));
             <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
                 <a href="/services.php">Our Services <span aria-hidden="true">&rarr;</span></a>
                 <a href="/projects.php">Our Projects <span aria-hidden="true">&rarr;</span></a>
-                <a href="/appointments/create.php">Scedule Appointment <span aria-hidden="true">&rarr;</span></a>
-                <a href="/public/signup.html">Contact Us<span aria-hidden="true">&rarr;</span></a>
+                <a href="/services.php">Scedule Appointment <span aria-hidden="true">&rarr;</span></a>
+                <a href="tel:+256760 271 098">Contact Us<span aria-hidden="true">&rarr;</span></a>
             </div>
 
 
@@ -628,7 +683,7 @@ $userInitial = strtoupper(substr($userName, 0, 1));
                 <a href="tel:+256760271098" class="con-btn con-btn-call" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fas fa-phone-alt"></i> Give Us a Call
                 </a>
-                <a href="appointments/create.php" class="con-btn con-btn-estimate" data-aos="zoom-in" data-aos-delay="200">
+                <a href="tel:+256760 271 098" class="con-btn con-btn-estimate" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-bolt"></i> Make Appointment
                 </a>
             </div>
@@ -638,7 +693,10 @@ $userInitial = strtoupper(substr($userName, 0, 1));
   
   
    <!-- ================= TESTIMONIALS SECTION ================= -->
-    <section class="test-section section-padding">
+   
+   
+   
+   <section class="test-section section-padding">
         <div class="test-container">
             <div class="test-header" data-aos="fade-up">
                 <span class="test-subtitle">TESTIMONIALS</span>
@@ -703,17 +761,17 @@ $userInitial = strtoupper(substr($userName, 0, 1));
                     <li><a href="index.php"> Home</a></li>
                     <li><a href="services.php">What we offer</a></li>
                     <li><a href="projects.php"> Projects</a></li>
-                    <li><a href="appointments/create.php">Reserve Appointment</a></li>
+                    <li><a href="services.php">Reserve Appointment</a></li>
                 </ul>
             </div>
             
             <div class="footer-box" data-aos="fade-up" data-aos-delay="400">
                 <h3 class="footer-title">Our Services</h3>
                 <ul class="footer-links">
-                    <li><a href="appointments/create.php"> WLAN/LAN Installation</a></li>
-                    <li><a href="appointments/create.php"> Air Conditioning</a></li>
-                    <li><a href="appointments/create.php"> Automatic Gates</a></li>
-                    <li><a href="appointments/create.php"> Fire Alarms</a></li>
+                    <li><a href="/services.php"> WLAN/LAN Installation</a></li>
+                    <li><a href="/services.php"> Air Conditioning</a></li>
+                    <li><a href="/services.php"> Automatic Gates</a></li>
+                    <li><a href="/services.php"> Fire Alarms</a></li>
                     <li><a href="services.php">View All</a></li>
                 </ul>
             </div>
