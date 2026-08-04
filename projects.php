@@ -95,6 +95,31 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="projects.css">
 
+
+<script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#F59E0B",
+                    primaryDark: "#D97706",
+                    background: "#0B1220",
+                    card: "#111827",
+                    muted: "#94A3B8",
+                    liver: "#5D4037"
+                },
+                fontFamily: {
+                    body: ["Noto Sans", "sans-serif"],
+                    heading: ["Kodchasan", "sans-serif"]
+                },
+                boxShadow: {
+                    glow: "0 0 60px rgba(245,158,11,.35)"
+                }
+            }
+        }
+    }
+    </script>
 <!-- ====== STRUCTURED DATA: Organization + Breadcrumb ====== -->
 <script type="application/ld+json">
 {
@@ -125,68 +150,7 @@
 </head>
 
 <style>
-    /*
-  FERMI — PROJECTS PAGE STYLESHEET
-  ---------------------------------------------------------------
-  Same approach as the home hero and services hero: every class
-  name is unchanged (.proj-grid.active, .proj-tab-link.active,
-  .proj-mobile-track, .proj-mobile-dot.active, .proj-lightbox.active,
-  .proj-lightbox-prev/next, etc.) so whatever JS toggles these
-  classes for the tabs / mobile slider / lightbox keeps working
-  untouched — only the visual values changed.
-
-  Bugs / gaps found and fixed:
-
-  1. Same :root duplicate-color bug as the home hero — primary-orange
-     / primary-dark / primary-light were all the identical flat
-     #F59E0B. Replaced with the same real gold family used on the
-     other two pages you've had restyled, so all three pages now
-     actually share one palette instead of three slightly different
-     oranges.
-
-  2. Several rules referenced hardcoded rgba(255,102,0,...) — an
-     orange that doesn't match --primary-* at all — instead of the
-     variables that already existed for this. Switched everything
-     to the variables.
-
-  3. `.proj-stats-section`, `.proj-stats-container`, `.proj-stat-number`
-     are styled in THREE media queries (1024/768/480px) but have
-     **no base rule anywhere in the file** — meaning this stats
-     block has responsive overrides for a component that doesn't
-     exist yet. I added sensible base styles so it isn't broken,
-     but I don't have your HTML for this section — if you already
-     have markup for it elsewhere, send it over and I'll make sure
-     the classes line up; otherwise here's a sample markup at the
-     bottom of this note you can drop in.
-
-  4. `.proj-bg-overlay` faded to near-transparent charcoal at the
-     bottom (rgba(27,26,26,.15)), same washed-out-contrast issue as
-     the services hero — replaced with a vignette that stays dark
-     behind the text column.
-
-  5. `.proj-btn-primary` was a flat single color instead of using
-     the gradient already defined in :root — now uses it, matching
-     the buttons on the other two pages.
-
-  Sample markup for the stats block, if you don't have one already:
-
-    <div class="proj-stats-section">
-      <div class="proj-stats-container">
-        <div class="proj-stat-item">
-          <span class="proj-stat-number">500+</span>
-          <span class="proj-stat-label">Projects Completed</span>
-        </div>
-        <div class="proj-stat-item">
-          <span class="proj-stat-number">10+</span>
-          <span class="proj-stat-label">Years Experience</span>
-        </div>
-        <div class="proj-stat-item">
-          <span class="proj-stat-number">24/7</span>
-          <span class="proj-stat-label">Support</span>
-        </div>
-      </div>
-    </div>
-*/
+  
 
 :root {
     --primary-orange: #F59E0B;    
@@ -891,40 +855,96 @@
 <body>
 <div id="loader"></div>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar" id="navbar">
-    <div class="container">
-        <a href="index.php" class="logo">
-            <div class="logo-img-wrapper">
-                <img src="Images/logo2.png" alt="FERMI logo – Safe Smart Secure" fetchpriority="high">
+ <!-- ================= HEADER / NAVBAR (FIXED) ================= -->
+  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" id="mainHeader">
+    <div class="bg-gray-900/90 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="headerBackground">
+      <nav aria-label="Global" class="flex items-center justify-between p-4 lg:px-8 max-w-7xl mx-auto">
+        
+        <!-- Logo -->
+        <div class="flex lg:flex-1">
+          <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3">
+            <span class="sr-only">FERMI</span>
+            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 w-auto" />
+            <div class="hidden sm:block">
+              <span class="block text-white font-bold text-lg tracking-wide">FERMI</span>
+              <span class="block text-[#FB923C] text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
             </div>
-            <span class="logotext">FERMI
-                <p class="sublogotext">Safe.Smart.Secure.</p>
-            </span>
-        </a>
-
-        <nav class="nav-links" aria-label="Main navigation">
-            <a href="index.php" class="nav-link">Home</a>
-            <a href="services.php" class="nav-link">What We Offer</a>
-            <a href="projects.php" class="nav-link active">Projects</a>
-            <a href="services.php" class="nav-link">Reserve Appointment</a>
-        </nav>
-
-        <div class="auth-buttons">
-            <?php if(isset($_SESSION['username'])): ?>
-                <div class="user-avatar user-account-trigger" id="userAvatar">
-                    <span class="user-initial"></span>
-                </div>
-            <?php else: ?>
-                <a href="index.php" class="btn-signup">Get Started</a>
-            <?php endif; ?>
+          </a>
         </div>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-            <i class="fas fa-bars"></i>
-        </button>
+        <!-- Mobile Menu Toggle -->
+        <div class="flex lg:hidden">
+          <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200 hover:text-white">
+            <span class="sr-only">Open main menu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="index.php" class="text-sm/6 font-semibold text-[#FB923C] relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-100">Home</a>
+          <a href="services.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">What We Offer</a>
+          <a href="projects.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Projects</a>
+          <a href="services.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Reserve Appointment</a>
+        </div>
+
+        <!-- Desktop Auth Buttons -->
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="index.php" class="rounded-md bg-[#EA580C] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#C2410C] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]">
+            Get Started
+          </a>
+        </div>
+      </nav>
     </div>
-</header>
+
+    <!-- Mobile Menu Dialog -->
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+            
+            <div class="flex items-center justify-between">
+              <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3">
+                <img src="./Images/logo2.png" alt="Fermi Logo" class="h-8 w-auto" />
+                <div>
+                  <span class="block text-white font-bold text-lg">FERMI</span>
+                  <span class="block text-[#FB923C] text-xs -mt-1">Safe.Smart.Secure.</span>
+                </div>
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-white/10">
+                <div class="space-y-2 py-6">
+                  <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FB923C] hover:bg-white/5">Home</a>
+                  <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">What We Offer</a>
+                  <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Projects</a>
+                  <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Reserve Appointment</a>
+                </div>
+                <div class="py-6">
+                  <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white bg-[#EA580C] text-center hover:bg-[#C2410C]">
+                    Get Started
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+
+  </header>
+
+  
 
 <!-- ================= MOBILE MENU ================= -->
 <div class="menu-overlay" id="menuOverlay"></div>
@@ -968,7 +988,7 @@
                 ensuring lasting reliability and a sleek, professional finish. Browse through our portfolio to see our work in action.
             </p>
             <div class="proj-hero-buttons" data-aos="fade-up" data-aos-delay="400">
-                <a href="appointments/create.php" class="proj-btn proj-btn-primary">
+                <a href="tel:+256760271098" class="proj-btn proj-btn-primary">
                     <i class="fas fa-phone-alt"></i> Start Your Project
                 </a>
             </div>
@@ -1010,7 +1030,7 @@
             <div class="proj-grid-item"><img src="Images/catcables.jpeg" alt="CAT6 structured data cabling installation" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Structured Cabling</h4><p>CAT6 data cabling installation</p></div></div>
             <div class="proj-grid-item"><img src="Images/gps-system-smart-car.jpg" alt="GPS vehicle tracking system installed in a car" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>GPS Fleet Tracking</h4><p>Vehicle tracking system installation</p></div></div>
             <div class="proj-grid-item"><img src="Images/technician-engineer-checks-maintenance-solar-cell-panels.jpg" alt="FERMI technician inspecting and cleaning solar panels" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Solar Panel Maintenance</h4><p>Solar system inspection and cleaning</p></div></div>
-            <div class="proj-grid-item"><img src="Images/modem-setup-troubleshooting-online-guides.jpg" alt="Enterprise WiFi router configuration and troubleshooting" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Router Setup</h4><p>Enterprise WiFi configuration</p></div></div>
+            <div class="proj-grid-item"><img src="Images/switch.png" alt="Enterprise WiFi switch configuration and troubleshooting" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Router Setup</h4><p>Enterprise WiFi configuration</p></div></div>
             <div class="proj-grid-item"><img src="Images/officelights.jpeg" alt="LED panel office lighting installation with dimmers" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Office Lighting Installation</h4><p>LED panel lighting with dimmers</p></div></div>
             <div class="proj-grid-item"><img src="Images/empty-escalator-stair.jpg" alt="Commercial escalator system in an office building" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Commercial Escalator</h4><p>Office building escalator system</p></div></div>
             <div class="proj-grid-item"><img src="Images/air-conditioning-decoration-interior.jpg" alt="Central air conditioning system in a modern office interior" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>HVAC Installation</h4><p>Central air conditioning system</p></div></div>
@@ -1018,13 +1038,13 @@
 
         <!-- RESIDENTIAL -->
         <div class="proj-grid" data-category="residences">
-            <div class="proj-grid-item"><img src="Images/residental-pics.jpg" alt="Residential CCTV security installation in Kampala" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>CCTV Camera Installation</h4><p>Residential security system with 4K cameras</p></div></div>
+            <div class="proj-grid-item"><img src="Images/RoofCCT.jpg" alt="Residential CCTV security installation in Kampala" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>CCTV Camera Installation</h4><p>Residential security system with 4K cameras</p></div></div>
             <div class="proj-grid-item"><img src="Images/fence-with-barbed-wire.jpg" alt="Electric fence with barbed wire on a home perimeter" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Electric Fence Installation</h4><p>Perimeter security with alarm integration</p></div></div>
-            <div class="proj-grid-item"><img src="Images/cctv-security-camera-ceiling.jpg" alt="Ceiling dome camera for discreet home surveillance" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Ceiling Camera Setup</h4><p>Discreet surveillance for home security</p></div></div>
-            <div class="proj-grid-item"><img src="Images/Residental-ingerprint-access-control.jpg" alt="Fingerprint biometric access control for a residence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Fingerprint Access Control</h4><p>Biometric entry system for homes</p></div></div>
+            <div class="proj-grid-item"><img src="Images/AutomatedCamera1.jpeg" alt="Ceiling dome camera for discreet home surveillance" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Ceiling Camera Setup</h4><p>Discreet surveillance for home security</p></div></div>
+            <div class="proj-grid-item"><img src="Images/SmartDoor.png" alt="Fingerprint biometric access control for a residence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Fingerprint Access Control</h4><p>Biometric entry system for homes</p></div></div>
             <div class="proj-grid-item"><img src="Images/electric-fence.jpg" alt="8-strand electric perimeter fence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Electric Perimeter Fence</h4><p>8-strand security fence</p></div></div>
             <div class="proj-grid-item"><img src="Images/fire-sensor.jpg" alt="Ceiling fire sensor and smoke detector in a home" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Fire Alarm System</h4><p>Smart smoke and heat detectors</p></div></div>
-            <div class="proj-grid-item"><img src="Images/security-camera-monitoring-travel-place.jpg" alt="PTZ camera monitoring a property remotely" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>PTZ Camera Installation</h4><p>360° surveillance with remote control</p></div></div>
+            <div class="proj-grid-item"><img src="Images/AutomatedCamera.jpeg" alt="PTZ camera monitoring a property remotely" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>PTZ Camera Installation</h4><p>360° surveillance with remote control</p></div></div>
             <div class="proj-grid-item"><img src="Images/solar-panel.jpg" alt="Rooftop solar panel array on a residence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Solar Panel Installation</h4><p>5kW grid-tie solar system</p></div></div>
         </div>
 
@@ -1033,16 +1053,16 @@
             <div class="proj-grid-item"><img src="Images/WaterHeater.jpg" alt="Industrial 500L water heater installation" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Industrial Water Heating</h4><p>500L commercial water heater installation</p></div></div>
             <div class="proj-grid-item"><img src="Images/escalator.jpg" alt="Mall escalator installation project" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Escalator Installation</h4><p>Shopping mall escalator system</p></div></div>
             <div class="proj-grid-item"><img src="Images/fire-alarm-switch.jpg" alt="Industrial addressable fire alarm switch panel" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Industrial Fire Alarm</h4><p>Addressable fire alarm system</p></div></div>
-            <div class="proj-grid-item"><img src="Images/network-switch-with-cables.jpg" alt="Managed network switch with patched cables" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Switch Installation</h4><p>48-port managed network switch</p></div></div>
-            <div class="proj-grid-item"><img src="Images/network.jpg" alt="Enterprise server rack network infrastructure" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Server Rack Setup</h4><p>Enterprise network infrastructure</p></div></div>
-            <div class="proj-grid-item"><img src="Images/cables-red-light-background.jpg" alt="CAT6 structured cabling with red status lights" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Structured Cabling</h4><p>CAT6 data cabling installation</p></div></div>
+            <div class="proj-grid-item"><img src="Images/rag.jpg" alt="Managed network switch with patched cables" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Switch Installation</h4><p>48-port managed network switch</p></div></div>
+            <div class="proj-grid-item"><img src="Images/netRag.jpg" alt="Enterprise server rack network infrastructure" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Server Rack Setup</h4><p>Enterprise network infrastructure</p></div></div>
+            <div class="proj-grid-item"><img src="Images/RecordingBox.jpeg" alt="CAT6 structured cabling with red status lights" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Structured Cabling</h4><p>CAT6 data cabling installation</p></div></div>
             <div class="proj-grid-item"><img src="Images/gps-system-smart-car.jpg" alt="GPS fleet tracking device in a vehicle" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>GPS Fleet Tracking</h4><p>Vehicle tracking system installation</p></div></div>
         </div>
 
         <!-- COMMERCIAL -->
         <div class="proj-grid" data-category="offices">
-            <div class="proj-grid-item"><img src="Images/modem-setup-troubleshooting-online-guides.jpg" alt="Office WiFi router setup and configuration" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Router Setup</h4><p>Enterprise WiFi configuration</p></div></div>
-            <div class="proj-grid-item"><img src="Images/office-lights.png" alt="Modern LED office lighting installation" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Office Lighting Installation</h4><p>LED panel lighting with dimmers</p></div></div>
+            <div class="proj-grid-item"><img src="Images/SmartCameraAndLight.jpeg" alt="Office WiFi router setup and configuration" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Router Setup</h4><p>Enterprise WiFi configuration</p></div></div>
+            <div class="proj-grid-item"><img src="Images/officelights.jpeg" alt="Modern LED office lighting installation" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Office Lighting Installation</h4><p>LED panel lighting with dimmers</p></div></div>
             <div class="proj-grid-item"><img src="Images/empty-escalator-stair.jpg" alt="Office building commercial escalator" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Commercial Escalator</h4><p>Office building escalator system</p></div></div>
             <div class="proj-grid-item"><img src="Images/air-conditioning-decoration-interior.jpg" alt="HVAC central air conditioning in a commercial office" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>HVAC Installation</h4><p>Central air conditioning system</p></div></div>
         </div>
@@ -1051,10 +1071,15 @@
     <!-- Mobile Slider (lazy: offscreen slides defer) -->
     <div class="proj-mobile-slider proj-mobile-only" id="projMobileSlider">
         <div class="proj-mobile-track">
+
+
+
+
+
             <div class="proj-mobile-slide"><img src="Images/cctvinter2.jpg" alt="Indoor CCTV camera installation in a residence" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>CCTV Camera Installation</h4><p>Residential security system with 4K cameras</p></div></div>
             <div class="proj-mobile-slide"><img src="Images/fence-with-barbed-wire.jpg" alt="Electric fence perimeter security" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Electric Fence Installation</h4><p>Perimeter security with alarm integration</p></div></div>
             <div class="proj-mobile-slide"><img src="Images/newcctv2.jpeg" alt="PTZ ceiling camera setup" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Ceiling Camera Setup</h4><p>Discreet surveillance for home security</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/Fingerprintaccesscontrol.png" alt="Fingerprint access control device" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Fingerprint Access Control</h4><p>Biometric entry system for homes</p></div></div>
+            <div class="proj-mobile-slide"><img src="Images/SmartDoor.jpg" alt="Fingerprint access control device" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Fingerprint Access Control</h4><p>Biometric entry system for homes</p></div></div>
             <div class="proj-mobile-slide"><img src="Images/electric-fence.jpg" alt="8-strand electric perimeter fence" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Electric Perimeter Fence</h4><p>8-strand security fence</p></div></div>
             <div class="proj-mobile-slide"><img src="Images/fire-sensor.jpg" alt="Residential fire sensor installation" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Fire Alarm System</h4><p>Smart smoke and heat detectors</p></div></div>
             <div class="proj-mobile-slide"><img src="Images/newcctv.jpeg" alt="PTZ camera with remote control" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>PTZ Camera Installation</h4><p>360° surveillance with remote control</p></div></div>
@@ -1090,7 +1115,7 @@
             to create a solution that meets your specific needs and exceeds your expectations.
         </p>
         <div class="proj-cta-buttons">
-            <a href="appointments/create.php" class="proj-btn proj-btn-primary">
+            <a href="tel:+256760271098" class="proj-btn proj-btn-primary">
                 <i class="fas fa-calendar-check"></i> Schedule Consultation
             </a>
             <a href="tel:+256760271098" class="proj-btn proj-btn-outline">
@@ -1113,58 +1138,170 @@
 </div>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer-section">
-    <div class="footer-container">
-        <div class="footer-box">
-            <div class="logo-img-wrapper">
-                <img src="Images/logo2.png" alt="FERMI logo" loading="lazy">
-            </div>
-            <h3 class="footer-title">About Us</h3>
-            <p class="footer-text">We provide top-notch Security, Electrical & IT solutions with years of experience delivering reliable and innovative services.</p>
-            <div class="footer-social">
-                <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
-        <div class="footer-box">
-            <h3 class="footer-title">Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="services.php">What we offer</a></li>
-                <li><a href="projects.php">Projects</a></li>
-                <li><a href="appointments/create.php">Reserve Appointment</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-box">
-            <h3 class="footer-title">Our Services</h3>
-            <ul class="footer-links">
-                <li><a href="services.php">WLAN/LAN Installation</a></li>
-                <li><a href="services.php">Air Conditioning</a></li>
-                <li><a href="services.php">Automatic Gates</a></li>
-                <li><a href="services.php">Fire Alarms</a></li>
-                <li><a href="services.php">View All</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-box contact-info">
-            <h3 class="footer-title">Contact Us</h3>
-            <div class="footer-contact-item">
-                <a href="tel:+256760271098">+256 760 271 098</a>
-                <a href="tel:+256754130885">+256 754 130 885</a>
-            </div>
-            <div class="footer-contact-item"><p>fermielectrictech@gmail.com</p></div>
-            <div class="footer-contact-item"><p>Kampala, Uganda</p></div>
-        </div>
+<footer class="bg-gray-900 text-gray-300 relative overflow-hidden">
+    
+    <!-- Decorative Background Elements -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl"></div>
     </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 Fermi Electrical & IT Solutions. All Rights Reserved.</p>
+    
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        
+        <!-- Main Footer Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            
+            <!-- About Column -->
+            <div class="footer-box space-y-4">
+                <div class="logo-img-wrapper mb-4">
+                    <img src="./Images/logo2.png" alt="Fermi Logo" class="h-12 md:h-14 w-auto object-contain" />
+                </div>
+                <h3 class="footer-title text-white text-lg font-bold">About Us</h3>
+                <p class="footer-text text-gray-400 text-sm leading-relaxed">
+                    We provide top-notch Security, Electrical & IT solutions with years of experience delivering reliable and innovative services.
+                </p>
+                <div class="footer-social flex gap-3 pt-2">
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 hover:bg-amber-500 text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                        <i class="fab fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 hover:bg-amber-500 text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                        <i class="fab fa-twitter text-sm"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 hover:bg-amber-500 text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                        <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 hover:bg-amber-500 text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                        <i class="fab fa-instagram text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Quick Links Column -->
+            <div class="footer-box space-y-4">
+                <h3 class="footer-title text-white text-lg font-bold relative inline-block">
+                    Quick Links
+                    
+                </h3>
+                <ul class="footer-links space-y-3">
+                    <li>
+                        <a href="index.php" class=" text-sm  text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            What We Offer
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                           
+                            Reserve Appointment
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Services Column -->
+            <div class="footer-box space-y-4">
+                <h3 class="footer-title text-white text-lg font-bold relative inline-block">
+                    Our Services
+                    
+                </h3>
+                <ul class="footer-links space-y-3">
+                    <li>
+                        <a href="services.php" class=" text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            WLAN/LAN Installation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class=" text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            Air Conditioning
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                          
+                            Automatic Gates
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            Fire Alarms
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <!-- Contact Column -->
+            <div class="footer-box space-y-4">
+                <h3 class="footer-title text-white text-lg font-bold relative inline-block">
+                    Contact Us
+                    
+                </h3>
+                <div class="footer-contact-item space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="space-y-1">
+                            <a href="tel:+256760271098" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
+                                +256 760 271 098
+                            </a>
+                            <a href="tel:+256754130885" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
+                                +256 754 130 885
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <a href="mailto:fermielectrictech@gmail.com" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 text-sm break-all">
+                            fermielectrictech@gmail.com
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <p class="text-gray-400 text-sm">Kampala, Uganda</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="footer-bottom mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-gray-500 text-sm text-center sm:text-left">
+                &copy; 2026 Fermi Electrical & IT Solutions. All Rights Reserved.
+            </p>
+            
+            <div class="flex items-center gap-6 text-xs text-gray-500">
+                <a href="#" class="hover:text-amber-400 transition-colors duration-300">Privacy Policy</a>
+                <span class="w-px h-4 bg-gray-700"></span>
+                <a href="#" class="hover:text-amber-400 transition-colors duration-300">Terms of Service</a>
+                <span class="w-px h-4 bg-gray-700"></span>
+                <a href="#" class="hover:text-amber-400 transition-colors duration-300">Sitemap</a>
+            </div>
+            
+            <!-- Scroll to Top Button
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                    class="w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                <i class="fas fa-arrow-up text-sm"></i>
+            </button> -->
+        </div>
     </div>
 </footer>
+
 
 <!-- <div id="ai-widget-container"></div> -->
  <!-- Floating WhatsApp CTA -->

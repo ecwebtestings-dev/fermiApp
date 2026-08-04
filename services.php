@@ -96,10 +96,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="widget.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services.css">
 
-    <script src="https://cdn.tailwindcss.com" defer></script>
-
-        <script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
     tailwind.config = {
         theme: {
             extend: {
@@ -1202,90 +1202,94 @@
 <body>
     <div id="loader"></div>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar" id="navbar">
-    <div class="container">
-
-        <a href="index.php" class="logo">
-            <div class="logo-img-wrapper">
-                <img src="./Images/logo2.png" alt="Fermi Logo" />
+<!-- ================= HEADER / NAVBAR (FIXED) ================= -->
+  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" id="mainHeader">
+    <div class="bg-gray-900/90 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="headerBackground">
+      <nav aria-label="Global" class="flex items-center justify-between p-4 lg:px-8 max-w-7xl mx-auto">
+        
+        <!-- Logo -->
+        <div class="flex lg:flex-1">
+          <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3">
+            <span class="sr-only">FERMI</span>
+            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 w-auto" />
+            <div class="hidden sm:block">
+              <span class="block text-white font-bold text-lg tracking-wide">FERMI</span>
+              <span class="block text-[#FB923C] text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
             </div>
-            <span class="logotext">FERMI
-                <p class="sublogotext">Safe.Smart.Secure.</p>
-            </span>
-        </a>
+          </a>
+        </div>
 
-        <nav class="nav-links">
-            <a href="index.php" class="nav-link active">Home</a>
-            <a href="services.php" class="nav-link">What We Offer</a>
-            <a href="projects.php" class="nav-link">Projects</a>
-            <a href="services.php" class="nav-link">Reserve Appointment</a>
-        </nav>
+        <!-- Mobile Menu Toggle -->
+        <div class="flex lg:hidden">
+          <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200 hover:text-white">
+            <span class="sr-only">Open main menu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
 
-        <div class="auth-buttons">
-            <?php if(isset($_SESSION['username'])): ?>
-                <!-- Logged In State -->
-                <div class="user-avatar user-account-trigger" id="userAvatar">
-                    <span class="user-initial">
-                        <?php # echo htmlspecialchars($userInitial); ?>
-                    </span>
+        <!-- Desktop Nav Links -->
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="index.php" class="text-sm/6 font-semibold text-[#FB923C] relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-100">Home</a>
+          <a href="services.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">What We Offer</a>
+          <a href="projects.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Projects</a>
+          <a href="services.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Reserve Appointment</a>
+        </div>
+
+        <!-- Desktop Auth Buttons -->
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="index.php" class="rounded-md bg-[#EA580C] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#C2410C] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]">
+            Get Started
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu Dialog -->
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+            
+            <div class="flex items-center justify-between">
+              <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3">
+                <img src="./Images/logo2.png" alt="Fermi Logo" class="h-8 w-auto" />
+                <div>
+                  <span class="block text-white font-bold text-lg">FERMI</span>
+                  <span class="block text-[#FB923C] text-xs -mt-1">Safe.Smart.Secure.</span>
                 </div>
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
 
-            <?php else: ?>
-                <!-- Guest State -->
-                <a href="index.php" class="btn-signup">
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-white/10">
+                <div class="space-y-2 py-6">
+                  <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FB923C] hover:bg-white/5">Home</a>
+                  <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">What We Offer</a>
+                  <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Projects</a>
+                  <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Reserve Appointment</a>
+                </div>
+                <div class="py-6">
+                  <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white bg-[#EA580C] text-center hover:bg-[#C2410C]">
                     Get Started
-                </a>
-            <?php endif; ?>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </el-dialog-panel>
         </div>
+      </dialog>
+    </el-dialog>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-            <i class="fas fa-bars"></i>
-        </button>
-
-    </div>
-</header>
-
-
-<!-- ================= MOBILE MENU ================= -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<div class="mobile-menu" id="mobileMenu">
-    <a href="index.php" class="logo">
-        <div class="logo-img-wrapper">
-            <img src="./Images/logo2.png" alt="Fermi Logo" />
-        </div>
-        <span class="logotext">
-            FERMI
-            <p class="sublogotext">Safe.Smart.Secure.</p>
-        </span>
-    </a>
-    
-
-    <div class="mobile-nav-links">
-        <a href="index.php" class="mobile-nav-link active">Home</a>
-        <a href="services.php" class="mobile-nav-link">What We Offer</a>
-        <a href="projects.php" class="mobile-nav-link">Projects</a>
-        <a href="services.php" class="mobile-nav-link">Reserve Appointment</a>
-    </div>
-    <div class="mobile-auth-section">
-        <div class="mobile-auth-buttons">
-            <?php if(isset($_SESSION['username'])): ?>
-                <a href="<?php #echo $logout_page; ?>" class="mobile-btn-login">
-                    Log Out
-                </a>
-                
-            <?php else: ?>
-                <a href="index.php" class="mobile-btn-signup">
-                    Get Started
-                </a>
-            <?php endif; ?>
-
-        </div>
-    </div>
-</div>
-
-
+  </header>
 <!-- ================= USER PROFILE DROPDOWN ================= -->
 <!-- <?php # if(isset($_SESSION['username'])): ?>
 <div class="user-profile" id="user-profile">
@@ -1338,75 +1342,32 @@
     
 </section>
 
-    <section class="services-section section-padding" id="services">
-        <div class="services-container">
-            <div class="services-header" data-aos="fade-up" data-aos-duration="800">
-                <span class="services-subtitle">What We Offer</span>
-                <h2 class="services-title">We are the Professional Security & Electrical Service Provider</h2>
-                <p class="services-description">Comprehensive solutions for residential, commercial, and industrial needs with certified expertise</p>
-            </div>
 
-            <div class="tabs-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <div class="tabs">
-                        <div class="tab active" data-tab="domestic">
-                            <i class="fas fa-home"></i>
-                            <span>Domestic Services</span>
-                            <i class="fas fa-chevron-down tab-arrow"></i>
-                        </div>
-                        <div class="tab" data-tab="industrial">
-                            <i class="fas fa-industry"></i>
-                            <span>Industrial Services</span>
-                            <i class="fas fa-chevron-down tab-arrow"></i>
-                        </div>
-                        <div class="tab commercial-tab" data-tab="commercial">
-                            <i class="fas fa-building"></i>
-                            <span>Commercial Services</span>
-                            <i class="fas fa-chevron-down tab-arrow"></i>
-                        </div>
-            </div>
-            </div>
 
-            <div class="tab-contents-wrapper">
-                <div class="tab-content-mobile" id="commercial-mobile">
-                    <div class="commercial-layout">
-                        <div class="commercial-image">
-                            <div class="image-wrapper">
-                                <img src="Images/alarm-control-panel.jpg" alt="Commercial Service" class="service-image">
-                                <div class="image-overlay">
-                                    <h4>Business Solutions</h4>
-                                    <p>Tailored for commercial efficiency</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="commercial-content">
-                            <h2>Commercial Services</h2>
-                            <p>Compared to domestic electrical repair work, commercial electrical installations require far more specialized labor.</p>
-                            <p>These tasks have a direct impact on the production system since they can save electrical costs and increased equipment longevity. Our services focuses:</p>
-                            <div class="checklist-container">
-                                <ul class="checklist">
-                                    <li><i class="fas fa-check-circle"></i> WAN/LAN setup</li>
-                                    <li><i class="fas fa-check-circle"></i> Wiring for offices and shops</li>
-                                    <li><i class="fas fa-check-circle"></i> Installations of elevators & escalators</li>
-                                    <li><i class="fas fa-check-circle"></i> Air conditioning (AC)</li>
-                                    <li><i class="fas fa-check-circle"></i> CCTV Camera installation</li>
-                                    <li><i class="fas fa-check-circle"></i> Installations of water heaters</li>
-                                    <li><i class="fas fa-check-circle"></i> Electrical System Maintenance</li>
-                                    <li><i class="fas fa-check-circle"></i> Upgradations of panels</li>
-                                    <li><i class="fas fa-check-circle"></i> Installations of CCTV surveillance</li>
-                                    <li><i class="fas fa-check-circle"></i> Electrical Safety check</li>
-                                    <li><i class="fas fa-check-circle"></i> Whole House Surge Protector</li>
-                                    <li><i class="fas fa-check-circle"></i> Line power quality checks</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<section class="services-section section-padding" id="services">
+    <div class="services-container">
 
-                <div class="tab-content-mobile active" id="domestic-mobile">
+        <div class="services-header" data-aos="fade-up">
+            <span class="services-subtitle">What We Offer</span>
+            <h2 class="services-title">We are the Professional Security &amp; Electrical Service Provider</h2>
+            <p class="services-description">Comprehensive solutions for residential, commercial, and industrial needs with certified expertise</p>
+        </div>
+
+        
+        <div class="accordion" id="services-accordion">
+
+            <!-- DOMESTIC -->
+            <button class="acc-header is-active" data-panel="domestic" aria-expanded="true">
+                <span class="acc-icon"><i class="fas fa-home"></i></span>
+                <span class="acc-title">Domestic Services</span>
+                <i class="fas fa-chevron-down acc-arrow"></i>
+            </button>
+            <div class="acc-panel is-active" data-panel-id="domestic">
+                <div class="acc-panel-inner">
                     <div class="domestic-layout">
                         <div class="content-left">
                             <div class="content-header">
-                                <h2>Domestic Services</h2>
+                                <h3>Domestic Services</h3>
                                 <p>We do domestic household security services, ensuring your families are in the perfect state and safe from hazards such as fire outbreaks, short-circuits, and high room temperatures and theft.</p>
                                 <p>Our expert technicians handle installations, repairs, and regular checkups to keep your home safe.</p>
                             </div>
@@ -1431,7 +1392,7 @@
                                 </div>
                                 <div class="feature-box">
                                     <div class="feature-text">
-                                        <h4>CCTV Camera installations</h4>
+                                        <h4>CCTV Camera Installations</h4>
                                         <p>Securing your property using secure artificial eyes.</p>
                                     </div>
                                 </div>
@@ -1454,24 +1415,32 @@
                                 <img src="Images/AutomaticGates.png" alt="Domestic Electrical Service" class="service-image">
                                 <div class="image-overlay">
                                     <h4>100% Satisfaction</h4>
-                                    <p>All domestic services come with quality guarantee</p>
+                                    <p>All domestic services come with a quality guarantee</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="tab-content-mobile" id="industrial-mobile">
+            <!-- INDUSTRIAL -->
+            <button class="acc-header" data-panel="industrial" aria-expanded="false">
+                <span class="acc-icon"><i class="fas fa-industry"></i></span>
+                <span class="acc-title">Industrial Services</span>
+                <i class="fas fa-chevron-down acc-arrow"></i>
+            </button>
+            <div class="acc-panel" data-panel-id="industrial">
+                <div class="acc-panel-inner">
                     <div class="industrial-layout">
                         <div class="content-header">
-                            <h2>Industrial Service</h2>
+                            <h3>Industrial Service</h3>
                             <p>We are the best provider of industrial and commercial electrical services. We've executed projects of all sizes, from simple to sophisticated.</p>
                             <p>Our seasoned electricians deliver efficient and effective solutions without interfering with your business operations.</p>
                         </div>
                         <div class="features-grid">
                             <div class="feature-box">
                                 <div class="feature-text">
-                                    <h4>Design & Build</h4>
+                                    <h4>Design &amp; Build</h4>
                                     <p>Industrial electrical designs and wiring ideas.</p>
                                 </div>
                             </div>
@@ -1489,7 +1458,7 @@
                             </div>
                             <div class="feature-box">
                                 <div class="feature-text">
-                                    <h4>Retrofits & Repair</h4>
+                                    <h4>Retrofits &amp; Repair</h4>
                                     <p>Component replacements and repairs as needed.</p>
                                 </div>
                             </div>
@@ -1508,11 +1477,55 @@
                         </div>
                     </div>
                 </div>
-
-                
             </div>
+
+            <!-- COMMERCIAL -->
+            <button class="acc-header" data-panel="commercial" aria-expanded="false">
+                <span class="acc-icon"><i class="fas fa-building"></i></span>
+                <span class="acc-title">Commercial Services</span>
+                <i class="fas fa-chevron-down acc-arrow"></i>
+            </button>
+            <div class="acc-panel" data-panel-id="commercial">
+                <div class="acc-panel-inner">
+                    <div class="commercial-layout">
+                        <div class="commercial-image">
+                            <div class="image-wrapper">
+                                <img src="Images/alarm-control-panel.jpg" alt="Commercial Service" class="service-image">
+                                <div class="image-overlay">
+                                    <h4>Business Solutions</h4>
+                                    <p>Tailored for commercial efficiency</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="commercial-content">
+                            <h3>Commercial Services</h3>
+                            <p>Compared to domestic electrical repair work, commercial electrical installations require far more specialized labor.</p>
+                            <p>These tasks have a direct impact on the production system since they can save electrical costs and increase equipment longevity. Our services focus on:</p>
+                            <div class="checklist-container">
+                                <ul class="checklist">
+                                    <li><i class="fas fa-check-circle"></i> WAN/LAN setup</li>
+                                    <li><i class="fas fa-check-circle"></i> Wiring for offices and shops</li>
+                                    <li><i class="fas fa-check-circle"></i> Elevator &amp; escalator installs</li>
+                                    <li><i class="fas fa-check-circle"></i> Air conditioning (AC)</li>
+                                    <li><i class="fas fa-check-circle"></i> CCTV camera installation</li>
+                                    <li><i class="fas fa-check-circle"></i> Water heater installation</li>
+                                    <li><i class="fas fa-check-circle"></i> Electrical system maintenance</li>
+                                    <li><i class="fas fa-check-circle"></i> Panel upgrades</li>
+                                    <li><i class="fas fa-check-circle"></i> CCTV surveillance installs</li>
+                                    <li><i class="fas fa-check-circle"></i> Electrical safety checks</li>
+                                    <li><i class="fas fa-check-circle"></i> Whole house surge protector</li>
+                                    <li><i class="fas fa-check-circle"></i> Line power quality checks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
 
 
@@ -1638,62 +1651,170 @@
 
     
 
-    <footer class="footer-section" data-aos="fade-up" data-aos-duration="1000">
-        <div class="footer-container">
-            <div class="footer-box" data-aos="fade-right" data-aos-delay="200">
-                <div class="logo-img-wrapper">
-                <img src="./Images/logo2.png" alt="Fermi Logo" />
-            </div>
-                <h3 class="footer-title">About Us</h3>
-                <p class="footer-text">We provide top-notch Security, Electrical & IT solutions with years of experience delivering reliable and innovative services.</p>
-                <div class="footer-social">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gray-900 text-gray-300 relative overflow-hidden">
+    
+    <!-- Decorative Background Elements -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl"></div>
+    </div>
+    
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        
+        <!-- Main Footer Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            
+            <!-- About Column -->
+            <div class="footer-box space-y-4">
+                <div class="logo-img-wrapper mb-4">
+                    <img src="./Images/logo2.png" alt="Fermi Logo" class="h-12 md:h-14 w-auto object-contain" />
+                </div>
+                <h3 class="footer-title text-white text-lg font-bold">About Us</h3>
+                <p class="footer-text text-gray-400 text-sm leading-relaxed">
+                    We provide top-notch Security, Electrical & IT solutions with years of experience delivering reliable and innovative services.
+                </p>
+                <div class="footer-social flex gap-3 pt-2">
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 hover:bg-amber-500 text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                        <i class="fab fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 hover:bg-amber-500 text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                        <i class="fab fa-twitter text-sm"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 hover:bg-amber-500 text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                        <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 hover:bg-amber-500 text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                        <i class="fab fa-instagram text-sm"></i>
+                    </a>
                 </div>
             </div>
             
-            <div class="footer-box" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="footer-title">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.php"> Home</a></li>
-                    <li><a href="services.php">What we offer</a></li>
-                    <li><a href="projects.php"> Projects</a></li>
-                    <li><a href="/services.php">Reserve Appointment</a></li>
+            <!-- Quick Links Column -->
+            <div class="footer-box space-y-4">
+                <h3 class="footer-title text-white text-lg font-bold relative inline-block">
+                    Quick Links
+                    
+                </h3>
+                <ul class="footer-links space-y-3">
+                    <li>
+                        <a href="index.php" class=" text-sm  text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            What We Offer
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                           
+                            Reserve Appointment
+                        </a>
+                    </li>
                 </ul>
             </div>
             
-            <div class="footer-box" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="footer-title">Our Services</h3>
-                <ul class="footer-links">
-                    <li><a href="/services.php"> WLAN/LAN Installation</a></li>
-                    <li><a href="/services.php"> Air Conditioning</a></li>
-                    <li><a href="/services.php"> Automatic Gates</a></li>
-                    <li><a href="/services.php"> Fire Alarms</a></li>
-                    <li><a href="services.php">View All</a></li>
+            <!-- Services Column -->
+            <div class="footer-box space-y-4">
+                <h3 class="footer-title text-white text-lg font-bold relative inline-block">
+                    Our Services
+                    
+                </h3>
+                <ul class="footer-links space-y-3">
+                    <li>
+                        <a href="services.php" class=" text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            WLAN/LAN Installation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class=" text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            Air Conditioning
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                          
+                            Automatic Gates
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                            
+                            Fire Alarms
+                        </a>
+                    </li>
+                    
                 </ul>
             </div>
             
-            <div class="footer-box contact-info" data-aos="fade-left" data-aos-delay="500">
-                <h3 class="footer-title">Contact Us</h3>
-                <div class="footer-contact-item">
-                    <a href="tel:+256760 271 098"> +256 760 271 098</a>
-                    <a href="tel:+256754 130 885"> +256 754 130 885</a>
-                </div>
-                <div class="footer-contact-item">
-                    <p> fermielectrictech@gmail.com</p>
-                </div>
-                <div class="footer-contact-item">
-                    <p> Kampala, Uganda</p>
+            <!-- Contact Column -->
+            <div class="footer-box space-y-4">
+                <h3 class="footer-title text-white text-lg font-bold relative inline-block">
+                    Contact Us
+                    
+                </h3>
+                <div class="footer-contact-item space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="space-y-1">
+                            <a href="tel:+256760271098" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
+                                +256 760 271 098
+                            </a>
+                            <a href="tel:+256754130885" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
+                                +256 754 130 885
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <a href="mailto:fermielectrictech@gmail.com" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 text-sm break-all">
+                            fermielectrictech@gmail.com
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <p class="text-gray-400 text-sm">Kampala, Uganda</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
         
-        <div class="footer-bottom">
-            <p>&copy; 2026 Fermi Electrical & IT Solutions. All Rights Reserved.</p>
+        <!-- Bottom Bar -->
+        <div class="footer-bottom mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-gray-500 text-sm text-center sm:text-left">
+                &copy; 2026 Fermi Electrical & IT Solutions. All Rights Reserved.
+            </p>
+            
+            <div class="flex items-center gap-6 text-xs text-gray-500">
+                <a href="#" class="hover:text-amber-400 transition-colors duration-300">Privacy Policy</a>
+                <span class="w-px h-4 bg-gray-700"></span>
+                <a href="#" class="hover:text-amber-400 transition-colors duration-300">Terms of Service</a>
+                <span class="w-px h-4 bg-gray-700"></span>
+                <a href="#" class="hover:text-amber-400 transition-colors duration-300">Sitemap</a>
+            </div>
+            
+            <!-- Scroll to Top Button
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                    class="w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
+                <i class="fas fa-arrow-up text-sm"></i>
+            </button> -->
         </div>
-    </footer>
+    </div>
+</footer>
 
     <!--AI WIDGET-->
    <!-- <div id="ai-widget-container"></div> -->
@@ -1714,6 +1835,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <script src="widget.js"></script>
+    <script src="services.js"></script>
    
 </body>
 </html>

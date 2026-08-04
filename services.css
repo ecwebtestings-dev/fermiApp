@@ -1,0 +1,449 @@
+
+
+.services-section {
+    --acc-amber-1: var(--primary-orange, #f59e0b);
+    --acc-amber-2: var(--primary-dark, #d97706);
+    --acc-ink: var(--header-color, #1f2430);
+    --acc-body: var(--text-gray, #667085);
+    --acc-bg: var(--bg-light, #f8f7f4);
+    --acc-card: #ffffff;
+    --acc-line: rgba(31, 36, 48, 0.08);
+    --acc-shadow-sm: 0 2px 10px rgba(31, 36, 48, 0.06);
+    --acc-shadow-md: 0 14px 34px rgba(217, 119, 6, 0.14);
+    --acc-shadow-lift: 0 22px 46px rgba(31, 36, 48, 0.12);
+    --acc-radius: 18px;
+    --acc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+    background-color: var(--acc-bg);
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* ---- Header ---- */
+
+.services-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-subtitle {
+    display: inline-block;
+    color: var(--acc-amber-2);
+    font-weight: 600;
+    background: rgba(245, 158, 11, 0.1);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.services-title {
+    font-size: 2.5rem;
+    color: var(--acc-ink);
+    margin-bottom: 16px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.services-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--acc-body);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   Accordion — shared structure (mobile-first)
+   Source order is: header1, panel1, header2, panel2, header3, panel3
+   ========================================================================== */
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.acc-header {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 18px 20px;
+    background: var(--acc-card);
+    border: 1px solid var(--acc-line);
+    border-radius: var(--acc-radius);
+    box-shadow: var(--acc-shadow-sm);
+    cursor: pointer;
+    font-family: inherit;
+    transition: box-shadow 0.35s var(--acc-ease), transform 0.35s var(--acc-ease), border-color 0.35s var(--acc-ease);
+}
+
+.acc-header:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--acc-shadow-md);
+}
+
+.acc-header:focus-visible {
+    outline: 2px solid var(--acc-amber-2);
+    outline-offset: 2px;
+}
+
+.acc-icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.05rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--acc-amber-1), var(--acc-amber-2));
+    transition: transform 0.35s var(--acc-ease);
+}
+
+.acc-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--acc-ink);
+    letter-spacing: -0.1px;
+}
+
+.acc-arrow {
+    margin-left: auto;
+    color: var(--acc-body);
+    font-size: 0.85rem;
+    transition: transform 0.35s var(--acc-ease), color 0.35s var(--acc-ease);
+}
+
+/* Active header state */
+.acc-header.is-active {
+    border-color: rgba(245, 158, 11, 0.35);
+    box-shadow: var(--acc-shadow-md);
+}
+
+.acc-header.is-active .acc-icon {
+    transform: scale(1.06);
+}
+
+.acc-header.is-active .acc-arrow {
+    transform: rotate(180deg);
+    color: var(--acc-amber-2);
+}
+
+/* Panel: grid-rows trick gives a buttery height animation without measuring JS heights */
+.acc-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    background: var(--acc-card);
+    border-radius: var(--acc-radius);
+    border: 1px solid transparent;
+    transition: grid-template-rows 0.45s var(--acc-ease), border-color 0.45s var(--acc-ease), box-shadow 0.45s var(--acc-ease);
+}
+
+.acc-panel.is-active {
+    grid-template-rows: 1fr;
+    border-color: var(--acc-line);
+    box-shadow: var(--acc-shadow-lift);
+    margin-top: -4px; /* tucks the panel visually under its header */
+}
+
+.acc-panel-inner {
+    min-height: 0;
+    min-width: 0;
+    padding: 4px 26px 26px;
+}
+
+/* subtle reveal of panel content once open */
+.acc-panel-inner > * {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+.acc-panel.is-active .acc-panel-inner > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- Shared inner content blocks ---- */
+
+.content-header h3,
+.commercial-content h3 {
+    font-size: 1.5rem;
+    color: var(--acc-ink);
+    margin: 14px 0 12px;
+    font-weight: 700;
+}
+
+.content-header p,
+.commercial-content p {
+    color: var(--acc-body);
+    line-height: 1.7;
+    margin-bottom: 12px;
+    font-size: 0.98rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.feature-box {
+    background: var(--acc-bg);
+    padding: 15px 16px;
+    border-left: 3px solid var(--acc-amber-1);
+    border-radius: 0 12px 12px 0;
+    transition: transform 0.3s var(--acc-ease), box-shadow 0.3s var(--acc-ease), background 0.3s var(--acc-ease);
+}
+
+.feature-box:hover {
+    background: #fff;
+    box-shadow: var(--acc-shadow-sm);
+    transform: translateY(-2px);
+}
+
+.feature-text h4 {
+    font-size: 0.98rem;
+    color: var(--acc-ink);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.feature-text p {
+    color: var(--acc-body);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: var(--acc-shadow-md);
+    margin-top: 16px;
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s var(--acc-ease);
+}
+
+.image-wrapper:hover .service-image {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(to top, rgba(217, 119, 6, 0.92), transparent);
+    color: #fff;
+    padding: 20px;
+}
+
+.image-overlay h4 {
+    font-size: 1.02rem;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.image-overlay p {
+    font-size: 0.85rem;
+    opacity: 0.92;
+    margin: 0;
+}
+
+.checklist-container {
+    margin-top: 14px;
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist li {
+    list-style: none;
+    font-size: 0.92rem;
+    color: var(--acc-ink);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checklist li i {
+    color: #fff;
+    background: linear-gradient(135deg, var(--acc-amber-1), var(--acc-amber-2));
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Desktop (≥993px): reflow into horizontal tabs + single content pane below,
+   using CSS `order` on the SAME markup — no duplicated HTML needed.
+   ========================================================================== */
+
+@media (min-width: 993px) {
+
+    .accordion {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        background: var(--acc-card);
+        border-radius: 16px;
+        box-shadow: var(--acc-shadow-sm);
+        overflow: hidden;
+        margin-bottom: 36px;
+    }
+
+    .acc-header {
+        flex: 1 1 0;
+        border-radius: 0;
+        border: none;
+        border-bottom: 3px solid transparent;
+        box-shadow: none;
+        padding: 24px 20px;
+        justify-content: center;
+    }
+
+    .acc-header:hover {
+        transform: none;
+        background: rgba(245, 158, 11, 0.06);
+        box-shadow: none;
+    }
+
+    .acc-header.is-active {
+        background: rgba(245, 158, 11, 0.06);
+        border-bottom-color: var(--acc-amber-2);
+        box-shadow: none;
+    }
+
+    .acc-arrow { display: none; }
+
+    /* order headers into the top row regardless of source position */
+    .acc-header:nth-of-type(1) { order: 1; }
+    .acc-header:nth-of-type(2) { order: 2; }
+    .acc-header:nth-of-type(3) { order: 3; }
+
+    /* panels drop below the tab row; only the active one renders */
+    .acc-panel {
+        order: 4;
+        flex: 1 1 100%;
+        display: none;
+        grid-template-rows: 1fr; /* no height animation needed on desktop */
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+    .acc-panel.is-active {
+        display: block;
+        border: none;
+        box-shadow: none;
+    }
+
+    .acc-panel-inner {
+        padding: 40px;
+    }
+
+    .acc-panel-inner > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .domestic-layout {
+        display: flex;
+        gap: 50px;
+        align-items: flex-start;
+    }
+
+    .content-left { flex: 0 0 68%; }
+    .content-right { flex: 0 0 32%; }
+
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .industrial-layout .features-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .commercial-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 44px;
+        align-items: center;
+    }
+
+    .checklist { grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+}
+
+/* ---- Tablet ---- */
+@media (min-width: 769px) and (max-width: 992px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .checklist { grid-template-columns: 1fr 1fr; }
+    .commercial-image { max-width: 480px; margin: 0 auto; }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 480px) {
+    .services-title { font-size: 1.7rem; }
+    .services-container { padding: 0 1rem; }
+    .acc-header { padding: 15px 16px; }
+    .acc-title { font-size: 0.98rem; }
+    .acc-icon { width: 36px; height: 36px; font-size: 0.95rem; }
+    .acc-panel-inner { padding: 2px 16px 20px; }
+    .content-header h3, .commercial-content h3 { font-size: 1.3rem; }
+    .image-overlay { padding: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .acc-header, .acc-panel, .acc-icon, .acc-arrow,
+    .acc-panel-inner > *, .feature-box, .image-wrapper .service-image {
+        transition: none !important;
+    }
+}
+
+@media (max-width: 992px) {
+  #services-accordion .content-left,
+  #services-accordion .content-right {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  #services-accordion .domestic-layout {
+    display: block !important;
+  }
+  #services-accordion .content-left { margin-bottom: 20px; }
+}
