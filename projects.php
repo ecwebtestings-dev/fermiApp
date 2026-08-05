@@ -358,202 +358,6 @@
     color: var(--text-gray);
 }
 
-/* ===== GALLERY SECTION ===== */
-.proj-gallery-section {
-    padding: 50px 0;
-    position: relative;
-    overflow: hidden;
-    background: var(--color-bg);
-}
-
-.proj-gallery-header {
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.proj-gallery-subtitle {
-    color: var(--primary-dark);
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background: rgba(201, 162, 39, 0.1);
-    border-radius: 30px;
-    border: 1px solid rgba(201, 162, 39, 0.25);
-}
-
-.proj-gallery-title {
-    font-family: "Kodchasan", sans-serif;
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--header-color);
-    margin-bottom: 0.5rem;
-    position: relative;
-}
-.proj-gallery-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    border-radius: 4px;
-    background: var(--primary-gradient);
-    margin: 15px auto 0;
-}
-
-/* Gallery Tabs */
-.proj-gallery-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
-}
-
-.proj-tab-link {
-    padding: 0.8rem 1.4rem;
-    background: white;
-    border: 1px solid rgba(201, 162, 39, 0.25);
-    border-radius: 30px;
-    font-weight: 600;
-    color: var(--header-color);
-    cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
-    font-size: 0.95rem;
-}
-.proj-tab-link.active,
-.proj-tab-link:hover {
-    background: var(--primary-gradient);
-    color: var(--text-dark);
-    border-color: transparent;
-    box-shadow: var(--shadow-sm);
-}
-
-/* Desktop Grid View */
-.proj-grid-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-}
-
-.proj-grid {
-    display: none;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 14px;
-}
-.proj-grid.active { display: grid; }
-
-.proj-grid-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-md);
-    aspect-ratio: 4/3;
-    cursor: pointer;
-}
-.proj-grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-.proj-grid-item:hover img { transform: scale(1.1); }
-
-.proj-item-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(160deg,
-        rgba(11,20,31,.15) 0%,
-        rgba(11,20,31,.75) 65%,
-        rgba(201,162,39,.55) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.proj-grid-item:hover .proj-item-overlay { opacity: 1; }
-.proj-item-overlay h4 { font-size: 1rem; margin-bottom: 10px; font-weight: 600; }
-.proj-item-overlay p { font-size: 0.95rem; line-height: 1.5; opacity: 0.9; }
-
-/* Mobile Slider View */
-.proj-mobile-slider { position: relative; overflow: hidden; padding: 20px 10px; }
-.proj-mobile-track { display: flex; transition: transform 0.5s ease; }
-.proj-mobile-slide {
-    flex: 0 0 100%;
-    min-width: 100%;
-    padding: 0 10px;
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-    box-shadow: var(--shadow-md);
-}
-.proj-mobile-slide img { width: 100%; height: 100%; object-fit: cover; }
-
-.proj-mobile-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(11,20,31,.9), transparent);
-    color: white;
-    padding: 30px 20px 20px;
-}
-.proj-mobile-caption h4 { font-size: 1.2rem; margin-bottom: 5px; color: var(--primary-light); }
-.proj-mobile-caption p { font-size: 0.9rem; opacity: 0.9; }
-
-.proj-mobile-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-.proj-mobile-prev, .proj-mobile-next {
-    width: 42px; height: 42px;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid var(--primary-dark);
-    color: var(--primary-dark);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    font-size: 1rem;
-}
-.proj-mobile-prev:hover, .proj-mobile-next:hover {
-    background: var(--primary-gradient);
-    color: white;
-    border-color: transparent;
-}
-
-.proj-mobile-dots { display: flex; gap: 8px; }
-.proj-mobile-dot {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-    transition: var(--transition);
-}
-.proj-mobile-dot.active {
-    background: var(--primary-dark);
-    transform: scale(1.2);
-}
-
 /* ===== CTA SECTION ===== */
 .proj-cta-section {
     padding: 80px 0;
@@ -855,287 +659,693 @@
 <body>
 <div id="loader"></div>
 
- <!-- ================= HEADER / NAVBAR (FIXED) ================= -->
-  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" id="mainHeader">
-    <div class="bg-gray-900/90 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="headerBackground">
-      <nav aria-label="Global" class="flex items-center justify-between p-4 lg:px-8 max-w-7xl mx-auto">
-        
-        <!-- Logo -->
-        <div class="flex lg:flex-1">
-          <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3">
-            <span class="sr-only">FERMI</span>
-            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 w-auto" />
-            <div class="hidden sm:block">
-              <span class="block text-white font-bold text-lg tracking-wide">FERMI</span>
-              <span class="block text-[#FB923C] text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
+<!-- ================= HEADER / NAVBAR (PREMIUM WHITE & ORANGE) ================= -->
+<header class="fixed inset-x-0 top-0 z-50 transition-all duration-500" id="mainHeader">
+    <div class="bg-white/95 backdrop-blur-lg border-b border-orange-100/50 shadow-sm transition-all duration-500" id="headerBackground">
+        <nav aria-label="Global" class="flex items-center justify-between p-3 md:p-4 lg:px-8 max-w-7xl mx-auto">
+            
+            <!-- Logo -->
+            <div class="flex lg:flex-1">
+                <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3 group">
+                    <span class="sr-only">FERMI</span>
+                    <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
+                    <div class="hidden sm:block">
+                        <span class="block text-gray-900 font-bold text-xl tracking-tight">FERMI</span>
+                        <span class="block text-orange-500 text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
+                    </div>
+                </a>
             </div>
-          </a>
-        </div>
 
-        <!-- Mobile Menu Toggle -->
-        <div class="flex lg:hidden">
-          <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200 hover:text-white">
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex lg:gap-x-10 xl:gap-x-12">
+                <a href="index.php" class="text-sm font-semibold text-orange-600 relative group">
+                    Home
+                   
+                </a>
+                <a href="services.php" class="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300 relative group">
+                    What We Offer
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="projects.php" class="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300 relative group">
+                    Projects
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="services.php" class="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300 relative group">
+                    Reserve Appointment
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
 
-        <!-- Desktop Nav Links -->
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="index.php" class="text-sm/6 font-semibold text-[#FB923C] relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-100">Home</a>
-          <a href="services.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">What We Offer</a>
-          <a href="projects.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Projects</a>
-          <a href="services.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Reserve Appointment</a>
-        </div>
+            <!-- Desktop CTA Buttons -->
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
+               
+                <a href="index.php" class="rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300">
+                    Get Started
+                    <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
 
-        <!-- Desktop Auth Buttons -->
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="index.php" class="rounded-md bg-[#EA580C] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#C2410C] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]">
-            Get Started
-          </a>
-        </div>
-      </nav>
+            <!-- Mobile Menu Toggle -->
+            <div class="flex lg:hidden">
+                <button type="button" command="show-modal" commandfor="mobile-menu" class="inline-flex items-center justify-center rounded-lg p-2.5 text-gray-600 hover:text-orange-600 hover:bg-orange-50 transition-all duration-300">
+                    <span class="sr-only">Open main menu</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-slot="icon" aria-hidden="true" class="size-6">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
     </div>
 
     <!-- Mobile Menu Dialog -->
     <el-dialog>
-      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-        <div tabindex="0" class="fixed inset-0 focus:outline-none">
-          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
-            
-            <div class="flex items-center justify-between">
-              <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3">
-                <img src="./Images/logo2.png" alt="Fermi Logo" class="h-8 w-auto" />
-                <div>
-                  <span class="block text-white font-bold text-lg">FERMI</span>
-                  <span class="block text-[#FB923C] text-xs -mt-1">Safe.Smart.Secure.</span>
-                </div>
-              </a>
-              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
-                <span class="sr-only">Close menu</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
+        <dialog id="mobile-menu" class="backdrop:bg-black/40 lg:hidden">
+            <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full max-w-sm overflow-y-auto bg-white p-6 shadow-2xl border-l border-orange-100/50">
+                    
+                    <div class="flex items-center justify-between">
+                        <a href="index.php" class="flex items-center gap-3">
+                            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-8 w-auto" />
+                            <div>
+                                <span class="block text-gray-900 font-bold text-lg">FERMI</span>
+                                <span class="block text-orange-500 text-xs -mt-1">Safe.Smart.Secure.</span>
+                            </div>
+                        </a>
+                        <button type="button" command="close" commandfor="mobile-menu" class="rounded-lg p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-all duration-300">
+                            <span class="sr-only">Close menu</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-slot="icon" aria-hidden="true" class="size-6">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
 
-            <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-white/10">
-                <div class="space-y-2 py-6">
-                  <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FB923C] hover:bg-white/5">Home</a>
-                  <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">What We Offer</a>
-                  <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Projects</a>
-                  <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Reserve Appointment</a>
-                </div>
-                <div class="py-6">
-                  <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white bg-[#EA580C] text-center hover:bg-[#C2410C]">
-                    Get Started
-                  </a>
-                </div>
-              </div>
-            </div>
+                    <div class="mt-8 flow-root">
+                        <div class="-my-6 divide-y divide-gray-100">
+                            <div class="space-y-3 py-6">
+                                <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-orange-600 bg-orange-50 hover:bg-orange-100 transition-colors duration-300">
+                                    Home
+                                </a>
+                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                    What We Offer
+                                </a>
+                                <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                    Projects
+                                </a>
+                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                    Reserve Appointment
+                                </a>
+                            </div>
+                            <div class="py-6 space-y-3">
+                                <a href="tel:+256760271098" class="flex items-center justify-center gap-2 -mx-3 rounded-lg px-3 py-3 text-base font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
+                                    <i class="fas fa-phone-alt text-orange-500"></i>
+                                    +256 760 271 098
+                                </a>
+                                <a href="index.php" class="block -mx-3 rounded-lg px-3 py-3 text-base font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-600 text-center hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300">
+                                    Get Started
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-          </el-dialog-panel>
-        </div>
-      </dialog>
+                </el-dialog-panel>
+            </div>
+        </dialog>
     </el-dialog>
 
-  </header>
+</header>
 
-  
+ <!-- ================= ABOUT / PROJECTS SECTION ================= -->
+<section class="relative flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white min-h-screen overflow-hidden">
 
-<!-- ================= MOBILE MENU ================= -->
-<div class="menu-overlay" id="menuOverlay"></div>
-<div class="mobile-menu" id="mobileMenu">
-    <a href="index.php" class="logo">
-        <div class="logo-img-wrapper">
-            <img src="Images/logo2.png" alt="FERMI logo" loading="lazy">
-        </div>
-        <span class="logotext">FERMI<p class="sublogotext">Safe.Smart.Secure.</p></span>
-    </a>
-    <div class="mobile-nav-links">
-        <a href="index.php" class="mobile-nav-link">Home</a>
-        <a href="services.php" class="mobile-nav-link">What We Offer</a>
-        <a href="projects.php" class="mobile-nav-link active">Projects</a>
-        <a href="services.php" class="mobile-nav-link">Reserve Appointment</a>
-    </div>
-    <div class="mobile-auth-section">
-        <div class="mobile-auth-buttons">
-            <?php if(isset($_SESSION['username'])): ?>
-                <a href="/FERMI/auth/logout.php" class="mobile-btn-login">Log Out</a>
-            <?php else: ?>
-                <a href="index.php" class="mobile-btn-signup">Get Started</a>
-            <?php endif; ?>
-        </div>
-    </div>
-</div>
+    <!-- Decorative Background Accent -->
+    <div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-orange-50 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
 
-<!-- ================= PROJECTS HERO ================= -->
-<section class="proj-hero-section">
-    <div class="proj-hero-bg">
-        <!-- LCP image: eager + high priority, NOT lazy -->
-        <img src="Images/Cyber.jpg" alt="FERMI technician configuring a cybersecurity network in Kampala" class="proj-bg-image" fetchpriority="high" decoding="async">
-        <div class="proj-bg-overlay"></div>
+    <!-- Image Container -->
+    <div class="flex-1 w-full max-w-xl lg:max-w-none mt-8 lg:mt-0 relative group">
+        <div class="absolute inset-0 bg-orange-500 rounded-lg translate-x-3 translate-y-3 opacity-20 transition-transform duration-300 group-hover:translate-x-4 group-hover:translate-y-4" aria-hidden="true"></div>
+        <img
+            src="Images/smart-home.jpg"
+            alt="Professional electrical and smart home services"
+            class="relative w-full h-auto min-h-[300px] md:min-h-[400px] lg:min-h-[550px] object-cover rounded-lg shadow-xl transition-transform duration-300 group-hover:-translate-y-1"
+            loading="lazy"
+        />
     </div>
 
-    <div class="proj-hero-container">
-        <div class="proj-hero-text" data-aos="fade-right">
-            <h1 class="proj-hero-title">Projects Completed</h1>
-            <p class="proj-hero-description" data-aos="fade-up" data-aos-delay="300">
-                We combine creativity and technology to bring each project to life. Every installation is designed with precision,
-                ensuring lasting reliability and a sleek, professional finish. Browse through our portfolio to see our work in action.
+    <!-- Content Container -->
+    <div class="flex-1 max-w-2xl lg:max-w-[600px] w-full text-left">
+        
+
+        <!-- Heading -->
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-5 leading-tight">
+            Responsive &amp; Professional
+        </h2>
+
+        <!-- Description -->
+        <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-8 max-w-prose">
+            We go the extra mile on every project. The value we provide clients comes from our level of skill
+            and performance, as well as our knowledge and professionalism. Rest assured, we put the same level
+            of energy into every project we take on.
+        </p>
+
+        <!-- Contact Info Card -->
+        <div class="bg-gray-50 border border-gray-100 rounded-xl p-6 inline-block w-full sm:w-auto hover:shadow-md transition-shadow duration-300">
+            <h4 class="font-semibold text-gray-700 text-sm uppercase tracking-wide mb-2">Call us today</h4>
+            <p class="text-2xl md:text-3xl font-bold text-orange-500 flex items-center gap-3">
+                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 text-orange-500 text-base shrink-0">
+                    <i class="fas fa-phone-alt"></i>
+                </span>
+                +256 760271098
             </p>
-            <div class="proj-hero-buttons" data-aos="fade-up" data-aos-delay="400">
-                <a href="tel:+256760271098" class="proj-btn proj-btn-primary">
-                    <i class="fas fa-phone-alt"></i> Start Your Project
-                </a>
+            <p class="text-gray-500 text-sm mt-3 ml-[52px]">We're available 24/7, 365 days a year.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= GALLERY SECTION ================= -->
+<section class="relative py-20 md:py-28 bg-gray-50 overflow-hidden">
+
+    <!-- Subtle Background Decoration -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-100/40 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+            <span class="inline-block px-5 py-1.5 mb-4 text-xs font-bold tracking-[0.2em] uppercase text-orange-600 bg-orange-50 border border-orange-100 rounded-full">
+                Portfolio
+            </span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+                Our Projects Gallery
+            </h2>
+            <div class="mt-4 mx-auto w-20 h-1.5 bg-gradient-to-r from-orange-400 to-amber-500 rounded-full"></div>
+        </div>
+
+        <!-- Desktop Filter Tabs -->
+        <div class="hidden md:flex justify-center flex-wrap gap-3 mb-12" data-aos="fade-up" data-aos-delay="200">
+            <button class="proj-tab-link active px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border border-orange-200 bg-white text-gray-700 hover:border-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400/50 data-[active]:bg-gradient-to-r data-[active]:from-orange-500 data-[active]:to-amber-500 data-[active]:text-white data-[active]:border-transparent data-[active]:shadow-lg data-[active]:shadow-orange-500/25" data-filter="all">All Projects</button>
+            <button class="proj-tab-link px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border border-orange-200 bg-white text-gray-700 hover:border-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400/50 data-[active]:bg-gradient-to-r data-[active]:from-orange-500 data-[active]:to-amber-500 data-[active]:text-white data-[active]:border-transparent data-[active]:shadow-lg data-[active]:shadow-orange-500/25" data-filter="residences">Residential</button>
+            <button class="proj-tab-link px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border border-orange-200 bg-white text-gray-700 hover:border-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400/50 data-[active]:bg-gradient-to-r data-[active]:from-orange-500 data-[active]:to-amber-500 data-[active]:text-white data-[active]:border-transparent data-[active]:shadow-lg data-[active]:shadow-orange-500/25" data-filter="industrial">Industrial</button>
+            <button class="proj-tab-link px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border border-orange-200 bg-white text-gray-700 hover:border-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400/50 data-[active]:bg-gradient-to-r data-[active]:from-orange-500 data-[active]:to-amber-500 data-[active]:text-white data-[active]:border-transparent data-[active]:shadow-lg data-[active]:shadow-orange-500/25" data-filter="offices">Commercial</button>
+        </div>
+
+        <!-- Desktop Grid -->
+        <div class="hidden md:block" id="projGrid">
+
+            <!-- ALL -->
+            <div class="proj-grid active grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5" data-category="all">
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/caera.jpg" alt="4K CCTV security camera installed on a home in Kampala" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">CCTV Camera Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Residential security system with 4K cameras</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/fence-with-barbed-wire.jpg" alt="Electric perimeter fence with barbed wire securing a residence" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Electric Fence Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Perimeter security with alarm integration</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/newcctv.jpeg" alt="Ceiling-mounted dome CCTV camera for discreet home surveillance" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Ceiling Camera Setup</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Discreet surveillance for home security</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/Facialrecognitionaccesscontrol.png" alt="Biometric fingerprint access control panel for home entry" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Fingerprint Access Control</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Biometric entry system for homes</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/electric-fence.jpg" alt="8-strand electric security fence around a residence" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Electric Perimeter Fence</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">8-strand security fence</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/NEWfirealarm.jpeg" alt="Smart fire alarm with smoke and heat detectors in a home" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Fire Alarm System</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Smart smoke and heat detectors</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/newcctv2.jpeg" alt="PTZ CCTV camera with 360° remote-controlled surveillance" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">PTZ Camera Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">360° surveillance with remote control</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/solar-panel.jpg" alt="5kW grid-tie rooftop solar panel system installed in Uganda" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Solar Panel Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">5kW grid-tie solar system</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/WaterHeater.jpg" alt="500L commercial water heater installation" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Industrial Water Heating</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">500L commercial water heater installation</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/escalator.jpg" alt="Shopping mall escalator system installed by FERMI" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Escalator Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Shopping mall escalator system</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/fire-alarm-switch.jpg" alt="Addressable industrial fire alarm control panel" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Industrial Fire Alarm</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Addressable fire alarm system</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/cat2cables.jpeg" alt="48-port managed network switch with CAT6 patch cables" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Network Switch Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">48-port managed network switch</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/netRag.png" alt="Enterprise server rack with organized network cabling" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Server Rack Setup</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Enterprise network infrastructure</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/catcables.jpeg" alt="CAT6 structured data cabling installation" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Structured Cabling</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">CAT6 data cabling installation</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/gps-system-smart-car.jpg" alt="GPS vehicle tracking system installed in a car" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">GPS Fleet Tracking</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Vehicle tracking system installation</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/technician-engineer-checks-maintenance-solar-cell-panels.jpg" alt="FERMI technician inspecting and cleaning solar panels" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Solar Panel Maintenance</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Solar system inspection and cleaning</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/switch.png" alt="Enterprise WiFi switch configuration and troubleshooting" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Network Router Setup</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Enterprise WiFi configuration</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/officelights.jpeg" alt="LED panel office lighting installation with dimmers" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Office Lighting Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">LED panel lighting with dimmers</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/empty-escalator-stair.jpg" alt="Commercial escalator system in an office building" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Commercial Escalator</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Office building escalator system</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/air-conditioning-decoration-interior.jpg" alt="Central air conditioning system in a modern office interior" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">HVAC Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Central air conditioning system</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESIDENTIAL -->
+            <div class="proj-grid hidden grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5" data-category="residences">
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/RoofCCT.jpg" alt="Residential CCTV security installation in Kampala" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">CCTV Camera Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Residential security system with 4K cameras</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/fence-with-barbed-wire.jpg" alt="Electric fence with barbed wire on a home perimeter" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Electric Fence Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Perimeter security with alarm integration</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/AutomatedCamera1.jpeg" alt="Ceiling dome camera for discreet home surveillance" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Ceiling Camera Setup</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Discreet surveillance for home security</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/SmartDoor.png" alt="Fingerprint biometric access control for a residence" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Fingerprint Access Control</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Biometric entry system for homes</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/electric-fence.jpg" alt="8-strand electric perimeter fence" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Electric Perimeter Fence</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">8-strand security fence</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/fire-sensor.jpg" alt="Ceiling fire sensor and smoke detector in a home" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Fire Alarm System</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Smart smoke and heat detectors</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/AutomatedCamera.jpeg" alt="PTZ camera monitoring a property remotely" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">PTZ Camera Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">360° surveillance with remote control</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/solar-panel.jpg" alt="Rooftop solar panel array on a residence" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Solar Panel Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">5kW grid-tie solar system</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INDUSTRIAL -->
+            <div class="proj-grid hidden grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5" data-category="industrial">
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/WaterHeater.jpg" alt="Industrial 500L water heater installation" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Industrial Water Heating</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">500L commercial water heater installation</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/escalator.jpg" alt="Mall escalator installation project" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Escalator Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Shopping mall escalator system</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/fire-alarm-switch.jpg" alt="Industrial addressable fire alarm switch panel" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Industrial Fire Alarm</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Addressable fire alarm system</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/rag.jpg" alt="Managed network switch with patched cables" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Network Switch Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">48-port managed network switch</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/netRag.jpg" alt="Enterprise server rack network infrastructure" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Server Rack Setup</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Enterprise network infrastructure</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/RecordingBox.jpeg" alt="CAT6 structured cabling with red status lights" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Structured Cabling</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">CAT6 data cabling installation</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/gps-system-smart-car.jpg" alt="GPS fleet tracking device in a vehicle" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">GPS Fleet Tracking</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Vehicle tracking system installation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMERCIAL -->
+            <div class="proj-grid hidden grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5" data-category="offices">
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/SmartCameraAndLight.jpeg" alt="Office WiFi router setup and configuration" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Network Router Setup</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Enterprise WiFi configuration</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/officelights.jpeg" alt="Modern LED office lighting installation" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Office Lighting Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">LED panel lighting with dimmers</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/empty-escalator-stair.jpg" alt="Office building commercial escalator" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Commercial Escalator</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Office building escalator system</p>
+                    </div>
+                </div>
+                <div class="proj-grid-item group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-pointer">
+                    <img src="Images/air-conditioning-decoration-interior.jpg" alt="HVAC central air conditioning in a commercial office" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-gray-900/60 to-orange-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center text-white">
+                        <h4 class="text-base font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">HVAC Installation</h4>
+                        <p class="text-sm opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Central air conditioning system</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+                <!-- Mobile Slider -->
+        <div class="md:hidden relative" id="projMobileSlider">
+            
+            <!-- Track Container -->
+            <div class="proj-mobile-track flex transition-transform duration-500 ease-out mb-8">
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/cctvinter2.jpg" alt="Indoor CCTV camera installation in a residence" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">CCTV Camera Installation</h4>
+                            <p class="text-sm opacity-90">Residential security system with 4K cameras</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/fence-with-barbed-wire.jpg" alt="Electric fence perimeter security" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Electric Fence Installation</h4>
+                            <p class="text-sm opacity-90">Perimeter security with alarm integration</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/newcctv2.jpeg" alt="PTZ ceiling camera setup" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Ceiling Camera Setup</h4>
+                            <p class="text-sm opacity-90">Discreet surveillance for home security</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/SmartDoor.jpg" alt="Fingerprint access control device" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Fingerprint Access Control</h4>
+                            <p class="text-sm opacity-90">Biometric entry system for homes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/electric-fence.jpg" alt="8-strand electric perimeter fence" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Electric Perimeter Fence</h4>
+                            <p class="text-sm opacity-90">8-strand security fence</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/fire-sensor.jpg" alt="Residential fire sensor installation" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Fire Alarm System</h4>
+                            <p class="text-sm opacity-90">Smart smoke and heat detectors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/newcctv.jpeg" alt="PTZ camera with remote control" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">PTZ Camera Installation</h4>
+                            <p class="text-sm opacity-90">360° surveillance with remote control</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/solar-panel.jpg" alt="Rooftop solar panel installation" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Solar Panel Installation</h4>
+                            <p class="text-sm opacity-90">5kW grid-tie solar system</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/WaterHeater.jpg" alt="Industrial water heater project" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Industrial Water Heating</h4>
+                            <p class="text-sm opacity-90">500L commercial water heater installation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/escalator.jpg" alt="Mall escalator system" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Escalator Installation</h4>
+                            <p class="text-sm opacity-90">Shopping mall escalator system</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/fire-alarm-switch.jpg" alt="Industrial fire alarm panel" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Industrial Fire Alarm</h4>
+                            <p class="text-sm opacity-90">Addressable fire alarm system</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/catcables.jpeg" alt="Network switch cabling project" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Network Switch Installation</h4>
+                            <p class="text-sm opacity-90">48-port managed network switch</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/netRag.png" alt="Server rack setup project" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Server Rack Setup</h4>
+                            <p class="text-sm opacity-90">Enterprise network infrastructure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/catcables.jpeg" alt="Structured CAT6 cabling" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Structured Cabling</h4>
+                            <p class="text-sm opacity-90">CAT6 data cabling installation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/gps-system-smart-car.jpg" alt="GPS fleet tracking installation" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">GPS Fleet Tracking</h4>
+                            <p class="text-sm opacity-90">Vehicle tracking system installation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/technician-engineer-checks-maintenance-solar-cell-panels.jpg" alt="Solar panel maintenance service" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Solar Panel Maintenance</h4>
+                            <p class="text-sm opacity-90">Solar system inspection and cleaning</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/modem-setup-troubleshooting-online-guides.jpg" alt="Office network router setup" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Network Router Setup</h4>
+                            <p class="text-sm opacity-90">Enterprise WiFi configuration</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/officelights.jpeg" alt="Office LED lighting project" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Office Lighting Installation</h4>
+                            <p class="text-sm opacity-90">LED panel lighting with dimmers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/empty-escalator-stair.jpg" alt="Commercial escalator project" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">Commercial Escalator</h4>
+                            <p class="text-sm opacity-90">Office building escalator system</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-mobile-slide flex-none w-full px-2">
+                    <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                        <img src="Images/air-conditioning-decoration-interior.jpg" alt="HVAC installation in office" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent p-5 pt-12 text-white">
+                            <h4 class="text-lg font-bold text-orange-400 mb-1">HVAC Installation</h4>
+                            <p class="text-sm opacity-90">Central air conditioning system</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls (Below Slider) -->
+            <div class="flex items-center justify-center gap-5 pt-4">
+                <button class="proj-mobile-prev w-11 h-11 rounded-full bg-white border-2 border-orange-500 text-orange-500 flex items-center justify-center text-sm transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500 hover:text-white hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-400/50 shadow-md hover:shadow-lg" aria-label="Previous project">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="proj-mobile-dots flex gap-2"></div>
+                <button class="proj-mobile-next w-11 h-11 rounded-full bg-white border-2 border-orange-500 text-orange-500 flex items-center justify-center text-sm transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500 hover:text-white hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-400/50 shadow-md hover:shadow-lg" aria-label="Next project">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        
     </div>
 </section>
 
-<!-- ================= GALLERY ================= -->
-<section class="proj-gallery-section">
-    <div class="proj-gallery-header" data-aos="fade-up">
-        <h2 class="proj-gallery-title">Our Projects Gallery</h2>
-    </div>
 
-    <div class="proj-gallery-tabs proj-desktop-only" data-aos="fade-up" data-aos-delay="200">
-        <a class="proj-tab-link active" data-filter="all">All Projects</a>
-        <a class="proj-tab-link" data-filter="residences">Residential</a>
-        <a class="proj-tab-link" data-filter="industrial">Industrial</a>
-        <a class="proj-tab-link" data-filter="offices">Commercial</a>
-    </div>
-
-    <!-- Desktop Grids: ALL images lazy-load on scroll; hidden tabs download nothing until clicked -->
-    <div class="proj-grid-container proj-desktop-only" id="projGrid">
-
-        <!-- ALL -->
-        <div class="proj-grid active" data-category="all">
-            <div class="proj-grid-item"><img src="Images/caera.jpg" alt="4K CCTV security camera installed on a home in Kampala" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>CCTV Camera Installation</h4><p>Residential security system with 4K cameras</p></div></div>
-            <div class="proj-grid-item"><img src="Images/fence-with-barbed-wire.jpg" alt="Electric perimeter fence with barbed wire securing a residence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Electric Fence Installation</h4><p>Perimeter security with alarm integration</p></div></div>
-            <div class="proj-grid-item"><img src="Images/newcctv.jpeg" alt="Ceiling-mounted dome CCTV camera for discreet home surveillance" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Ceiling Camera Setup</h4><p>Discreet surveillance for home security</p></div></div>
-            <div class="proj-grid-item"><img src="Images/Facialrecognitionaccesscontrol.png" alt="Biometric fingerprint access control panel for home entry" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Fingerprint Access Control</h4><p>Biometric entry system for homes</p></div></div>
-            <div class="proj-grid-item"><img src="Images/electric-fence.jpg" alt="8-strand electric security fence around a residence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Electric Perimeter Fence</h4><p>8-strand security fence</p></div></div>
-            <div class="proj-grid-item"><img src="Images/NEWfirealarm.jpeg" alt="Smart fire alarm with smoke and heat detectors in a home" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Fire Alarm System</h4><p>Smart smoke and heat detectors</p></div></div>
-            <div class="proj-grid-item"><img src="Images/newcctv2.jpeg" alt="PTZ CCTV camera with 360° remote-controlled surveillance" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>PTZ Camera Installation</h4><p>360° surveillance with remote control</p></div></div>
-            <div class="proj-grid-item"><img src="Images/solar-panel.jpg" alt="5kW grid-tie rooftop solar panel system installed in Uganda" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Solar Panel Installation</h4><p>5kW grid-tie solar system</p></div></div>
-            <div class="proj-grid-item"><img src="Images/WaterHeater.jpg" alt="500L commercial water heater installation" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Industrial Water Heating</h4><p>500L commercial water heater installation</p></div></div>
-            <div class="proj-grid-item"><img src="Images/escalator.jpg" alt="Shopping mall escalator system installed by FERMI" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Escalator Installation</h4><p>Shopping mall escalator system</p></div></div>
-            <div class="proj-grid-item"><img src="Images/fire-alarm-switch.jpg" alt="Addressable industrial fire alarm control panel" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Industrial Fire Alarm</h4><p>Addressable fire alarm system</p></div></div>
-            <div class="proj-grid-item"><img src="Images/cat2cables.jpeg" alt="48-port managed network switch with CAT6 patch cables" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Switch Installation</h4><p>48-port managed network switch</p></div></div>
-            <div class="proj-grid-item"><img src="Images/netRag.png" alt="Enterprise server rack with organized network cabling" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Server Rack Setup</h4><p>Enterprise network infrastructure</p></div></div>
-            <div class="proj-grid-item"><img src="Images/catcables.jpeg" alt="CAT6 structured data cabling installation" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Structured Cabling</h4><p>CAT6 data cabling installation</p></div></div>
-            <div class="proj-grid-item"><img src="Images/gps-system-smart-car.jpg" alt="GPS vehicle tracking system installed in a car" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>GPS Fleet Tracking</h4><p>Vehicle tracking system installation</p></div></div>
-            <div class="proj-grid-item"><img src="Images/technician-engineer-checks-maintenance-solar-cell-panels.jpg" alt="FERMI technician inspecting and cleaning solar panels" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Solar Panel Maintenance</h4><p>Solar system inspection and cleaning</p></div></div>
-            <div class="proj-grid-item"><img src="Images/switch.png" alt="Enterprise WiFi switch configuration and troubleshooting" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Router Setup</h4><p>Enterprise WiFi configuration</p></div></div>
-            <div class="proj-grid-item"><img src="Images/officelights.jpeg" alt="LED panel office lighting installation with dimmers" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Office Lighting Installation</h4><p>LED panel lighting with dimmers</p></div></div>
-            <div class="proj-grid-item"><img src="Images/empty-escalator-stair.jpg" alt="Commercial escalator system in an office building" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Commercial Escalator</h4><p>Office building escalator system</p></div></div>
-            <div class="proj-grid-item"><img src="Images/air-conditioning-decoration-interior.jpg" alt="Central air conditioning system in a modern office interior" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>HVAC Installation</h4><p>Central air conditioning system</p></div></div>
-        </div>
-
-        <!-- RESIDENTIAL -->
-        <div class="proj-grid" data-category="residences">
-            <div class="proj-grid-item"><img src="Images/RoofCCT.jpg" alt="Residential CCTV security installation in Kampala" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>CCTV Camera Installation</h4><p>Residential security system with 4K cameras</p></div></div>
-            <div class="proj-grid-item"><img src="Images/fence-with-barbed-wire.jpg" alt="Electric fence with barbed wire on a home perimeter" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Electric Fence Installation</h4><p>Perimeter security with alarm integration</p></div></div>
-            <div class="proj-grid-item"><img src="Images/AutomatedCamera1.jpeg" alt="Ceiling dome camera for discreet home surveillance" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Ceiling Camera Setup</h4><p>Discreet surveillance for home security</p></div></div>
-            <div class="proj-grid-item"><img src="Images/SmartDoor.png" alt="Fingerprint biometric access control for a residence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Fingerprint Access Control</h4><p>Biometric entry system for homes</p></div></div>
-            <div class="proj-grid-item"><img src="Images/electric-fence.jpg" alt="8-strand electric perimeter fence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Electric Perimeter Fence</h4><p>8-strand security fence</p></div></div>
-            <div class="proj-grid-item"><img src="Images/fire-sensor.jpg" alt="Ceiling fire sensor and smoke detector in a home" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Fire Alarm System</h4><p>Smart smoke and heat detectors</p></div></div>
-            <div class="proj-grid-item"><img src="Images/AutomatedCamera.jpeg" alt="PTZ camera monitoring a property remotely" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>PTZ Camera Installation</h4><p>360° surveillance with remote control</p></div></div>
-            <div class="proj-grid-item"><img src="Images/solar-panel.jpg" alt="Rooftop solar panel array on a residence" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Solar Panel Installation</h4><p>5kW grid-tie solar system</p></div></div>
-        </div>
-
-        <!-- INDUSTRIAL -->
-        <div class="proj-grid" data-category="industrial">
-            <div class="proj-grid-item"><img src="Images/WaterHeater.jpg" alt="Industrial 500L water heater installation" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Industrial Water Heating</h4><p>500L commercial water heater installation</p></div></div>
-            <div class="proj-grid-item"><img src="Images/escalator.jpg" alt="Mall escalator installation project" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Escalator Installation</h4><p>Shopping mall escalator system</p></div></div>
-            <div class="proj-grid-item"><img src="Images/fire-alarm-switch.jpg" alt="Industrial addressable fire alarm switch panel" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Industrial Fire Alarm</h4><p>Addressable fire alarm system</p></div></div>
-            <div class="proj-grid-item"><img src="Images/rag.jpg" alt="Managed network switch with patched cables" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Switch Installation</h4><p>48-port managed network switch</p></div></div>
-            <div class="proj-grid-item"><img src="Images/netRag.jpg" alt="Enterprise server rack network infrastructure" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Server Rack Setup</h4><p>Enterprise network infrastructure</p></div></div>
-            <div class="proj-grid-item"><img src="Images/RecordingBox.jpeg" alt="CAT6 structured cabling with red status lights" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Structured Cabling</h4><p>CAT6 data cabling installation</p></div></div>
-            <div class="proj-grid-item"><img src="Images/gps-system-smart-car.jpg" alt="GPS fleet tracking device in a vehicle" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>GPS Fleet Tracking</h4><p>Vehicle tracking system installation</p></div></div>
-        </div>
-
-        <!-- COMMERCIAL -->
-        <div class="proj-grid" data-category="offices">
-            <div class="proj-grid-item"><img src="Images/SmartCameraAndLight.jpeg" alt="Office WiFi router setup and configuration" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Network Router Setup</h4><p>Enterprise WiFi configuration</p></div></div>
-            <div class="proj-grid-item"><img src="Images/officelights.jpeg" alt="Modern LED office lighting installation" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Office Lighting Installation</h4><p>LED panel lighting with dimmers</p></div></div>
-            <div class="proj-grid-item"><img src="Images/empty-escalator-stair.jpg" alt="Office building commercial escalator" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>Commercial Escalator</h4><p>Office building escalator system</p></div></div>
-            <div class="proj-grid-item"><img src="Images/air-conditioning-decoration-interior.jpg" alt="HVAC central air conditioning in a commercial office" loading="lazy" decoding="async"><div class="proj-item-overlay"><h4>HVAC Installation</h4><p>Central air conditioning system</p></div></div>
-        </div>
-    </div>
-
-    <!-- Mobile Slider (lazy: offscreen slides defer) -->
-    <div class="proj-mobile-slider proj-mobile-only" id="projMobileSlider">
-        <div class="proj-mobile-track">
-
-
-
-
-
-            <div class="proj-mobile-slide"><img src="Images/cctvinter2.jpg" alt="Indoor CCTV camera installation in a residence" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>CCTV Camera Installation</h4><p>Residential security system with 4K cameras</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/fence-with-barbed-wire.jpg" alt="Electric fence perimeter security" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Electric Fence Installation</h4><p>Perimeter security with alarm integration</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/newcctv2.jpeg" alt="PTZ ceiling camera setup" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Ceiling Camera Setup</h4><p>Discreet surveillance for home security</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/SmartDoor.jpg" alt="Fingerprint access control device" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Fingerprint Access Control</h4><p>Biometric entry system for homes</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/electric-fence.jpg" alt="8-strand electric perimeter fence" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Electric Perimeter Fence</h4><p>8-strand security fence</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/fire-sensor.jpg" alt="Residential fire sensor installation" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Fire Alarm System</h4><p>Smart smoke and heat detectors</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/newcctv.jpeg" alt="PTZ camera with remote control" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>PTZ Camera Installation</h4><p>360° surveillance with remote control</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/solar-panel.jpg" alt="Rooftop solar panel installation" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Solar Panel Installation</h4><p>5kW grid-tie solar system</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/WaterHeater.jpg" alt="Industrial water heater project" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Industrial Water Heating</h4><p>500L commercial water heater installation</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/escalator.jpg" alt="Mall escalator system" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Escalator Installation</h4><p>Shopping mall escalator system</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/fire-alarm-switch.jpg" alt="Industrial fire alarm panel" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Industrial Fire Alarm</h4><p>Addressable fire alarm system</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/catcables.jpeg" alt="Network switch cabling project" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Network Switch Installation</h4><p>48-port managed network switch</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/netRag.png" alt="Server rack setup project" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Server Rack Setup</h4><p>Enterprise network infrastructure</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/catcables.jpeg" alt="Structured CAT6 cabling" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Structured Cabling</h4><p>CAT6 data cabling installation</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/gps-system-smart-car.jpg" alt="GPS fleet tracking installation" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>GPS Fleet Tracking</h4><p>Vehicle tracking system installation</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/technician-engineer-checks-maintenance-solar-cell-panels.jpg" alt="Solar panel maintenance service" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Solar Panel Maintenance</h4><p>Solar system inspection and cleaning</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/modem-setup-troubleshooting-online-guides.jpg" alt="Office network router setup" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Network Router Setup</h4><p>Enterprise WiFi configuration</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/officelights.jpeg" alt="Office LED lighting project" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Office Lighting Installation</h4><p>LED panel lighting with dimmers</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/empty-escalator-stair.jpg" alt="Commercial escalator project" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>Commercial Escalator</h4><p>Office building escalator system</p></div></div>
-            <div class="proj-mobile-slide"><img src="Images/air-conditioning-decoration-interior.jpg" alt="HVAC installation in office" loading="lazy" decoding="async"><div class="proj-mobile-caption"><h4>HVAC Installation</h4><p>Central air conditioning system</p></div></div>
-        </div>
-
-        <div class="proj-mobile-nav">
-            <button class="proj-mobile-prev" aria-label="Previous project"><i class="fas fa-chevron-left"></i></button>
-            <div class="proj-mobile-dots"></div>
-            <button class="proj-mobile-next" aria-label="Next project"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="proj-cta-section">
-    <div class="proj-cta-container">
-        <h2 class="proj-cta-title">Ready to Start Your Project?</h2>
-        <p class="proj-cta-description">
-            Let us bring your electrical and security vision to life. Our team of experts is ready to work with you
-            to create a solution that meets your specific needs and exceeds your expectations.
-        </p>
-        <div class="proj-cta-buttons">
-            <a href="tel:+256760271098" class="proj-btn proj-btn-primary">
-                <i class="fas fa-calendar-check"></i> Schedule Consultation
-            </a>
-            <a href="tel:+256760271098" class="proj-btn proj-btn-outline">
-                <i class="fas fa-phone-alt"></i> Call: +256 760 271 098
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ================= LIGHTBOX ================= -->
-<div class="proj-lightbox" id="projLightbox" role="dialog" aria-label="Project image viewer">
-    <span class="proj-lightbox-close" aria-label="Close">&times;</span>
-    <div class="proj-lightbox-content">
-        <img class="proj-lightbox-img" id="projLightboxImg" src="" alt="Enlarged project photo">
-        <div class="proj-lightbox-nav">
-            <button class="proj-lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-            <button class="proj-lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-</div>
 
 <!-- ================= FOOTER ================= -->
 <footer class="bg-gray-900 text-gray-300 relative overflow-hidden">
@@ -1186,25 +1396,25 @@
                 </h3>
                 <ul class="footer-links space-y-3">
                     <li>
-                        <a href="index.php" class=" text-sm  text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                        <a href="index.php" class=" text-sm  text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
                             
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
                             
                             What We Offer
                         </a>
                     </li>
                     <li>
-                        <a href="projects.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                        <a href="projects.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
                             
                             Projects
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
                            
                             Reserve Appointment
                         </a>
@@ -1220,25 +1430,25 @@
                 </h3>
                 <ul class="footer-links space-y-3">
                     <li>
-                        <a href="services.php" class=" text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                        <a href="services.php" class=" text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
                             
                             WLAN/LAN Installation
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class=" text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                        <a href="services.php" class=" text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
                             
                             Air Conditioning
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
                           
                             Automatic Gates
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
+                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
                             
                             Fire Alarms
                         </a>
@@ -1256,17 +1466,17 @@
                 <div class="footer-contact-item space-y-4">
                     <div class="flex items-start gap-3">
                         <div class="space-y-1">
-                            <a href="tel:+256760271098" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
+                            <a href="tel:+256760271098" class="text-white  transition-colors duration-300 block text-sm">
                                 +256 760 271 098
                             </a>
-                            <a href="tel:+256754130885" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
+                            <a href="tel:+256754130885" class="text-white  transition-colors duration-300 block text-sm">
                                 +256 754 130 885
                             </a>
                         </div>
                     </div>
                     
                     <div class="flex items-start gap-3">
-                        <a href="mailto:fermielectrictech@gmail.com" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 text-sm break-all">
+                        <a href="mailto:fermielectrictech@gmail.com" class="text-white transition-colors duration-300 text-sm break-all">
                             fermielectrictech@gmail.com
                         </a>
                     </div>
@@ -1327,240 +1537,160 @@
 </html>
    
 <script>
+
+
+// ===== MOBILE SLIDER =====
 document.addEventListener('DOMContentLoaded', function() {
-    // ===== DESKTOP GRID FILTERING =====
-    const tabLinks = document.querySelectorAll('.proj-tab-link');
-    const grids = document.querySelectorAll('.proj-grid');
+    // FIX: Use class selector instead of ID
+    const track = document.querySelector('.proj-mobile-track');
+    if (!track) return;
     
-    tabLinks.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Update active tab
-            tabLinks.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            
-            // Get filter value
-            const filter = tab.dataset.filter;
-            
-            // Show corresponding grid
-            grids.forEach(grid => {
-                if (grid.dataset.category === filter || filter === 'all') {
-                    grid.classList.add('active');
-                } else {
-                    grid.classList.remove('active');
-                }
-            });
+    const slides = track.querySelectorAll('.proj-mobile-slide');
+    const prevBtn = document.querySelector('.proj-mobile-prev');
+    const nextBtn = document.querySelector('.proj-mobile-next');
+    const dotsContainer = document.querySelector('.proj-mobile-dots');
+    
+    let currentIndex = 0;
+    let totalSlides = slides.length;
+    let isAnimating = false;
+
+    // Generate dots dynamically with Tailwind classes
+    if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = `w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                i === 0 ? 'bg-amber-500 scale-150' : 'bg-gray-300 hover:bg-amber-300'
+            }`;
+            dot.setAttribute('data-index', i);
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateSlider() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        // Calculate offset accounting for slide padding (px-2 = 8px each side = 16px total)
+        const slideWidth = slides[0].offsetWidth;
+        const offset = currentIndex * slideWidth;
+        
+        track.style.transform = `translateX(-${offset}px)`;
+        
+        // Update dots
+        const dots = dotsContainer.querySelectorAll('button');
+        dots.forEach((dot, i) => {
+            dot.className = `w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                i === currentIndex ? 'bg-amber-500 scale-150' : 'bg-gray-300 hover:bg-amber-300'
+            }`;
         });
-    });
+        
+        // Allow next animation after transition completes
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500); // Match the transition duration in CSS
+    }
+
+    function goToSlide(index) {
+        if (isAnimating) return;
+        
+        // Wrap around
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        
+        currentIndex = index;
+        updateSlider();
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    }
     
-    // ===== MOBILE SLIDER =====
-    const mobileTrack = document.querySelector('.proj-mobile-track');
-    const mobileSlides = document.querySelectorAll('.proj-mobile-slide');
-    const mobilePrev = document.querySelector('.proj-mobile-prev');
-    const mobileNext = document.querySelector('.proj-mobile-next');
-    const mobileDotsContainer = document.querySelector('.proj-mobile-dots');
-    
-    if (mobileSlides.length > 0 && mobileTrack) {
-        let currentIndex = 0;
-        let autoRotateInterval;
-        
-        // Create dots
-        function createMobileDots() {
-            mobileDotsContainer.innerHTML = '';
-            mobileSlides.forEach((_, index) => {
-                const dot = document.createElement('span');
-                dot.className = `proj-mobile-dot ${index === 0 ? 'active' : ''}`;
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
-                    resetAutoRotate();
-                });
-                mobileDotsContainer.appendChild(dot);
-            });
-        }
-        
-        // Go to slide
-        function goToSlide(index) {
-            if (index < 0) index = mobileSlides.length - 1;
-            if (index >= mobileSlides.length) index = 0;
-            currentIndex = index;
-            mobileTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-            updateActiveDot();
-        }
-        
-        // Update active dot
-        function updateActiveDot() {
-            const dots = document.querySelectorAll('.proj-mobile-dot');
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
-            });
-        }
-        
-        // Next slide
-        function nextSlide() {
-            goToSlide(currentIndex + 1);
-        }
-        
-        // Previous slide
-        function prevSlide() {
-            goToSlide(currentIndex - 1);
-        }
-        
-        // Auto rotate
-        function startAutoRotate() {
-            stopAutoRotate();
-            autoRotateInterval = setInterval(() => {
-                nextSlide();
-            }, 5000);
-        }
-        
-        function stopAutoRotate() {
-            if (autoRotateInterval) {
-                clearInterval(autoRotateInterval);
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    }
+
+    // Enhanced touch support with swipe detection
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let isSwiping = false;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+        isSwiping = false;
+    }, { passive: true });
+
+    track.addEventListener('touchmove', (e) => {
+        if (!isSwiping) {
+            const touchCurrentX = e.changedTouches[0].screenX;
+            const touchCurrentY = e.changedTouches[0].screenY;
+            const diffX = Math.abs(touchStartX - touchCurrentX);
+            const diffY = Math.abs(touchStartY - touchCurrentY);
+            
+            // Determine if horizontal swipe
+            if (diffX > diffY && diffX > 10) {
+                isSwiping = true;
             }
         }
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        if (!isSwiping) return;
         
-        function resetAutoRotate() {
-            stopAutoRotate();
-            startAutoRotate();
-        }
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
         
-        // Event listeners
-        if (mobilePrev && mobileNext) {
-            mobilePrev.addEventListener('click', () => {
-                prevSlide();
-                resetAutoRotate();
-            });
-            
-            mobileNext.addEventListener('click', () => {
-                nextSlide();
-                resetAutoRotate();
-            });
-        }
-        
-        // Initialize
-        createMobileDots();
-        startAutoRotate();
-        
-        // Pause on hover/touch
-        mobileTrack.addEventListener('mouseenter', stopAutoRotate);
-        mobileTrack.addEventListener('mouseleave', startAutoRotate);
-        mobileTrack.addEventListener('touchstart', stopAutoRotate);
-        mobileTrack.addEventListener('touchend', () => setTimeout(startAutoRotate, 5000));
-    }
-    
-    // ===== LIGHTBOX =====
-    const lightbox = document.getElementById('projLightbox');
-    const lightboxImg = document.getElementById('projLightboxImg');
-    const lightboxClose = document.querySelector('.proj-lightbox-close');
-    const lightboxPrev = document.querySelector('.proj-lightbox-prev');
-    const lightboxNext = document.querySelector('.proj-lightbox-next');
-    
-    // For desktop grid items
-    const gridItems = document.querySelectorAll('.proj-grid-item');
-    // For mobile slides
-    const mobileItems = document.querySelectorAll('.proj-mobile-slide');
-    
-    let currentLightboxImages = [];
-    let currentLightboxIndex = 0;
-    
-    // Helper to open lightbox
-    function openLightbox(images, index) {
-        currentLightboxImages = images;
-        currentLightboxIndex = index;
-        lightboxImg.src = currentLightboxImages[currentLightboxIndex];
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    // Desktop grid click
-    gridItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            const allVisibleItems = Array.from(document.querySelectorAll('.proj-grid.active .proj-grid-item'));
-            const images = allVisibleItems.map(item => item.querySelector('img').src);
-            openLightbox(images, allVisibleItems.indexOf(item));
-        });
-    });
-    
-    // Mobile slide click
-    mobileItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            const images = Array.from(document.querySelectorAll('.proj-mobile-slide')).map(slide => slide.querySelector('img').src);
-            openLightbox(images, index);
-        });
-    });
-    
-    // Close lightbox
-    lightboxClose.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-    
-    // Close on background click
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    // Navigation
-    lightboxPrev.addEventListener('click', () => {
-        currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
-        lightboxImg.src = currentLightboxImages[currentLightboxIndex];
-    });
-    
-    lightboxNext.addEventListener('click', () => {
-        currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
-        lightboxImg.src = currentLightboxImages[currentLightboxIndex];
-    });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        
-        if (e.key === 'Escape') {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        } else if (e.key === 'ArrowLeft') {
-            lightboxPrev.click();
-        } else if (e.key === 'ArrowRight') {
-            lightboxNext.click();
-        }
-    });
-    
-    // ===== STATS COUNTER =====
-    const statNumbers = document.querySelectorAll('.proj-stat-number');
-    const statsSection = document.querySelector('.proj-stats-section');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                statNumbers.forEach(stat => {
-                    const target = parseInt(stat.textContent.replace('+', '').replace('%', ''));
-                    animateCounter(stat, target);
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    if (statsSection) {
-        observer.observe(statsSection);
-    }
-    
-    function animateCounter(element, target) {
-        let current = 0;
-        const increment = target / 100;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                element.textContent = target + (element.textContent.includes('%') ? '%' : '+');
-                clearInterval(timer);
+        // Require minimum swipe distance
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                goToSlide(currentIndex + 1);
             } else {
-                element.textContent = Math.floor(current) + (element.textContent.includes('%') ? '%' : '+');
+                goToSlide(currentIndex - 1);
             }
-        }, 20);
+        }
+    }, { passive: true });
+
+    // Auto-play (optional - uncomment to enable)
+    /*
+    let autoPlayInterval;
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 5000);
     }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    // Start auto-play, pause on interaction
+    startAutoPlay();
+    track.addEventListener('mouseenter', stopAutoPlay);
+    track.addEventListener('mouseleave', startAutoPlay);
+    track.addEventListener('touchstart', stopAutoPlay, { passive: true });
+    */
+
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            updateSlider();
+        }, 250);
+    });
+
+    // Initialize
+    updateSlider();
 });
+
+
+
+
 </script>
 </body>
 </html>

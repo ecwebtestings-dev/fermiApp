@@ -174,7 +174,7 @@
     <!-- ====== FAVICON ====== -->
     <link rel="icon" type="image/png" href="./Images/favicon.png">
 
-</head>
+
 
 
 
@@ -509,144 +509,6 @@
     }
 }
 
-
-
-/* ===== CONTACT SECTION ===== */
-.serv-contact-section {
-    padding: 80px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-
-
-.serv-contact-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
-.serv-image-container{
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.serv-image-container::before{
-    content: "";
-    position: absolute;
-    inset: 12px -12px -12px 12px;
-    border: 3px solid var(--primary-light);
-    border-radius: 20px;
-    z-index: -1;
-    transition: .4s;
-}
-
-.serv-image-container:hover::before{
-    inset: 8px -8px -8px 8px;
-}
-
-
-.serv-contact-image img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-}
-
-.serv-contact-subtitle {
-    color: var(--primary-dark);
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background: rgba(255, 102, 0, 0.1);
-    border-radius: 30px;
-    border: 1px solid rgba(255, 102, 0, 0.2);
-}
-
-.serv-contact-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--header-color);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-}
-
-
-
-.serv-contact-description {
-    color: var(--text-gray);
-    font-size: 1.1rem;
-    line-height: 1.4;
-    margin-bottom: 1.2rem;
-}
-
-.serv-contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.serv-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 102, 0, 0.1);
-}
-
-.serv-contact-item:hover {
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    border-color: var(--header-color);
-}
-
-.serv-contact-item i {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(145deg, var(--primary-dark),var(--primary-light));
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-}
-
-.serv-contact-label {
-    color: #7f8c8d;
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    letter-spacing: 1px;
-    margin-bottom: 0.3rem;
-}
-
-.serv-contact-value {
-    color: #2c3e50;
-    font-size: 1rem;
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.serv-contact-value:hover {
-    color: var(--primary-dark);
-}
 
 
 
@@ -1203,143 +1065,159 @@
     <div id="loader"></div>
 
 <!-- ================= HEADER / NAVBAR (FIXED) ================= -->
-  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" id="mainHeader">
-    <div class="bg-gray-900/90 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="headerBackground">
-      <nav aria-label="Global" class="flex items-center justify-between p-4 lg:px-8 max-w-7xl mx-auto">
-        
-        <!-- Logo -->
-        <div class="flex lg:flex-1">
-          <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3">
-            <span class="sr-only">FERMI</span>
-            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 w-auto" />
-            <div class="hidden sm:block">
-              <span class="block text-white font-bold text-lg tracking-wide">FERMI</span>
-              <span class="block text-[#FB923C] text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
+<header class="fixed inset-x-0 top-0 z-50 transition-all duration-500" id="mainHeader">
+    <div class="bg-white/95 backdrop-blur-lg border-b border-orange-100/50 shadow-sm transition-all duration-500" id="headerBackground">
+        <nav aria-label="Global" class="flex items-center justify-between p-3 md:p-4 lg:px-8 max-w-7xl mx-auto">
+            
+            <!-- Logo -->
+            <div class="flex lg:flex-1">
+                <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3 group">
+                    <span class="sr-only">FERMI</span>
+                    <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
+                    <div class="hidden sm:block">
+                        <span class="block text-gray-900 font-bold text-xl tracking-tight">FERMI</span>
+                        <span class="block text-orange-500 text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
+                    </div>
+                </a>
             </div>
-          </a>
-        </div>
 
-        <!-- Mobile Menu Toggle -->
-        <div class="flex lg:hidden">
-          <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200 hover:text-white">
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex lg:gap-x-10 xl:gap-x-12">
+                <a href="index.php" class="text-sm font-semibold text-orange-600 relative group">
+                    Home
+                    
+                </a>
+                <a href="services.php" class="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300 relative group">
+                    What We Offer
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="projects.php" class="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300 relative group">
+                    Projects
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="services.php" class="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300 relative group">
+                    Reserve Appointment
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
 
-        <!-- Desktop Nav Links -->
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="index.php" class="text-sm/6 font-semibold text-[#FB923C] relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-100">Home</a>
-          <a href="services.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">What We Offer</a>
-          <a href="projects.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Projects</a>
-          <a href="services.php" class="text-sm/6 font-semibold text-white hover:text-[#FB923C] transition relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#FB923C] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Reserve Appointment</a>
-        </div>
+            <!-- Desktop CTA Buttons -->
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
+               
+                <a href="index.php" class="rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300">
+                    Get Started
+                    <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
 
-        <!-- Desktop Auth Buttons -->
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="index.php" class="rounded-md bg-[#EA580C] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#C2410C] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]">
-            Get Started
-          </a>
-        </div>
-      </nav>
+            <!-- Mobile Menu Toggle -->
+            <div class="flex lg:hidden">
+                <button type="button" command="show-modal" commandfor="mobile-menu" class="inline-flex items-center justify-center rounded-lg p-2.5 text-gray-600 hover:text-orange-600 hover:bg-orange-50 transition-all duration-300">
+                    <span class="sr-only">Open main menu</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-slot="icon" aria-hidden="true" class="size-6">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
     </div>
 
     <!-- Mobile Menu Dialog -->
     <el-dialog>
-      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-        <div tabindex="0" class="fixed inset-0 focus:outline-none">
-          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
-            
-            <div class="flex items-center justify-between">
-              <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3">
-                <img src="./Images/logo2.png" alt="Fermi Logo" class="h-8 w-auto" />
-                <div>
-                  <span class="block text-white font-bold text-lg">FERMI</span>
-                  <span class="block text-[#FB923C] text-xs -mt-1">Safe.Smart.Secure.</span>
-                </div>
-              </a>
-              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
-                <span class="sr-only">Close menu</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
+        <dialog id="mobile-menu" class="backdrop:bg-black/40 lg:hidden">
+            <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full max-w-sm overflow-y-auto bg-white p-6 shadow-2xl border-l border-orange-100/50">
+                    
+                    <div class="flex items-center justify-between">
+                        <a href="index.php" class="flex items-center gap-3">
+                            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-8 w-auto" />
+                            <div>
+                                <span class="block text-gray-900 font-bold text-lg">FERMI</span>
+                                <span class="block text-orange-500 text-xs -mt-1">Safe.Smart.Secure.</span>
+                            </div>
+                        </a>
+                        <button type="button" command="close" commandfor="mobile-menu" class="rounded-lg p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-all duration-300">
+                            <span class="sr-only">Close menu</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-slot="icon" aria-hidden="true" class="size-6">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
 
-            <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-white/10">
-                <div class="space-y-2 py-6">
-                  <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FB923C] hover:bg-white/5">Home</a>
-                  <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">What We Offer</a>
-                  <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Projects</a>
-                  <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Reserve Appointment</a>
-                </div>
-                <div class="py-6">
-                  <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white bg-[#EA580C] text-center hover:bg-[#C2410C]">
-                    Get Started
-                  </a>
-                </div>
-              </div>
-            </div>
+                    <div class="mt-8 flow-root">
+                        <div class="-my-6 divide-y divide-gray-100">
+                            <div class="space-y-3 py-6">
+                                <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-orange-600 bg-orange-50 hover:bg-orange-100 transition-colors duration-300">
+                                    Home
+                                </a>
+                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                    What We Offer
+                                </a>
+                                <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                    Projects
+                                </a>
+                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                    Reserve Appointment
+                                </a>
+                            </div>
+                            <div class="py-6 space-y-3">
+                                <a href="tel:+256760271098" class="flex items-center justify-center gap-2 -mx-3 rounded-lg px-3 py-3 text-base font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
+                                    <i class="fas fa-phone-alt text-orange-500"></i>
+                                    +256 760 271 098
+                                </a>
+                                <a href="index.php" class="block -mx-3 rounded-lg px-3 py-3 text-base font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-600 text-center hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300">
+                                    Get Started
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-          </el-dialog-panel>
-        </div>
-      </dialog>
+                </el-dialog-panel>
+            </div>
+        </dialog>
     </el-dialog>
 
-  </header>
-<!-- ================= USER PROFILE DROPDOWN ================= -->
-<!-- <?php # if(isset($_SESSION['username'])): ?>
-<div class="user-profile" id="user-profile">
-    <div class="profile-header">
-            <?php #echo strtoupper(substr($userName, 0, 1)); ?>
-        <p class="welcome-text">
-            Welcome, <?php #echo $userName; ?>
-        </p>
-        <p class="profile-email">
-            <?php #echo $userEmail; ?>
-        </p>
+</header>
 
-         <a href="<?php #echo $logout_page; ?>" class="sign-out-btn">
-            <i class="fas fa-sign-out-alt"></i>
-            Sign Out
-        </a>
-    </div>
+
+    
+    
+
+
+<!-- ================= ABOUT HERO ================= -->
+<section class="relative isolate min-h-[70vh] md:min-h-[70vh] lg:min-h-[80vh] grid place-items-center text-center text-white overflow-hidden" style="background: #0b2a52;">
+    
+   <div class="absolute inset-0 -z-10">
+
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-[url('Images/ManAtWork1.jpeg')] bg-top bg-cover bg-no-repeat scale-105"></div>
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black/70"></div>
 
 </div>
-<?php #endif; ?> -->
-
+   
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 py-16 md:py-20 lg:py-24">
+        
     
-    
-
-<!-- Services Hero Section -->
-<section class="serv-hero-section">
-    <div class="serv-hero-bg">
-        <img src="Images/albert.jpg" alt="Electrical Services Background" class="serv-bg-image">
-        <div class="serv-bg-overlay"></div>
+        <!-- Heading -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-black tracking-wide leading-tight">
+            Powering 
+            <span class="text-orange-500 inline-block border-r-[3px] border-orange-500 pr-1.5 whitespace-nowrap" id="fermiAbout_rotating">Reliable Grids</span> 
+            <br class="hidden sm:block" />
+            with Smart IT
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="text-white/90 max-w-[70ch] mx-auto text-base sm:text-lg md:text-xl leading-relaxed mt-4 mb-8">
+            We design, install, and maintain security, electrical systems and enterprise networks that scale—safely, efficiently, and sustainably—across Uganda.
+        </p>
+        
+        
+        
     </div>
-    
-    <div class="serv-hero-container">
-        <div class="serv-hero-content">
-            
-            <h1 class="serv-title">
-               Explore Our Professional <span class="serv-title-highlight">Security Solutions Today</span>
-            </h1>
-            
-            <p class="serv-text" data-aos="fade-up" data-aos-delay="300">
-                We go extra mile on every project. The value we provide clients comes from our level of 
-                <span class="serv-highlight">skill and performance</span>, as well as our 
-                <span class="serv-highlight">knowledge and professionalism</span>. 
-                Rest assured, we put the same level of energy into every project we take on.
-            </p>
-            <div class="about-cta">
-                    <a href="tel:+256 754 130 885" class="btn-about">Schedule An Appointment <i class="fas fa-arrow-right"></i></a>
-                </div>
-        </div>
-    </div>
-    
 </section>
 
 
@@ -1529,127 +1407,112 @@
 
 
 
-<!-- Contact Section -->
-<section class="serv-contact-section">
-    <div class="serv-contact-container">
-        <div class="serv-contact-image" data-aos="fade-right" data-aos-duration="800">
-            <img src="Images/ManAtWork.png" alt="Electrical Worker">
+<!-- ================= CONTACT SECTION ================= -->
+<section class="serv-contact-section py-16 md:py-20 lg:py-24 relative overflow-hidden">
+    
+    <div class="serv-contact-container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center relative z-10">
+        
+        <!-- Image -->
+        <div class="serv-image-container relative rounded-2xl overflow-hidden group" data-aos="fade-right" data-aos-duration="800">
+            <div class="absolute inset-[12px_-12px_-12px_12px] border-[3px] border-orange-500 rounded-2xl -z-10 transition-all duration-300 group-hover:inset-[8px_-8px_-8px_8px]"></div>
+            <img src="Images/InstallationSmartDoor.jpg" alt="Electrical Worker" class="w-full h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover block transition-transform duration-600 group-hover:scale-105" />
         </div>
 
-        <div class="serv-contact-info" data-aos="fade-left" data-aos-duration="800">
-            <p class="serv-contact-subtitle" data-aos="fade-up" data-aos-delay="200">
+        <!-- Content -->
+        <div class="serv-contact-info space-y-4 md:space-y-5" data-aos="fade-left" data-aos-duration="800">
+            
+            <p class="serv-contact-subtitle inline-block text-orange-700 text-sm font-medium uppercase tracking-[2px] mb-1 px-5 py-2 bg-orange-50/80 rounded-full border border-orange-200/60" data-aos="fade-up" data-aos-delay="200">
                 We're Here to Help
             </p>
             
-            <h2 class="serv-contact-title" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="serv-contact-title text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-tight" data-aos="fade-up" data-aos-delay="300">
                 Need Security Services? Get in Touch Today.
             </h2>
             
-            <p class="serv-contact-description" data-aos="fade-up" data-aos-delay="400">
+            <p class="serv-contact-description text-gray-600 text-base md:text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="400">
                 Our team of engineers is available around the clock to assist with any security needs.
                 Whether it's an emergency repair or a routine inspection — we've got you covered.
             </p>
 
-            <div class="serv-contact-details">
-                <div class="serv-contact-item">
-                    <i class="fas fa-phone-volume"></i>
+            <div class="serv-contact-details flex flex-col gap-4 pt-2">
+                <!-- Phone -->
+                <div class="serv-contact-item flex items-center gap-4 p-4 md:p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50 hover:border-orange-300/50" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-600 to-orange-500 text-white flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
                     <div>
-                        <p class="serv-contact-label">Call Us Anytime</p>
-                        <a href="tel:+256754130885" class="serv-contact-value">0754 130885</a>
+                        <p class="serv-contact-label text-gray-500 text-sm font-medium uppercase tracking-[1px]">Call Us Anytime</p>
+                        <a href="tel:+256754130885" class="serv-contact-value text-gray-800 text-base font-medium hover:text-orange-600 transition-colors duration-300">
+                            0754 130885
+                        </a>
                     </div>
                 </div>
 
-                <div class="serv-contact-item" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fas fa-envelope-open-text"></i>
+                <!-- Email -->
+                <div class="serv-contact-item flex items-center gap-4 p-4 md:p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50 hover:border-orange-300/50" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-600 to-orange-500 text-white flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
                     <div>
-                        <p class="serv-contact-label">Email Our Team</p>
-                        <a href="mailto:fermielectritech@gmail.com" class="serv-contact-value">fermielectritech@gmail.com</a>
+                        <p class="serv-contact-label text-gray-500 text-sm font-medium uppercase tracking-[1px]">Email Our Team</p>
+                        <a href="mailto:fermielectritech@gmail.com" class="serv-contact-value text-gray-800 text-base font-medium hover:text-orange-600 transition-colors duration-300 break-all">
+                            fermielectritech@gmail.com
+                        </a>
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>
 
 <!-- Emergency Banner -->
-<section class="serv-emergency-banner" data-aos="fade-up">
-    <div class="serv-emergency-content">
-        <div class="serv-emergency-icon" data-aos="pulse" data-aos-duration="1000">
-            <i class="fas fa-exclamation-triangle"></i>
+
+<!-- ================= EMERGENCY BANNER (DRAMATIC) ================= -->
+<section class="relative overflow-hidden py-8 md:py-12 px-4 sm:px-6" style="background: linear-gradient(135deg, #dc2626, #b91c1c, #991b1b);">
+    
+    <!-- Animated Background Glow -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-red-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 relative z-10">
+        
+        <!-- Icon with Pulse Animation -->
+        <div class="flex-shrink-0" data-aos="pulse" data-aos-duration="1000">
+            <div class="relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white text-2xl md:text-3xl border-2 border-white/30 animate-pulse">
+                <i class="fas fa-exclamation-triangle"></i>
+                <!-- Pulse Ring -->
+                <span class="absolute inset-0 rounded-full border-2 border-white/20 animate-ping"></span>
+            </div>
         </div>
         
-        <div class="serv-emergency-text" data-aos="fade-right" data-aos-delay="200">
-            <h3><span class="serv-emergency-highlight">24/7</span> Emergency Security Services</h3>
-            <p>Security emergencies don't wait for business hours. Our rapid response team is available round-the-clock for urgent repairs and critical situations.</p>
+        <!-- Text -->
+        <div class="flex-1 text-center md:text-left" data-aos="fade-right" data-aos-delay="200">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight">
+                <span class="bg-white/20 px-3 py-1 rounded-lg inline-block mr-2 backdrop-blur-sm">24/7</span> 
+                Emergency Security Services
+            </h3>
+            <p class="text-white/90 text-sm md:text-base mt-1 max-w-2xl">
+                Security emergencies don't wait for business hours. Our rapid response team is available round-the-clock for urgent repairs and critical situations.
+            </p>
         </div>
         
-        <div class="serv-emergency-contact" data-aos="fade-left" data-aos-delay="300">
-            <a href="tel:+256760271098" class="serv-emergency-btn">
-                <i class="fas fa-phone"></i>
+        <!-- Contact Button -->
+        <div class="flex-shrink-0" data-aos="fade-left" data-aos-delay="300">
+            <a href="tel:+256760271098" class="group inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-red-600 font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/30 hover:scale-105">
+                <i class="fas fa-phone text-xl"></i>
                 <div>
-                    <span class="serv-emergency-number">+256 760 271 098</span>
+                    <span class="text-base md:text-lg">+256 760 271 098</span>
+                    <span class="block text-[10px] text-red-400 font-normal -mt-0.5">Call Now</span>
                 </div>
             </a>
         </div>
-    </div>
-</section>
-
-<!-- Sustainability Section -->
-<section class="serv-sustainability-section" data-aos="fade-up">
-    <div class="serv-sustainability-content">
-        <div class="serv-sustainability-text" data-aos="fade-right">
-            <span class="serv-sustainability-subtitle">ECO-FRIENDLY</span>
-            <h2>Energy Efficient & Sustainable Solutions</h2>
-            <p>We're committed to helping clients reduce their carbon footprint while saving on energy costs</p>
-            
-            <div class="serv-green-features">
-                <div class="serv-green-feature" data-aos="fade-right" data-aos-delay="200">
-                    <i class="fas fa-solar-panel"></i>
-                    <div>
-                        <h4>Solar Integration</h4>
-                        <p>Expert installation of solar systems with grid-tie capabilities</p>
-                    </div>
-                </div>
-                
-                <div class="serv-green-feature" data-aos="fade-right" data-aos-delay="300">
-                    <i class="fas fa-leaf"></i>
-                    <div>
-                        <h4>LED Conversions</h4>
-                        <p>Energy-efficient LED lighting upgrades with up to 80% savings</p>
-                    </div>
-                </div>
-                
-                <div class="serv-green-feature" data-aos="fade-right" data-aos-delay="400">
-                    <i class="fas fa-bolt"></i>
-                    <div>
-                        <h4>Smart Energy Management</h4>
-                        <p>Automated systems to optimize energy consumption</p>
-                    </div>
-                </div>
-                
-
-            </div>
-        </div>
         
-        <div class="serv-sustainability-image" data-aos="fade-left" data-aos-delay="400">
-            <div class="serv-image-container">
-                <img src="Images/OutdoorCCTV.jpg" alt="Solar Panel Installation">
-                <div class="serv-stats-overlay">
-                    <div class="serv-stat">
-                        <span class="serv-stat-number">40%</span>
-                        <span class="serv-stat-label">Average Savings</span>
-                    </div>
-                    <div class="serv-stat">
-                        <span class="serv-stat-number">5+</span>
-                        <span class="serv-stat-label">Years Warranty</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
-    
 
 <!-- ================= FOOTER ================= -->
 <footer class="bg-gray-900 text-gray-300 relative overflow-hidden">
@@ -1837,5 +1700,46 @@
     <script src="widget.js"></script>
     <script src="services.js"></script>
    
+   <script>
+    // ===== ROTATING TEXT ANIMATION =====
+document.addEventListener('DOMContentLoaded', function() {
+    const words = ["Reliable Grids", "Secure Networks", "Smart Systems", "Safe Solutions"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingElement = document.getElementById('fermiAbout_rotating');
+    
+    // Exit if element doesn't exist
+    if (!typingElement) return;
+    
+    function typeEffect() {
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+            typingElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        
+        let speed = isDeleting ? 50 : 100;
+        
+        if (!isDeleting && charIndex === currentWord.length) {
+            speed = 2000; // Pause at end
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            speed = 500;
+        }
+        
+        setTimeout(typeEffect, speed);
+    }
+    
+    // Start the typing effect
+    typeEffect();
+});
+   </script>
 </body>
 </html>
