@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.php" },
+    { "source": "/services", "destination": "/services.php" },
+    { "source": "/projects", "destination": "/projects.php" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*).php",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
+      ]
+    }
+  ]
+}
