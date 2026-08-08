@@ -49,7 +49,7 @@
     <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://fermi.co.ug/">
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
 
     <!-- ====== THEME & PERFORMANCE ====== -->
     <meta name="theme-color" content="#fff">
@@ -103,8 +103,8 @@
         theme: {
             extend: {
                 colors: {
-                    primary: "#F59E0B",
-                    primaryDark: "#D97706",
+                    primary: "#ff6600",
+                    primaryDark: "#ff6600",
                     background: "#0B1220",
                     card: "#111827",
                     muted: "#94A3B8",
@@ -122,54 +122,42 @@
     }
     </script>
 
-    <!-- ====== STRUCTURED DATA: Local Business (huge SEO boost for .co.ug) ====== -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Electrician",
-      "@id": "https://fermi.co.ug/#organization",
-      "name": "FERMI Electrical & IT Solutions",
-      "alternateName": "Fermi Electrotech",
-      "url": "https://fermi.co.ug/",
-      "logo": "https://fermi.co.ug/Images/logo2.png",
-      "image": "https://fermi.co.ug/Images/og-cover.jpg",
-      "telephone": "+256760271098",
-      "email": "fermielectrictech@gmail.com",
-      "priceRange": "$$",
-      "description": "Certified security systems, electrical installations, and IT networking for residential, commercial, and industrial clients in Uganda.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kampala",
-        "addressCountry": "UG"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "0.3476",
-        "longitude": "32.5825"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "sameAs": [
-        "https://facebook.com/fermi",
-        "https://twitter.com/fermi",
-        "https://linkedin.com/company/fermi"
-      ],
-      "areaServed": {
-        "@type": "Country",
-        "name": "Uganda"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "102"
-      }
-    }
-    </script>
-
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "@id": "https://fermi.co.ug/#organization",
+  "name": "FERMI Electrical & IT Solutions",
+  "alternateName": "Fermi Electrotech",
+  "url": "https://fermi.co.ug/",
+  "logo": "https://fermi.co.ug/Images/logo2.png",
+  "image": "https://fermi.co.ug/Images/og-cover.jpg",
+  "telephone": "+256760271098",
+  "email": "fermielectrictech@gmail.com",
+  "priceRange": "$$",
+  "description": "Certified security systems, electrical installations, and IT networking for residential, commercial, and industrial clients in Uganda.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kampala",
+    "addressCountry": "UG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "0.3476",
+    "longitude": "32.5825"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Uganda"
+  }
+}
+</script>
     <!-- ====== FAVICON ====== -->
     <link rel="icon" type="image/png" href="./Images/favicon.png">
 
@@ -287,13 +275,41 @@
     transition: none;
   }
 }
+
+
+
+
+
     </style>
+
+
+
 </head>
 
 
 <body>
 
-<div id="loader"></div>
+
+<!-- ================= PRELOADER  ================= -->
+<div id="loader" class="fixed inset-0 z-[99999] flex items-center justify-center bg-orange-500">
+    <div class="flex flex-col items-center gap-6">
+        
+        <div class="relative w-16 h-16 md:w-20 md:h-20">
+            <!-- Outer ring -->
+            <div class="absolute inset-0 border-4 border-white/20 rounded-full"></div>
+            <!-- Animated ring -->
+            <div class="absolute inset-0 border-4 border-t-white border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+        </div>
+        
+        <!-- Logo -->
+        <div class="text-center">
+            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 md:h-14 w-auto mx-auto mb-2 animate-pulse" />
+            <p class="text-white font-semibold text-xs md:text-sm tracking-widest uppercase">Loading...</p>
+        </div>
+    </div>
+</div>
+
+
 <!-- ================= HEADER / NAVBAR (PREMIUM WHITE & ORANGE) ================= -->
 <header class="fixed inset-x-0 top-0 z-50 transition-all duration-500" id="mainHeader">
     <div class="bg-white/95 backdrop-blur-lg border-b border-orange-100/50 shadow-sm transition-all duration-500" id="headerBackground">
@@ -304,7 +320,7 @@
                 <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3 group">
                     <span class="sr-only">FERMI</span>
                     <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
-                    <div class="hidden sm:block">
+                    <div class="sm:block">
                         <span class="block text-gray-900 font-bold text-xl tracking-tight">FERMI</span>
                         <span class="block text-orange-500 text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
                     </div>
@@ -377,16 +393,16 @@
                     <div class="mt-8 flow-root">
                         <div class="-my-6 divide-y divide-gray-100">
                             <div class="space-y-3 py-6">
-                                <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-orange-600 bg-orange-50 hover:bg-orange-100 transition-colors duration-300">
+                                <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-orange-600">
                                     Home
                                 </a>
-                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 ">
                                     What We Offer
                                 </a>
-                                <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 ">
                                     Projects
                                 </a>
-                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 ">
                                     Reserve Appointment
                                 </a>
                             </div>
@@ -413,6 +429,7 @@
 <!-- ================= SPACER FOR FIXED HEADER ================= -->
 <div class="h-10 md:h-20"></div>
 
+
 <!-- ================= HERO SECTION ================= -->
 <div class="hero relative min-h-[90vh] flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-hidden">
     
@@ -423,51 +440,56 @@
         <div class="slidee absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('Images/fire-sensor.jpg');"></div>
     </div>
     
-    <!-- Dark Overlay - Lighter for better readability -->
-    <div class="absolute inset-0 bg-black/40 z-10"></div>
+    <!-- Dark Overlay with Gradient -->
+    <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/80 via-black/50 to-orange-500/20"></div>
     
     <!-- Content -->
-    <div class="relative z-20 flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl gap-8 md:gap-10">
+    <div class="relative z-20 flex flex-col lg:flex-row items-start justify-between w-full max-w-6xl gap-8 md:gap-10">
         
-        <!-- Left Section -->
-<div class="flex-1 min-w-[300px] lg:min-w-[300px] text-center lg:text-left">
-            <div class="inline-flex items-left gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
+        <!-- Left Section - All Left Aligned -->
+        <div class="flex-1 min-w-[300px] lg:min-w-[300px] text-left">
+            
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
                 <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse"></span>
                 <span class="text-xs font-medium text-white/90 tracking-wider">24/7 Service Available</span>
             </div>
             
+            <!-- Heading -->
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
                 Fermi Professional
-                 <br />
+                <br />
                 <span class="text-orange-600 inline-flex items-center gap-2">
                     <i class="fas fa-bolt"></i>
                 </span>
                 <span class="typing-text-animation text-orange-500 font-semibold border-r-2 border-orange-400 inline-block" id="typingg"></span>
             </h1>
                         
-            <p class="text-white/90 text-base sm:text-lg md:text-xl mb-8 max-w-[90%] lg:max-w-[90%] mx-auto lg:mx-0 leading-relaxed text-left sm:text-center lg:text-left">
-               "Securing your world with trusted expertise, reliable solutions, and comprehensive protection for your home, business, and peace of mind."
+            <!-- Description -->
+            <p class="text-white/90 text-base sm:text-lg md:text-xl mb-8 max-w-[90%] lg:max-w-[90%] leading-relaxed text-left">
+                "Securing your world with trusted expertise, reliable solutions, and comprehensive protection for your home, business, and peace of mind."
             </p>
                         
-                    <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 justify-start">
-    <a href="services.php" class="group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-orange-500/30">
-        Explore Services
-        <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
-    </a>
-    <a href="tel:+256760271098" class="group inline-flex items-center gap-3 text-white hover:text-orange-400 transition-colors duration-300">
-        <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-orange-500/20 group-hover:border-orange-500/30 transition-all duration-300">
-            <i class="fas fa-phone-alt text-orange-400 text-sm"></i>
-        </span>
-        <div>
-            <p class="text-xs text-white/60">Make a call</p>
-            <strong class="text-base sm:text-lg font-semibold">+256 760 271 098</strong>
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 justify-start">
+                <a href="services.php" class="group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-orange-500/30">
+                    Explore Services
+                    <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+                <a href="tel:+256760271098" class="group inline-flex items-center gap-3 text-white hover:text-orange-400 transition-colors duration-300">
+                    <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-orange-500/20 group-hover:border-orange-500/30 transition-all duration-300">
+                        <i class="fas fa-phone-alt text-orange-400 text-sm"></i>
+                    </span>
+                    <div>
+                        <p class="text-xs text-white/60 text-left">Make a call</p>
+                        <strong class="text-base sm:text-lg font-semibold">+256 760 271 098</strong>
+                    </div>
+                </a>
+            </div>
         </div>
-    </a>
-</div>
-    </div>
         
         <!-- Stats / Trust Badges -->
-        <div class="w-full  lg:w-auto grid grid-cols-3 gap-3 sm:gap-4 mt-8 lg:mt-0">
+        <div class="w-full lg:w-auto grid grid-cols-3 gap-3 sm:gap-4 mt-8 lg:mt-0 justify-start">
             <div class="bg-white/5 backdrop-blur-sm rounded-2xl px-4 py-5 text-center border border-white/10">
                 <div class="text-2xl sm:text-3xl font-bold text-white">4.5<span class="text-orange-400">/5</span></div>
                 <div class="text-[10px] sm:text-xs text-white/60 uppercase tracking-wider mt-1">Rating</div>
@@ -488,29 +510,30 @@
 
 
 
- <!-- ================= ABOUT US SECTION ================= -->
+    <!-- ================= ABOUT US SECTION ================= -->
 <section class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0 py-16 md:py-20 lg:py-24 relative">
     
+            
     <!-- Image Column -->
-    <div class="relative w-full lg:flex-1 lg:flex-[1_1_60%] min-h-[40vh] lg:min-h-[50vh] overflow-hidden">
-        <img src="Images/cctvinter2.jpg" alt="Electrical services" class="w-full object-cover" />
+    <div class="relative w-full lg:flex-1 lg:flex-[1_1_40%] min-h-[40vh] lg:min-h-[50vh] overflow-hidden">
+        <img src="Images/WINTERR.jpg" alt="Electrical services" class="w-full object-cover" />
     </div>
 
     <!-- Content Column (Overlapping) -->
-    <div class="relative w-[90%] lg:w-auto lg:flex-1 lg:flex-[1_1_50%] bg-white p-6 md:p-8 lg:p-10 -mt-8 lg:mt-0 lg:-ml-20 xl:-ml-40 z-10 shadow-[0_4px_15px_rgba(0,0,0,0.1)] rounded-lg lg:rounded-none">
+    <div class="relative sm:w-[90%] lg:w-auto lg:flex-1 lg:flex-[1_1_50%] bg-white p-6 md:p-8 lg:p-10 -mt-8 lg:mt-0 lg:-ml-20 xl:-ml-40 z-10 sm:shadow-[0_4px_15px_rgba(0,0,0,0.1)] rounded-lg lg:rounded-none">
         
         <!-- Badge -->
-        <span class="text-orange-600 font-semibold uppercase text-sm tracking-wide">
+        <span class="text-[#ff6600] font-semibold  text-sm tracking-wide">
            Let's Introduce
         </span>
         
         <!-- Heading -->
         <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mt-2 mb-3 md:mb-4 leading-tight">
-            Outstanding Residential, Commercial & Industrial Services
+           At Fermi Security ,Electrical & IT Solutions,We offetr Outstanding Residential, Commercial & Industrial Services
         </h2>
         
         <!-- Description -->
-        <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-4 md:mb-6">
+        <p class="text-[#334155] text-sm md:text-base leading-relaxed mb-4 md:mb-6">
             All of our services are backed by our 100% satisfaction guarantee. Our technicians can install anything
             from new security lighting for your outdoors to a whole home network, security that will keep your
             appliances & property safe and working.
@@ -519,23 +542,23 @@
         <!-- Features List -->
         <ul class="space-y-2 md:space-y-3">
             <li class="flex items-start gap-3 text-gray-700 text-sm md:text-base">
-                <i class="fas fa-check text-orange-600 mt-1 text-sm"></i>
+                <i class="fas fa-check text-[#ff6600] mt-1 text-sm"></i>
                 <span>Full-service WAN/LAN layout, design</span>
             </li>
             <li class="flex items-start gap-3 text-gray-700 text-sm md:text-base">
-                <i class="fas fa-check text-orange-600 mt-1 text-sm"></i>
+                <i class="fas fa-check text-[#ff6600] mt-1 text-sm"></i>
                 <span>AC installation</span>
             </li>
             <li class="flex items-start gap-3 text-gray-700 text-sm md:text-base">
-                <i class="fas fa-check text-orange-600 mt-1 text-sm"></i>
+                <i class="fas fa-check text-[#ff6600] mt-1 text-sm"></i>
                 <span>CCTV cameras installation</span>
             </li>
             <li class="flex items-start gap-3 text-gray-700 text-sm md:text-base">
-                <i class="fas fa-check text-orange-600 mt-1 text-sm"></i>
+                <i class="fas fa-check text-[#ff6600] mt-1 text-sm"></i>
                 <span>Wiring and installation/upgrades</span>
             </li>
             <li class="flex items-start gap-3 text-gray-700 text-sm md:text-base">
-                <i class="fas fa-check text-orange-600 mt-1 text-sm"></i>
+                <i class="fas fa-check text-[#ff6600] mt-1 text-sm"></i>
                 <span>Virtually any electrical needs you have – just ask!</span>
             </li>
         </ul>
@@ -618,7 +641,7 @@
 
 
 <!-- ================= SERVICES SECTION (PREMIUM) ================= -->
-<section class="py-24 md:py-32 bg-[#FAF7F2] relative overflow-hidden">
+<section class="py-24 md:py-32 relative overflow-hidden">
     
     <!-- Decorative Elements -->
     <div class="absolute inset-0 pointer-events-none">
@@ -632,12 +655,12 @@
         <!-- Header - Centered & Elegant -->
         <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
             <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-[3px] uppercase text-amber-600 bg-amber-50/80 px-5 py-2 rounded-full border border-amber-200/50 mb-5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ff6600] animate-pulse"></span>
                 24/7 Service – Safe & Efficient
             </span>
-            <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-[#2D1B12] mb-4 tracking-tight leading-tight">
-                We are a Full Service<br>
-                <span class="text-amber-600">Security & Electrical Contractor</span>
+            <h2 class="text-xl md:text-4xl lg:text-5xl font-bold text-[#2D1B12] mb-4 tracking-tight leading-tight">
+            
+            Security & Electrical Contractor</span>
             </h2>
             <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                 Comprehensive security, electrical, and IT solutions with round-the-clock support and certified expertise.
@@ -661,7 +684,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">Automatic Gates & Electric Fences</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">Secure your premises with automatic gates and reliable electric fences.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -682,7 +705,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">Surveillance & Detection</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">CCTV cameras, motion sensors, and metal detectors for complete coverage.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -703,7 +726,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">Access Control & Communication</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">Intercoms, smart alarms, and modern access control systems.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -724,7 +747,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">Fire Alarms & Motion Detectors</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">Protect lives and property with fire alarms and reliable motion detection.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -745,7 +768,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">POS & Tracking Solutions</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">Point of Sale systems, GPS trackers, and fuel monitoring systems.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -766,7 +789,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">WAN/LAN & Installations</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">Office/shop wiring, elevators, and escalator installations.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -787,7 +810,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">Air Conditioning Systems</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">Professional installation of energy-efficient air conditioning.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -808,7 +831,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">Refrigeration & Water Heaters</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">Reliable refrigeration systems and modern water heating solutions.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -829,7 +852,7 @@
                 <div class="p-6 md:p-7">
                     <h3 class="text-lg font-bold text-[#2D1B12] mb-2">Panel Design & Automation</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">Custom design and automation of electrical panels tailored to you.</p>
-                    <a href="services.php" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
+                    <a href="services.php" class="inline-flex items-center gap-2 text-[#ff6600] font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-amber-700">
                         Learn More
                         <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -840,7 +863,7 @@
 
         <!-- View All CTA -->
         <div class="text-center mt-14 md:mt-16">
-            <a href="services.php" class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30 hover:-translate-y-0.5">
+            <a href="services.php" class="inline-flex items-center gap-3 hover:bg-amber-500 bg-[#ff6600] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30 hover:-translate-y-0.5">
                 View All Services
                 <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
             </a>
@@ -872,7 +895,7 @@
         <!-- Feature 1 -->
         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="100">
           <dt class="text-base font-semibold text-gray-900">
-            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/25">
+            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#ff6600]">
               <i class="fas fa-clock text-white text-lg"></i>
             </div>
             24/7 Emergency Service
@@ -886,7 +909,7 @@
         <!-- Feature 2 -->
         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="200">
           <dt class="text-base font-semibold text-gray-900">
-            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/25">
+            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#ff6600]">
               <i class="fas fa-certificate text-white text-lg"></i>
             </div>
             Certified & Licensed
@@ -900,7 +923,7 @@
         <!-- Feature 3 -->
         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="300">
           <dt class="text-base font-semibold text-gray-900">
-            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/25">
+            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#ff6600]">
               <i class="fas fa-shield-alt text-white text-lg"></i>
             </div>
             Security-First Approach
@@ -914,7 +937,7 @@
         <!-- Feature 4 -->
         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="400">
           <dt class="text-base font-semibold text-gray-900">
-            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/25">
+            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#ff6600]">
               <i class="fas fa-check-circle text-white text-lg"></i>
             </div>
             100% Satisfaction Guarantee
@@ -928,7 +951,7 @@
         <!-- Feature 5 -->
         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="500">
           <dt class="text-base font-semibold text-gray-900">
-            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/25">
+            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#ff6600]">
               <i class="fas fa-microchip text-white text-lg"></i>
             </div>
             Smart Technology Integration
@@ -942,7 +965,7 @@
         <!-- Feature 6 -->
         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="600">
           <dt class="text-base font-semibold text-gray-900">
-            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/25">
+            <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#ff6600]">
               <i class="fas fa-handshake text-white text-lg"></i>
             </div>
             Affordable & Transparent Pricing
@@ -959,7 +982,7 @@
     <!-- Call to Action -->
     <div class="mt-16 text-center" data-aos="zoom-in" data-aos-delay="700">
       <a href="tel:+256754130885" 
-         class="inline-flex items-center gap-3 bg-gradient-to-br from-amber-500 to-amber-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-1 transition-all duration-300">
+         class="inline-flex items-center gap-3 bg-[#ff6600] text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-1 transition-all duration-300">
         <i class="fas fa-phone-alt"></i>
         Get a Free Consultation
         <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -981,11 +1004,15 @@
          alt="Security and electrical services" 
          class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center" />
 
-    <!-- Decorative Elements -->
-    <div aria-hidden="true" class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl">
-        <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%); background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); opacity: 0.25;" 
-             class="aspect-[1097/845] w-[274.25rem] max-w-none"></div>
-    </div>
+   <!-- Decorative Elements -->
+<div aria-hidden="true" class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl">
+    <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%); background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); opacity: 0.08;" 
+         class="aspect-[1097/845] w-[274.25rem] max-w-none"></div>
+</div>
+<div aria-hidden="true" class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:-top-112 sm:ml-16 sm:translate-x-0">
+    <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%); background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); opacity: 0.06;" 
+         class="aspect-[1097/845] w-[274.25rem] max-w-none"></div>
+</div>
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         
@@ -997,8 +1024,8 @@
                 Protect What Matters Most
             </h2>
             <p class="mt-4 text-base leading-relaxed text-[#D7CCC8] sm:text-lg sm:leading-8">
-                From <span class="text-amber-400 font-semibold">CCTV surveillance</span> and access control to 
-                structured networking and electrical installations, <span class="text-amber-400 font-semibold">FERMI</span> 
+                From <span class="text-[#ff6600] font-semibold">CCTV surveillance</span> and access control to 
+            structured networking and electrical installations, <span class="text-[#ff6600] font-semibold">FERMI</span> 
                 delivers reliable solutions that keep your home, business, and assets safe.
             </p>
             
@@ -1007,19 +1034,19 @@
                 <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                     <dt class="text-xs text-[#D7CCC8] font-medium uppercase tracking-wider">Customers</dt>
                     <dd class="text-2xl sm:text-3xl font-bold text-white">
-                        <span class="counter" data-target="102">0</span><span class="text-amber-400">+</span>
+                        <span class="counter" data-target="102">0</span><span class="text-[#ff6600]">+</span>
                     </dd>
                 </div>
                 <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                     <dt class="text-xs text-[#D7CCC8] font-medium uppercase tracking-wider">Support</dt>
                     <dd class="text-2xl sm:text-3xl font-bold text-white">
-                        <span class="counter" data-target="24">0</span><span class="text-amber-400 text-lg">/7</span>
+                        <span class="counter" data-target="24">0</span><span class="text-[#ff6600] text-lg">/7</span>
                     </dd>
                 </div>
                 <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                     <dt class="text-xs text-[#D7CCC8] font-medium uppercase tracking-wider">Experience</dt>
                     <dd class="text-2xl sm:text-3xl font-bold text-white">
-                        <span class="counter" data-target="5">0</span><span class="text-amber-400">+ Years</span>
+                        <span class="counter" data-target="5">0</span><span class="text-[#ff6600]">+ Years</span>
                     </dd>
                 </div>
                 <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
@@ -1033,12 +1060,12 @@
             <!-- CTA Buttons -->
             <div class="mt-8 flex flex-wrap gap-4">
                 <a href="tel:+256754130885" 
-                   class="inline-flex items-center gap-3 bg-gradient-to-br from-amber-500 to-amber-600 text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5 transition-all duration-300 group">
+                   class="inline-flex items-center gap-3 bg-[#ff6600] text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5 transition-all duration-300 group">
                     <i class="fas fa-phone-alt"></i>
                     Get a Free Quote
                     <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
                 </a>
-                <a href="/services.php" 
+                <a href="services.php" 
                    class="inline-flex items-center gap-2 border-2 border-white/30 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 hover:border-white/50 transition-all duration-300">
                     <i class="fas fa-chevron-right"></i>
                     Our Services
@@ -1157,13 +1184,13 @@
         
         <!-- Header -->
         <div class="text-center mb-12 md:mb-16">
-            <div class="inline-flex items-center gap-2 bg-amber-50 text-amber-600 px-5 py-2 rounded-full border border-amber-200/60 mb-4 shadow-sm">
+            <div class="inline-flex items-center gap-2 bg-amber-50 text-[#ff6600] px-5 py-2 rounded-full border border-amber-200/60 mb-4 shadow-sm">
                 <i class="fas fa-question-circle text-sm"></i>
                 <span class="text-xs font-semibold uppercase tracking-[2px]">FAQ's</span>
             </div>
             
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-                Frequently Asked <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Questions</span>
+                Frequently Asked <span class="text-transparent bg-clip-text bg-[#ff6600]">Questions</span>
             </h2>
             
             <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
@@ -1392,12 +1419,12 @@
         <!-- Bottom CTA -->
         <div class="text-center mt-12 pt-8 border-t border-gray-200/60">
             <p class="text-gray-600 mb-4">
-                <i class="fas fa-phone-alt text-amber-500 mr-2"></i>
+                <i class="fas fa-phone-alt text-[#ff6600] mr-2"></i>
                 Still have questions? We're here to help!
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="tel:+256754130885" 
-                   class="inline-flex items-center gap-3 bg-gradient-to-br from-amber-500 to-amber-600 text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5 transition-all duration-300">
+                   class="inline-flex items-center gap-3 bg-[#ff6600] text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5 transition-all duration-300">
                     <i class="fas fa-headset"></i>
                     Contact Our Support Team
                     <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -1584,17 +1611,23 @@
                 </div>
             </div>
 
-        </div>
+           
 
+        </div>
+    <span class="flex flex-1 sm:hidden items-centre justify-center"><<< Scroll >>></span>
         
 
     
     </div>
 </section>
 
-
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gray-900 text-gray-300 relative overflow-hidden">
+<!-- ================= FOOTER ================= -->
+<footer class="relative text-gray-300 overflow-hidden bg-cover bg-center bg-no-repeat" 
+        style="background-image: url('Images/network-switch-with-cables.jpg');">
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/90"></div>
     
     <!-- Decorative Background Elements -->
     <div class="absolute inset-0 pointer-events-none">
@@ -1602,7 +1635,6 @@
         <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-3xl"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl"></div>
     </div>
-    
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
         
@@ -1638,30 +1670,25 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Quick Links
-                    
                 </h3>
                 <ul class="footer-links space-y-3">
                     <li>
-                        <a href="index.php" class=" text-sm  text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="index.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             What We Offer
                         </a>
                     </li>
                     <li>
-                        <a href="projects.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="projects.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Projects
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                           
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Reserve Appointment
                         </a>
                     </li>
@@ -1672,34 +1699,28 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Our Services
-                    
                 </h3>
                 <ul class="footer-links space-y-3">
                     <li>
-                        <a href="services.php" class=" text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             WLAN/LAN Installation
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class=" text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Air Conditioning
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                          
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Automatic Gates
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Fire Alarms
                         </a>
                     </li>
-                    
                 </ul>
             </div>
             
@@ -1707,22 +1728,21 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Contact Us
-                    
                 </h3>
                 <div class="footer-contact-item space-y-4">
                     <div class="flex items-start gap-3">
                         <div class="space-y-1">
-                            <a href="tel:+256760271098" class="text-white  transition-colors duration-300 block text-sm">
+                            <a href="tel:+256760271098" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
                                 +256 760 271 098
                             </a>
-                            <a href="tel:+256754130885" class="text-white  transition-colors duration-300 block text-sm">
+                            <a href="tel:+256754130885" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
                                 +256 754 130 885
                             </a>
                         </div>
                     </div>
                     
                     <div class="flex items-start gap-3">
-                        <a href="mailto:fermielectrictech@gmail.com" class="text-white transition-colors duration-300 text-sm break-all">
+                        <a href="mailto:fermielectrictech@gmail.com" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 text-sm break-all">
                             fermielectrictech@gmail.com
                         </a>
                     </div>
@@ -1730,7 +1750,6 @@
                     <div class="flex items-start gap-3">
                         <p class="text-gray-400 text-sm">Kampala, Uganda</p>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -1748,8 +1767,6 @@
                 <span class="w-px h-4 bg-gray-700"></span>
                 <a href="#" class="hover:text-amber-400 transition-colors duration-300">Sitemap</a>
             </div>
-            
-            
         </div>
     </div>
 </footer>

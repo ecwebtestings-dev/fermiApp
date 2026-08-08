@@ -1,11 +1,54 @@
 
 
+ 
+(function() {
+    var loader = document.getElementById('loader');
+    var spinner = document.getElementById('spinner');
+    
+    if (!loader) return;
+    
+    function hideLoader() {
+        // Stop spinner
+        if (spinner) {
+            spinner.style.animation = 'none';
+            spinner.style.animationPlayState = 'paused';
+        }
+        
+        // Hide loader
+        loader.classList.add('hidden');
+        
+        // Remove from DOM
+        setTimeout(function() {
+            loader.style.display = 'none';
+        }, 400);
+    }
+    
+    // Show loader immediately
+    loader.style.display = 'flex';
+    
+    // Hide when ready
+    if (document.readyState === 'complete') {
+        setTimeout(hideLoader, 200);
+    } else {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(hideLoader, 300);
+        });
+        window.addEventListener('load', function() {
+            setTimeout(hideLoader, 200);
+        });
+    }
+    
+    // Force hide after 3 seconds
+    setTimeout(hideLoader, 3000);
+})();
 
-//PRELOADER
-const loader=document.getElementById('loader');
-window.addEventListener('load',()=>{
-    loader.style.display='none'
-});
+
+
+
+
+
+
+
 
         AOS.init({
             once: true,
@@ -507,98 +550,98 @@ function toggleFaq(button) {
 
 
 
-/// ===== SERVICES SLIDER =====
-document.addEventListener('DOMContentLoaded', function() {
-    const track = document.getElementById('servicesSlider');
-    const prevBtns = document.querySelectorAll('#sliderPrev, #sliderPrevMobile');
-    const nextBtns = document.querySelectorAll('#sliderNext, #sliderNextMobile');
-    const dotContainers = document.querySelectorAll('#sliderDots, #sliderDotsMobile');
+// /// ===== SERVICES SLIDER =====
+// document.addEventListener('DOMContentLoaded', function() {
+//     const track = document.getElementById('servicesSlider');
+//     const prevBtns = document.querySelectorAll('#sliderPrev, #sliderPrevMobile');
+//     const nextBtns = document.querySelectorAll('#sliderNext, #sliderNextMobile');
+//     const dotContainers = document.querySelectorAll('#sliderDots, #sliderDotsMobile');
     
-    let currentIndex = 0;
-    let cardWidth = 0;
-    let visibleCards = 0;
-    let totalSlides = 0;
-    let isAnimating = false;
+//     let currentIndex = 0;
+//     let cardWidth = 0;
+//     let visibleCards = 0;
+//     let totalSlides = 0;
+//     let isAnimating = false;
     
-    function getVisibleCards() {
-        if (window.innerWidth >= 1024) return 3;
-        if (window.innerWidth >= 640) return 2;
-        return 1;
-    }
+//     function getVisibleCards() {
+//         if (window.innerWidth >= 1024) return 3;
+//         if (window.innerWidth >= 640) return 2;
+//         return 1;
+//     }
     
-    function getCardWidth() {
-        const firstCard = track.querySelector('.service-card');
-        if (!firstCard) return 0;
-        // Include gap (16px for md, 24px for lg)
-        const gap = window.innerWidth >= 1024 ? 24 : 16;
-        return firstCard.offsetWidth + gap;
-    }
+//     function getCardWidth() {
+//         const firstCard = track.querySelector('.service-card');
+//         if (!firstCard) return 0;
+//         // Include gap (16px for md, 24px for lg)
+//         const gap = window.innerWidth >= 1024 ? 24 : 16;
+//         return firstCard.offsetWidth + gap;
+//     }
     
-    function updateSlider() {
-        const totalCards = track.querySelectorAll('.service-card').length;
-        visibleCards = getVisibleCards();
-        cardWidth = getCardWidth();
-        totalSlides = Math.ceil(totalCards / visibleCards);
+//     function updateSlider() {
+//         const totalCards = track.querySelectorAll('.service-card').length;
+//         visibleCards = getVisibleCards();
+//         cardWidth = getCardWidth();
+//         totalSlides = Math.ceil(totalCards / visibleCards);
         
-        // Clamp current index
-        if (currentIndex >= totalSlides) currentIndex = totalSlides - 1;
-        if (currentIndex < 0) currentIndex = 0;
+//         // Clamp current index
+//         if (currentIndex >= totalSlides) currentIndex = totalSlides - 1;
+//         if (currentIndex < 0) currentIndex = 0;
         
-        // Calculate scroll position
-        const scrollPosition = currentIndex * cardWidth * visibleCards;
-        track.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-        });
+//         // Calculate scroll position
+//         const scrollPosition = currentIndex * cardWidth * visibleCards;
+//         track.scrollTo({
+//             left: scrollPosition,
+//             behavior: 'smooth'
+//         });
         
-        // Update dots
-        dotContainers.forEach(container => {
-            const dots = container.querySelectorAll('button');
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('bg-amber-500', i === currentIndex);
-                dot.classList.toggle('bg-[#E5DDD5]', i !== currentIndex);
-                dot.classList.toggle('scale-150', i === currentIndex);
-            });
-        });
-    }
+//         // Update dots
+//         dotContainers.forEach(container => {
+//             const dots = container.querySelectorAll('button');
+//             dots.forEach((dot, i) => {
+//                 dot.classList.toggle('bg-amber-500', i === currentIndex);
+//                 dot.classList.toggle('bg-[#E5DDD5]', i !== currentIndex);
+//                 dot.classList.toggle('scale-150', i === currentIndex);
+//             });
+//         });
+//     }
     
-    function goToSlide(index) {
-        if (isAnimating) return;
-        if (index < 0) index = totalSlides - 1;
-        if (index >= totalSlides) index = 0;
-        currentIndex = index;
-        isAnimating = true;
-        updateSlider();
-        setTimeout(() => { isAnimating = false; }, 500);
-    }
+//     function goToSlide(index) {
+//         if (isAnimating) return;
+//         if (index < 0) index = totalSlides - 1;
+//         if (index >= totalSlides) index = 0;
+//         currentIndex = index;
+//         isAnimating = true;
+//         updateSlider();
+//         setTimeout(() => { isAnimating = false; }, 500);
+//     }
     
-    // Event listeners for navigation buttons
-    prevBtns.forEach(btn => {
-        btn.addEventListener('click', () => goToSlide(currentIndex - 1));
-    });
+//     // Event listeners for navigation buttons
+//     prevBtns.forEach(btn => {
+//         btn.addEventListener('click', () => goToSlide(currentIndex - 1));
+//     });
     
-    nextBtns.forEach(btn => {
-        btn.addEventListener('click', () => goToSlide(currentIndex + 1));
-    });
+//     nextBtns.forEach(btn => {
+//         btn.addEventListener('click', () => goToSlide(currentIndex + 1));
+//     });
     
-    // Dot click listeners
-    dotContainers.forEach(container => {
-        const dots = container.querySelectorAll('button');
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => goToSlide(i));
-        });
-    });
+//     // Dot click listeners
+//     dotContainers.forEach(container => {
+//         const dots = container.querySelectorAll('button');
+//         dots.forEach((dot, i) => {
+//             dot.addEventListener('click', () => goToSlide(i));
+//         });
+//     });
     
-    // Touch/swipe support
-    let touchStartX = 0;
-    let touchEndX = 0;
+//     // Touch/swipe support
+//     let touchStartX = 0;
+//     let touchEndX = 0;
     
-    track.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+//     track.addEventListener('touchstart', (e) => {
+//         touchStartX = e.changedTouches[0].screenX;
+//     }, { passive: true });
     
    
-});
+// });
 
 
 

@@ -66,6 +66,61 @@ a{
 
 
 
+#loader {
+            background: #ff6600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            transition: opacity 0.4s ease;
+        }
+        
+        #loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        /* Spinner animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .animate-spin {
+            animation: spin 0.8s linear infinite;
+            will-change: transform;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.95); }
+        }
+        
+        .animate-pulse {
+            animation: pulse 1.5s ease-in-out infinite;
+            will-change: opacity, transform;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 480px) {
+            .loader-spinner {
+                width: 50px !important;
+                height: 50px !important;
+            }
+            .loader-logo {
+                height: 40px !important;
+            }
+            .loader-text {
+                font-size: 10px !important;
+            }
+        }
+
+
+
+
+
 /* ================= HERO SECTION ================= */
 
 .hero {

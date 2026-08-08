@@ -39,141 +39,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ====== PRIMARY SEO ====== -->
-    <title>Fermi Professional Security, Electrical & IT Solutions in Uganda | Safe.Smart.Secure.</title>
-    <meta name="description" content="FERMI provides certified CCTV surveillance, access control, automatic gates, fire alarms, electrical installations, and IT networking for homes and businesses across Uganda. 24/7 emergency support.">
-    <meta name="keywords" content="CCTV Uganda, security systems Kampala, electrical contractor Uganda, access control, fire alarms, automatic gates, IT networking, Fermi Electrotech, fermi.co.ug">
-    <meta name="author" content="FERMI Electrical & IT Solutions">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <meta name="googlebot" content="index, follow">
-    <link rel="canonical" href="https://fermi.co.ug/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ====== THEME & PERFORMANCE ====== -->
-    <meta name="theme-color" content="#fff">
-    <meta name="color-scheme" content="#fff">
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+<!-- ====== PRIMARY SEO ====== -->
+<title>Our Services | CCTV, Electrical, Access Control & IT Solutions | FERMI</title>
+<meta name="description" content="Explore FERMI's full range of services: CCTV surveillance, access control, automatic gates, fire alarms, electrical installations, and IT networking across Uganda.">
+<meta name="keywords" content="CCTV Uganda, security systems Kampala, electrical contractor Uganda, access control, fire alarms, automatic gates, IT networking, Fermi Electrotech, fermi.co.ug">
+<meta name="author" content="FERMI Electrical & IT Solutions">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="googlebot" content="index, follow">
+<link rel="canonical" href="https://fermi.co.ug/services.php">
 
-    <!-- ====== OPEN GRAPH ====== -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fermi.co.ug/">
-    <meta property="og:title" content="FERMI | Professional Security, Electrical & IT Solutions in Uganda">
-    <meta property="og:description" content="Certified CCTV, access control, electrical installations and IT networking. 10+ years of excellence. 24/7 support.">
-    <!-- Ensure you have an image named og-cover.jpg in your Images folder  -->
-    <meta property="og:image" content="https://fermi.co.ug/Images/og-cover.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="en_UG">
-    <meta property="og:site_name" content="FERMI">
+<!-- ====== THEME & PERFORMANCE ====== -->
+<meta name="theme-color" content="#fff">
+<meta name="color-scheme" content="#fff">
+<meta http-equiv="Cache-Control" content="public, max-age=31536000">
 
-    <!-- ====== TWITTER CARD ====== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FERMI | Professional Security, Electrical & IT Solutions in Uganda">
-    <meta name="twitter:description" content="Certified CCTV, access control, electrical installations and IT networking. 24/7 support.">
-    <meta name="twitter:image" content="https://fermi.co.ug/Images/og-cover.jpg">
+<!-- ====== OPEN GRAPH ====== -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fermi.co.ug/services.php">
+<meta property="og:title" content="FERMI Services | Security, Electrical & IT Solutions">
+<meta property="og:description" content="CCTV, access control, automatic gates, fire alarms, electrical installations and IT networking — explore our full service range.">
+<meta property="og:image" content="https://fermi.co.ug/Images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_UG">
+<meta property="og:site_name" content="FERMI">
 
-    <!-- ====== RESOURCE HINTS  ====== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://unpkg.com">
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
+<!-- ====== TWITTER CARD ====== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FERMI Services | Security, Electrical & IT Solutions">
+<meta name="twitter:description" content="CCTV, access control, automatic gates, fire alarms, electrical installations and IT networking — explore our full service range.">
+<meta name="twitter:image" content="https://fermi.co.ug/Images/og-cover.jpg">
 
-    <!-- Preload hero logo -->
-    <link rel="preload" as="image" href="./Images/logo2.png" fetchpriority="high">
-    <link rel="preload" as="style" href="styles.css">
+<!-- ====== RESOURCE HINTS  ====== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://unpkg.com">
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 
+<!-- Preload hero logo -->
+<link rel="preload" as="image" href="./Images/logo2.png" fetchpriority="high">
+<link rel="preload" as="style" href="styles.css">
 
-     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
 
-    <!-- ====== FONTS ====== -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Kodchasan:wght@500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+<!-- ====== FONTS ====== -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Kodchasan:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
 
-    <!-- ====== EXTERNAL CSS ====== -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="widget.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="services.css">
+<!-- ====== EXTERNAL CSS ====== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="widget.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="services.css">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    primary: "#F59E0B",
-                    primaryDark: "#D97706",
-                    background: "#0B1220",
-                    card: "#111827",
-                    muted: "#94A3B8",
-                    liver: "#5D4037"
-                },
-                fontFamily: {
-                    body: ["Noto Sans", "sans-serif"],
-                    heading: ["Kodchasan", "sans-serif"]
-                },
-                boxShadow: {
-                    glow: "0 0 60px rgba(245,158,11,.35)"
-                }
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: "#F59E0B",
+                primaryDark: "#D97706",
+                background: "#0B1220",
+                card: "#111827",
+                muted: "#94A3B8",
+                liver: "#5D4037"
+            },
+            fontFamily: {
+                body: ["Noto Sans", "sans-serif"],
+                heading: ["Kodchasan", "sans-serif"]
+            },
+            boxShadow: {
+                glow: "0 0 60px rgba(245,158,11,.35)"
             }
         }
     }
-    </script>
+}
+</script>
 
-    <!-- ====== STRUCTURED DATA: Local Business (huge SEO boost for .co.ug) ====== -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Electrician",
-      "@id": "https://fermi.co.ug/#organization",
-      "name": "FERMI Electrical & IT Solutions",
-      "alternateName": "Fermi Electrotech",
-      "url": "https://fermi.co.ug/",
-      "logo": "https://fermi.co.ug/Images/logo2.png",
-      "image": "https://fermi.co.ug/Images/og-cover.jpg",
-      "telephone": "+256760271098",
-      "email": "fermielectrictech@gmail.com",
-      "priceRange": "$$",
-      "description": "Certified security systems, electrical installations, and IT networking for residential, commercial, and industrial clients in Uganda.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kampala",
-        "addressCountry": "UG"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "0.3476",
-        "longitude": "32.5825"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "sameAs": [
-        "https://facebook.com/fermi",
-        "https://twitter.com/fermi",
-        "https://linkedin.com/company/fermi"
-      ],
-      "areaServed": {
-        "@type": "Country",
-        "name": "Uganda"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "102"
-      }
-    }
-    </script>
+<!-- ====== FAVICON ====== -->
+<link rel="icon" type="image/png" href="./Images/favicon.png">
 
-    <!-- ====== FAVICON ====== -->
-    <link rel="icon" type="image/png" href="./Images/favicon.png">
-
+<!-- ====== STRUCTURED DATA: Local Business ====== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "@id": "https://fermi.co.ug/#organization",
+  "name": "FERMI Electrical & IT Solutions",
+  "alternateName": "Fermi Electrotech",
+  "url": "https://fermi.co.ug/",
+  "logo": "https://fermi.co.ug/Images/logo2.png",
+  "image": "https://fermi.co.ug/Images/og-cover.jpg",
+  "telephone": "+256760271098",
+  "email": "fermielectrictech@gmail.com",
+  "priceRange": "$$",
+  "description": "Certified security systems, electrical installations, and IT networking for residential, commercial, and industrial clients in Uganda.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kampala",
+    "addressCountry": "UG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "0.3476",
+    "longitude": "32.5825"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Uganda"
+  }
+}
+</script>
 
 
 
@@ -1062,7 +1050,28 @@
  </style>
 </head>
 <body>
-    <div id="loader"></div>
+   
+
+<!-- ================= PRELOADER  ================= -->
+<div id="loader" class="fixed inset-0 z-[99999] flex items-center justify-center bg-orange-500">
+    <div class="flex flex-col items-center gap-6">
+        
+        <div class="relative w-16 h-16 md:w-20 md:h-20">
+            <!-- Outer ring -->
+            <div class="absolute inset-0 border-4 border-white/20 rounded-full"></div>
+            <!-- Animated ring -->
+            <div class="absolute inset-0 border-4 border-t-white border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+        </div>
+        
+        <!-- Logo -->
+        <div class="text-center">
+            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 md:h-14 w-auto mx-auto mb-2 animate-pulse" />
+            <p class="text-white font-semibold text-xs md:text-sm tracking-widest uppercase">Loading...</p>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- ================= HEADER / NAVBAR (FIXED) ================= -->
 <header class="fixed inset-x-0 top-0 z-50 transition-all duration-500" id="mainHeader">
@@ -1074,7 +1083,7 @@
                 <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3 group">
                     <span class="sr-only">FERMI</span>
                     <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
-                    <div class="hidden sm:block">
+                    <div class="sm:block">
                         <span class="block text-gray-900 font-bold text-xl tracking-tight">FERMI</span>
                         <span class="block text-orange-500 text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
                     </div>
@@ -1515,7 +1524,11 @@
 
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gray-900 text-gray-300 relative overflow-hidden">
+<footer class="relative text-gray-300 overflow-hidden bg-cover bg-center bg-no-repeat" 
+        style="background-image: url('Images/network-switch-with-cables.jpg');">
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/90"></div>
     
     <!-- Decorative Background Elements -->
     <div class="absolute inset-0 pointer-events-none">
@@ -1523,7 +1536,6 @@
         <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-3xl"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl"></div>
     </div>
-    
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
         
@@ -1559,30 +1571,25 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Quick Links
-                    
                 </h3>
                 <ul class="footer-links space-y-3">
                     <li>
-                        <a href="index.php" class=" text-sm  text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="index.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Home
                         </a>
                     </li>
                     <li>
                         <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
-                            
                             What We Offer
                         </a>
                     </li>
                     <li>
                         <a href="projects.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
-                            
                             Projects
                         </a>
                     </li>
                     <li>
                         <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
-                           
                             Reserve Appointment
                         </a>
                     </li>
@@ -1593,34 +1600,28 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Our Services
-                    
                 </h3>
                 <ul class="footer-links space-y-3">
                     <li>
-                        <a href="services.php" class=" text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             WLAN/LAN Installation
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class=" text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Air Conditioning
                         </a>
                     </li>
                     <li>
                         <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
-                          
                             Automatic Gates
                         </a>
                     </li>
                     <li>
                         <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
-                            
                             Fire Alarms
                         </a>
                     </li>
-                    
                 </ul>
             </div>
             
@@ -1628,7 +1629,6 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Contact Us
-                    
                 </h3>
                 <div class="footer-contact-item space-y-4">
                     <div class="flex items-start gap-3">
@@ -1651,7 +1651,6 @@
                     <div class="flex items-start gap-3">
                         <p class="text-gray-400 text-sm">Kampala, Uganda</p>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -1669,16 +1668,9 @@
                 <span class="w-px h-4 bg-gray-700"></span>
                 <a href="#" class="hover:text-amber-400 transition-colors duration-300">Sitemap</a>
             </div>
-            
-            <!-- Scroll to Top Button
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
-                    class="w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
-                <i class="fas fa-arrow-up text-sm"></i>
-            </button> -->
         </div>
     </div>
 </footer>
-
     <!--AI WIDGET-->
    <!-- <div id="ai-widget-container"></div> -->
     <!-- Floating WhatsApp CTA -->

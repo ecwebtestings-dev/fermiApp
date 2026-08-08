@@ -54,8 +54,7 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 
- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
+<link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
 <!-- ====== OPEN GRAPH ====== -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fermi.co.ug/projects.php">
@@ -120,29 +119,41 @@
         }
     }
     </script>
-<!-- ====== STRUCTURED DATA: Organization + Breadcrumb ====== -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Electrician",
   "@id": "https://fermi.co.ug/#organization",
   "name": "FERMI Electrical & IT Solutions",
+  "alternateName": "Fermi Electrotech",
   "url": "https://fermi.co.ug/",
   "logo": "https://fermi.co.ug/Images/logo2.png",
+  "image": "https://fermi.co.ug/Images/og-cover.jpg",
   "telephone": "+256760271098",
   "email": "fermielectrictech@gmail.com",
-  "address": { "@type": "PostalAddress", "addressLocality": "Kampala", "addressCountry": "UG" },
-  "areaServed": { "@type": "Country", "name": "Uganda" }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fermi.co.ug/" },
-    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://fermi.co.ug/projects.php" }
-  ]
+  "priceRange": "$$",
+  "description": "Certified security systems, electrical installations, and IT networking for residential, commercial, and industrial clients in Uganda.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kampala",
+    "addressCountry": "UG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "0.3476",
+    "longitude": "32.5825"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Uganda"
+  }
 }
 </script>
 
@@ -657,7 +668,27 @@
 ?>
 
 <body>
-<div id="loader"></div>
+
+
+<!-- ================= PRELOADER  ================= -->
+<div id="loader" class="fixed inset-0 z-[99999] flex items-center justify-center bg-orange-500">
+    <div class="flex flex-col items-center gap-6">
+        
+        <div class="relative w-16 h-16 md:w-20 md:h-20">
+            <!-- Outer ring -->
+            <div class="absolute inset-0 border-4 border-white/20 rounded-full"></div>
+            <!-- Animated ring -->
+            <div class="absolute inset-0 border-4 border-t-white border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+        </div>
+        
+        <!-- Logo -->
+        <div class="text-center">
+            <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 md:h-14 w-auto mx-auto mb-2 animate-pulse" />
+            <p class="text-white font-semibold text-xs md:text-sm tracking-widest uppercase">Loading...</p>
+        </div>
+    </div>
+</div>
+
 
 <!-- ================= HEADER / NAVBAR (PREMIUM WHITE & ORANGE) ================= -->
 <header class="fixed inset-x-0 top-0 z-50 transition-all duration-500" id="mainHeader">
@@ -669,7 +700,7 @@
                 <a href="index.php" class="-m-1.5 p-1.5 flex items-center gap-3 group">
                     <span class="sr-only">FERMI</span>
                     <img src="./Images/logo2.png" alt="Fermi Logo" class="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
-                    <div class="hidden sm:block">
+                    <div class="sm:block">
                         <span class="block text-gray-900 font-bold text-xl tracking-tight">FERMI</span>
                         <span class="block text-orange-500 text-xs font-medium -mt-1 tracking-wider">Safe.Smart.Secure.</span>
                     </div>
@@ -742,16 +773,16 @@
                     <div class="mt-8 flow-root">
                         <div class="-my-6 divide-y divide-gray-100">
                             <div class="space-y-3 py-6">
-                                <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-orange-600 bg-orange-50 hover:bg-orange-100 transition-colors duration-300">
+                                <a href="index.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-orange-600 ">
                                     Home
                                 </a>
-                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 ">
                                     What We Offer
                                 </a>
-                                <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                <a href="projects.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 ">
                                     Projects
                                 </a>
-                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors duration-300">
+                                <a href="services.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 ">
                                     Reserve Appointment
                                 </a>
                             </div>
@@ -1346,9 +1377,12 @@
 </section>
 
 
-
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gray-900 text-gray-300 relative overflow-hidden">
+<footer class="relative text-gray-300 overflow-hidden bg-cover bg-center bg-no-repeat" 
+        style="background-image: url('Images/network-switch-with-cables.jpg');">
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/90"></div>
     
     <!-- Decorative Background Elements -->
     <div class="absolute inset-0 pointer-events-none">
@@ -1356,7 +1390,6 @@
         <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-3xl"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl"></div>
     </div>
-    
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
         
@@ -1392,30 +1425,25 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Quick Links
-                    
                 </h3>
                 <ul class="footer-links space-y-3">
                     <li>
-                        <a href="index.php" class=" text-sm  text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="index.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             What We Offer
                         </a>
                     </li>
                     <li>
-                        <a href="projects.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="projects.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Projects
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                           
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Reserve Appointment
                         </a>
                     </li>
@@ -1426,34 +1454,28 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Our Services
-                    
                 </h3>
                 <ul class="footer-links space-y-3">
                     <li>
-                        <a href="services.php" class=" text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             WLAN/LAN Installation
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class=" text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Air Conditioning
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                          
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Automatic Gates
                         </a>
                     </li>
                     <li>
-                        <a href="services.php" class="text-sm text-gray-400 cursor-pointer transition-colors duration-300 flex items-center gap-2">
-                            
+                        <a href="services.php" class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2">
                             Fire Alarms
                         </a>
                     </li>
-                    
                 </ul>
             </div>
             
@@ -1461,22 +1483,21 @@
             <div class="footer-box space-y-4">
                 <h3 class="footer-title text-white text-lg font-bold relative inline-block">
                     Contact Us
-                    
                 </h3>
                 <div class="footer-contact-item space-y-4">
                     <div class="flex items-start gap-3">
                         <div class="space-y-1">
-                            <a href="tel:+256760271098" class="text-white  transition-colors duration-300 block text-sm">
+                            <a href="tel:+256760271098" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
                                 +256 760 271 098
                             </a>
-                            <a href="tel:+256754130885" class="text-white  transition-colors duration-300 block text-sm">
+                            <a href="tel:+256754130885" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 block text-sm">
                                 +256 754 130 885
                             </a>
                         </div>
                     </div>
                     
                     <div class="flex items-start gap-3">
-                        <a href="mailto:fermielectrictech@gmail.com" class="text-white transition-colors duration-300 text-sm break-all">
+                        <a href="mailto:fermielectrictech@gmail.com" class="text-gray-400 hover:text-amber-400 transition-colors duration-300 text-sm break-all">
                             fermielectrictech@gmail.com
                         </a>
                     </div>
@@ -1484,7 +1505,6 @@
                     <div class="flex items-start gap-3">
                         <p class="text-gray-400 text-sm">Kampala, Uganda</p>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -1502,16 +1522,9 @@
                 <span class="w-px h-4 bg-gray-700"></span>
                 <a href="#" class="hover:text-amber-400 transition-colors duration-300">Sitemap</a>
             </div>
-            
-            <!-- Scroll to Top Button
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
-                    class="w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/25">
-                <i class="fas fa-arrow-up text-sm"></i>
-            </button> -->
         </div>
     </div>
 </footer>
-
 
 <!-- <div id="ai-widget-container"></div> -->
  <!-- Floating WhatsApp CTA -->
